@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.kimikevin";
+option java_outer_classname = "Main";
+option objc_class_prefix = "HLW";
+
+package com.kimikevin;
+
+service MainService {
+  rpc send (MainRequest) returns (MainReply) {}
+}
+
+message MainRequest {
+  string name = 1;
+}
+
+message MainReply {
+  string message = 1;
+}
