@@ -5,6 +5,7 @@ public class DepartmentFinder {
 
     public static Department find(int number) {
         Department department = new Department();
+        department.getEmployees();
         return department;
     }
 }
