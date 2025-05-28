@@ -28,13 +28,6 @@ public class ShopApp {
         System.out.println("Item 2" + item2.description + " , " + item2.price + " , " + item2.size);
 
 //        total = (item1.price + (item2.price * 2)) * (1 + tax);
-        for(Clothing item : items) {
-            System.out.println("Item " + item.description + " , " + item.price + " , "+ item.size);
-            if (c1.size.equals(item.size)) {
-                total = total + (item.price * (1 + tax));
-            }
-        }
-        System.out.println("Total is " + total);
 
         int measurement = 3;
 
@@ -51,5 +44,11 @@ public class ShopApp {
             default:
                 c1.size = "X";
         }
+
+        for(Clothing item : items) {
+            System.out.println("Item " + item.description + " , " + item.price + " , "+ item.size);
+                total = total + item.price;
+        }
+        System.out.println("Total is " + total);
     }
 }
