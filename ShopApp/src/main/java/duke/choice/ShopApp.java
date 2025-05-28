@@ -33,17 +33,14 @@ public class ShopApp {
 //        total = (item1.price + (item2.price * 2)) * (1 + tax);
 
         int measurement = 8;
-        c1.setSize(measurement);
-        System.out.println("Customer is " + c1.getName() + "," + c1.getSize());
 
-        for(Clothing item : items) {
-            if (c1.getSize().equals(item.getSize())) {
-                total = total + item.getPrice();
-                System.out.println("Item " + item.getDescription() + " , " + item.getPrice() + " , "+ item.getSize());
-                total = total + total * tax;
-                if (total > 15)
-                    break;
-            }
+        c1.addItems(items);
+
+        c1.setSize(measurement);
+
+        System.out.println("Customer is " + c1.getName() + "," + c1.getSize() + "," + c1.getTotalClothingCost());
+        for(Clothing item : c1.getItems()) {
+            System.out.println("Items " + item.getDescription());
         }
         System.out.println("Total is " + total);
     }
