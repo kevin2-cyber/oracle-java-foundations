@@ -30,7 +30,9 @@ public class ShopApp {
 //        total = (item1.price + (item2.price * 2)) * (1 + tax);
         for(Clothing item : items) {
             System.out.println("Item " + item.description + " , " + item.price + " , "+ item.size);
-            total = total + (item.price * (1 + tax));
+            if (c1.size.equals(item.size)) {
+                total = total + (item.price * (1 + tax));
+            }
         }
         System.out.println("Total is " + total);
 
