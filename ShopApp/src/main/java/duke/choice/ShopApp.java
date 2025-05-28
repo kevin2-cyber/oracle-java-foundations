@@ -27,7 +27,11 @@ public class ShopApp {
         System.out.println("Item 1 " + item1.description + " , " + item1.price + " , "+ item1.size);
         System.out.println("Item 2" + item2.description + " , " + item2.price + " , " + item2.size);
 
-        total = (item1.price + (item2.price * 2)) * (1 + tax);
+//        total = (item1.price + (item2.price * 2)) * (1 + tax);
+        for(Clothing item : items) {
+            System.out.println("Item " + item.description + " , " + item.price + " , "+ item.size);
+            total = total + (item.price * (1 + tax));
+        }
         System.out.println("Total is " + total);
 
         int measurement = 3;
