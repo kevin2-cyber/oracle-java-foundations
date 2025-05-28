@@ -23,10 +23,6 @@ public class ShopApp {
         item2.price = 10.5;
         item2.size = "S";
 
-
-        System.out.println("Item 1 " + item1.description + " , " + item1.price + " , "+ item1.size);
-        System.out.println("Item 2" + item2.description + " , " + item2.price + " , " + item2.size);
-
 //        total = (item1.price + (item2.price * 2)) * (1 + tax);
 
         int measurement = 3;
