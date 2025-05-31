@@ -1,10 +1,14 @@
 package duke.choice;
 
+import static duke.choice.Clothing.TAX_RATE;
+
 public class ShopApp {
     public static void main(String[] args) {
 
         System.out.println("Welcome to Duke Choice Shop");
         Customer c1 = new Customer("Pinky",3);
+
+        System.out.println("Minimum price: " + TAX_RATE);
 
         Clothing item1 = new Clothing("Blue Jacket",20.9,"M");
         Clothing item2 = new Clothing("Orange T-Shirt",10.5,"S");
