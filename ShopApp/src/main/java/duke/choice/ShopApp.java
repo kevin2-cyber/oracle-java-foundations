@@ -1,5 +1,7 @@
 package duke.choice;
 
+import java.util.Arrays;
+
 import static duke.choice.Clothing.TAX_RATE;
 
 public class ShopApp {
@@ -41,5 +43,9 @@ public class ShopApp {
             System.out.println("Don't divide by zero");
         }
 
+        Arrays.sort(c1.getItems());
+        for(Clothing item : c1.getItems()) {
+            System.out.println("Item output " + item);
+        }
     }
 }
