@@ -1,5 +1,7 @@
 package duke.choice;
 
+import java.util.Arrays;
+
 import static duke.choice.Clothing.TAX_RATE;
 
 public class ShopApp {
@@ -20,7 +22,7 @@ public class ShopApp {
 
         System.out.println("Customer is " + c1.getName() + "," + c1.getSize() + "," + c1.getTotalClothingCost());
         for(Clothing item : c1.getItems()) {
-            System.out.println("Items " + item.getDescription());
+            System.out.println("Item output " + item);
         }
 
         int average = 0;
@@ -29,7 +31,7 @@ public class ShopApp {
         for(Clothing item : c1.getItems()) {
             if(item.getSize().equals("L")) {
                 count++;
-                average += item.getPrice();
+                average += (int) item.getPrice();
             }
         }
 
@@ -41,5 +43,9 @@ public class ShopApp {
             System.out.println("Don't divide by zero");
         }
 
+        Arrays.sort(c1.getItems());
+        for(Clothing item : c1.getItems()) {
+            System.out.println("Item output " + item);
+        }
     }
 }
