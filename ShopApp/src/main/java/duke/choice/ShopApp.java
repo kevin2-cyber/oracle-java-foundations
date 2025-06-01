@@ -29,7 +29,7 @@ public class ShopApp {
         for(Clothing item : c1.getItems()) {
             if(item.getSize().equals("L")) {
                 count++;
-                average += item.getPrice();
+                average += (int) item.getPrice();
             }
         }
 
