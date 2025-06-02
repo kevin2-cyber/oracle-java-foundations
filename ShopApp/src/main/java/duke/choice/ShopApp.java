@@ -26,6 +26,8 @@ public class ShopApp {
                 new Clothing("Blue T-Shirt",10.5,"S")
         };
 
+        c1.addItems(items);
+
         try {
             ItemList list = new ItemList(items);
             Routing routing = Routing.builder()
@@ -41,9 +43,6 @@ public class ShopApp {
         } catch (UnknownHostException ex) {
             ex.printStackTrace();
         }
-
-
-        c1.addItems(items);
 
         System.out.println("Customer is " + c1.getName() + "," + c1.getSize() + "," + c1.getTotalClothingCost());
         for(Clothing item : c1.getItems()) {
