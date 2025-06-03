@@ -57,8 +57,10 @@ public class Department {
     // query method that attempts to locate an employee with specific id in this department.
     public Employee getEmployeeById(int empId) {
         for (Employee emp: employees) {
-            if (emp.getId() == empId) {
-                return emp;
+            if (emp != null) {
+                if (emp.getId() == empId) {
+                    return emp;
+                }
             }
         }
         return null;
