@@ -33,5 +33,7 @@ public class HRApp {
         }
         System.out.println("total salary: " + computer.getTotalSalary());
         System.out.println("average salary: " + computer.getAverageSalary());
+
+        System.out.println(computer.getEmployeeById(130));
     }
 }
