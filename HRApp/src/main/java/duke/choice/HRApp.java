@@ -1,6 +1,19 @@
 package duke.choice;
 
+import io.helidon.webserver.Routing;
+import io.helidon.webserver.ServerConfiguration;
+import io.helidon.webserver.WebServer;
+
+import java.net.InetAddress;
+import java.net.UnknownHostException;
+import java.util.Arrays;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
+
 public class HRApp {
+    private static final Logger LOGGER = Logger.getLogger(HRApp.class.getName());
     public static void main(String[] args) {
         System.out.println("HRApp starts");
 
@@ -35,5 +48,29 @@ public class HRApp {
         System.out.println("average salary: " + computer.getAverageSalary());
 
         System.out.println(computer.getEmployeeById(1302));
+        Employee[] allEmployees = mergeEmployeesUsingStreams(educationEmployees, computerEmployees);
+
+        try {
+            ItemList list = new ItemList(allEmployees);
+            Routing routing = Routing.builder()
+                    .get("/items", list)
+                    .build();
+
+            ServerConfiguration config = ServerConfiguration.builder()
+                    .bindAddress(InetAddress.getLocalHost())
+                    .port(8888).build();
+
+            WebServer ws = WebServer.create(config, routing);
+            ws.start();
+        } catch (UnknownHostException ex) {
+            LOGGER.log(Level.INFO, ex.getMessage(), ex);
+        }
     }
+    public static Employee[] mergeEmployeesUsingStreams(Employee[] educationEmployees, Employee[] computerEmployees) {
+        return Stream.concat(
+                Arrays.stream(educationEmployees),
+                Arrays.stream(computerEmployees))
+                .toArray(Employee[]::new);
+    }
+
 }
