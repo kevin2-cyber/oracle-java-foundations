@@ -25,25 +25,11 @@ public class Main {
 //        Department aDept = DepartmentFinder.find(departNumber);
 //        aDept.assignEmployee(newEmp);
 //        System.out.println(aDept.getEmployees());
-        // Create a Scanner object to read input
-        Scanner sc = new Scanner(System.in);
 
-        // Read the integer
-        int age = sc.nextInt();
+        int[] nums = {0,1,2,3,4,5,6,7,8,9};
 
-        // Write your code here to determine the life stage based on the input age
-        // You should use if...else if...else statement
-        if(age <= 12) {
-            System.out.println("Child");
-        } else if(age >= 13 && age <= 17) {
-            System.out.println("Teenager");
-        }  else if(age >= 18 && age <= 56) {
-            System.out.println("Adult");
-        } else if(age >= 60){
-            System.out.println("Senior Citizen");
+        for(int num = nums.length - 1; num >= 0; num--){
+            System.out.print(num + " ");
         }
-        // Then, print out the appropriate message
-
-        sc.close();
     }
 }
