@@ -5,11 +5,11 @@ public class Task {
 
         String haystack = "supercalifragilisticexpialidocious";
 
-        int haystackLength = 34;
+        int haystackLength = haystack.length();
 
         String pattern = "cali";
 
-        int patternLength = 4;
+        int patternLength = pattern.length();
 
         boolean next;
 
