@@ -10,5 +10,6 @@ public class Expressions {
         System.out.println(b % a);
         System.out.println((a - b) + a * (b - a) - a % b);
         System.out.println((-5) * (-10) * (-20));
+        System.out.println(2 + 4 * 5 - 10 / (2 + 1));
     }
 }
