@@ -9,5 +9,6 @@ public class ProductPriceCalculator {
         double finalPrice = basePrice + taxAmount - discountAmount;
 
         System.out.printf("Final Price: %.2f%n", finalPrice);
+        System.out.println(24 % 2);
     }
 }
