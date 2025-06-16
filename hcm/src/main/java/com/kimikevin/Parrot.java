@@ -11,6 +11,7 @@ public class Parrot {
          * calculates parrotWeight / 5 + parrotAge
          */
         int myParrotPortion = countSeeds(myParrotWeight, myParrotAge);
+        addSeeds(myParrotPortion);
         printSeedsCount(myParrotPortion);
     }
 
@@ -20,5 +21,14 @@ public class Parrot {
 
     public static int countSeeds(int parrotWeight, int parrotAge) {
         return parrotWeight / 5 + parrotAge; // it returns an int
+    }
+
+    /**
+     * The method increases the portion of seeds by 50
+     * and prints the resulting value
+     */
+    public static void addSeeds(int portion) {
+        portion += 50;
+        System.out.println("The increased portion is " + portion);
     }
 }
