@@ -13,7 +13,7 @@ public class MultipleFunction {
         //call your implemented methods here.
         if(x <= 0) {
             return f1(x);
-        } else if(x < 0 || x > 0) {
+        } else if(x < 0 || x < 1) {
            return f2(x);
         } else {
            return f3(x);
