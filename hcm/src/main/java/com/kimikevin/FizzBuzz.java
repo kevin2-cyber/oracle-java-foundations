@@ -7,33 +7,29 @@ public class FizzBuzz {
         Scanner scanner = new Scanner(System.in);
         int num  = scanner.nextInt();
 
-        if (num % 3 == 0) {
-            isDivByThree(num);
-        }  else if (num % 5 == 0) {
-            isDivByFive(num);
-        }  else {
-            isDivByThreeAndFive(num);
+        if (isDivByThreeAndFive(num)) {
+            System.out.println("FizzBuzz");
+        }  else if (isDivByFive(num)) {
+            System.out.println("Buzz");
+        }  else if (isDivByThree(num)){
+            System.out.println("Fizz");
+        } else {
+            System.out.println("None");
         }
     }
 
     // function isDivByThree will be here
-    public static void isDivByThree(int num) {
-        if(num % 3 == 0) {
-            System.out.println("Fizz");
-        }
+    public static boolean isDivByThree(int num) {
+       return num % 3 == 0;
     }
 
     // function isDivByFive will be here
-    public static void isDivByFive(int num) {
-        if(num % 5 == 0) {
-            System.out.println("Buzz");
-        }
+    public static boolean isDivByFive(int num) {
+        return num % 5 == 0;
     }
 
     // function isDivByThreeAndFive will be here
-    public static void isDivByThreeAndFive(int num) {
-        if(num % 3 == 0 && num % 5 == 0) {
-            System.out.println("FizzBuzz");
-        }
+    public static boolean isDivByThreeAndFive(int num) {
+        return isDivByThree(num) && isDivByFive(num);
     }
 }
