@@ -13,6 +13,8 @@ public class TrafficConductor {
 
         System.out.println(nextState);
         System.out.println(action);
+
+        System.out.println(amountOfDaysInAMonth(2));
     }
 
     public static String getNextState(int currentState) {
@@ -31,6 +33,14 @@ public class TrafficConductor {
             case 1 -> "Change to Green";
             case 2 -> "Change to Red";
             default -> "Unknown action";
+        };
+    }
+
+    static String amountOfDaysInAMonth(int monthNumber) {
+        return switch (monthNumber) {
+            case 2 -> "28 or 29 days";
+            case 4, 6, 9, 11 -> "30 days";
+            default -> "31 days";
         };
     }
 }
