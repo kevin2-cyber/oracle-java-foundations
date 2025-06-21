@@ -26,7 +26,7 @@ public class CalculateNumberFromInput {
     }
 
     public static void calculate(int num1, int num2) {
-        System.out.println(num1 + num2);
+        System.out.println(num1 * num2);
     }
 
     public static void calculate(int num1, int num2, int num3) {
