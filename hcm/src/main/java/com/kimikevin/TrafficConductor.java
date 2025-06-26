@@ -36,7 +36,7 @@ public class TrafficConductor {
         };
     }
 
-    static String amountOfDaysInAMonth(int monthNumber) {
+    public static String amountOfDaysInAMonth(int monthNumber) {
         return switch (monthNumber) {
             case 2 -> "28 or 29 days";
             case 4, 6, 9, 11 -> "30 days";
