@@ -13,5 +13,9 @@ public class FinalVar {
         cnt = 20; // no errors here, cnt is not final
         System.out.println(count);
         System.out.println(cnt);
+
+        final StringBuilder builder = new StringBuilder();
+        builder.append("Hello");
+        System.out.println(builder);
     }
 }
