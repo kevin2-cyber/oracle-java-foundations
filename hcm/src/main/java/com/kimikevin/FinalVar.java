@@ -7,5 +7,11 @@ public class FinalVar {
 
         System.out.println(PI);
         System.out.println(HELLO_MSG);
+
+        final int count = 10;
+        int cnt = count;
+        cnt = 20; // no errors here, cnt is not final
+        System.out.println(count);
+        System.out.println(cnt);
     }
 }
