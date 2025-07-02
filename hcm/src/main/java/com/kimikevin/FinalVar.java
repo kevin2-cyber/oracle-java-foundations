@@ -16,6 +16,6 @@ public class FinalVar {
 
         final StringBuilder builder = new StringBuilder();
         builder.append("Hello");
-        System.out.println(builder.toString());
+        System.out.println(builder);
     }
 }
