@@ -14,8 +14,6 @@ public class FinalVar {
         System.out.println(count);
         System.out.println(cnt);
 
-        final StringBuilder builder = new StringBuilder();
-        builder.append("Hello");
-        System.out.println(builder);
+        System.out.println("Hello");
     }
 }
