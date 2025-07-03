@@ -17,5 +17,8 @@ public class FinalVar {
         final StringBuilder builder = new StringBuilder();
         builder.append("Hello");
         System.out.println(builder);
+
+        final var FINAL_VAR = 10;
+        final var MSG = "Hello!";
     }
 }
