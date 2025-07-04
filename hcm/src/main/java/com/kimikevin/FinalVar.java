@@ -20,5 +20,7 @@ public class FinalVar {
 
         final var FINAL_VAR = 10;
         final var MSG = "Hello!";
+        System.out.println(FINAL_VAR);
+        System.out.println(builder);
     }
 }
