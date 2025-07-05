@@ -22,5 +22,6 @@ public class FinalVar {
         final var MSG = "Hello!";
         System.out.println(FINAL_VAR);
         System.out.println(builder);
+        System.out.println(MSG);
     }
 }
