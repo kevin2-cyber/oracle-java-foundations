@@ -1,6 +1,5 @@
 package com.kimikevin;
 
-import java.util.Scanner;
 
 public class Happiness {
     public static void main(String[] args) {
