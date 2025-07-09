@@ -7,6 +7,5 @@ public class Happiness {
         double love = 7.3;
         double hate = 2.3;
         System.out.println("Happiness = " + ((life + laughter) * love - hate / 2.0));
-
     }
 }
