@@ -10,7 +10,7 @@ public class Happiness {
         double hate = 2.3;
         System.out.println("Happiness = " + ((life + laughter) * love - hate / 2.0));
 //
-//        System.out.println(Math.PI * Math.pow(100,2));\
+        System.out.println(Math.PI * Math.pow(100,2));
 
 //        Scanner scanner = new Scanner(System.in);
 //        int minutes = scanner.nextInt();
