@@ -12,9 +12,6 @@ public class Happiness {
 
         System.out.println(Math.PI * Math.pow(100,2));
 
-//        Scanner scanner = new Scanner(System.in);
-//        int minutes = scanner.nextInt();
-//        int hours = minutes / 60;
 //        minutes %= 60;
 //        if (hours > 0) {
 //            hours++;
