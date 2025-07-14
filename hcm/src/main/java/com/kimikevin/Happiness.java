@@ -12,8 +12,6 @@ public class Happiness {
 
         System.out.println(Math.PI * Math.pow(100,2));
 
-//        System.out.println(minutes + " minutes " + hours + " hours");
-
         Scanner scanner = new Scanner(System.in);
         boolean isSunny = scanner.nextBoolean();
         boolean isRainy = scanner.nextBoolean();
