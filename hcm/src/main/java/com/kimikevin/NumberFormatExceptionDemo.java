@@ -7,7 +7,11 @@ public class NumberFormatExceptionDemo {
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
 
-        int number = Integer.parseInt(input); // an exception is possible here!
-        System.out.println(number + 1);
+        if (input.matches("\\d+")) { // it checks if the input line contains only digits
+            int number = Integer.parseInt(input);
+            System.out.println(number + 1);
+        } else {
+            System.out.println("Incorrect number: " + input);
+        }
     }
 }
