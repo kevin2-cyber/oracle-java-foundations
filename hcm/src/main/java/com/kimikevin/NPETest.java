@@ -8,8 +8,8 @@ public class NPETest {
 //            System.out.println("The same");
 //        }
 
-        if ("abc".equals(str)) { // no NPE here
-            System.out.println("The same");
-        }
+//        if ("abc".equals(str)) { // no NPE here
+//            System.out.println("The same");
+//        }
     }
 }
