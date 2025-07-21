@@ -5,11 +5,7 @@ import java.util.Scanner;
 
 public class NPEDemoWithUpperCase {
     public static String toUpperCase(String str) {
-        if(str == null) {
-            return "";
-        } else {
-            return str.toUpperCase(Locale.ENGLISH);
-        }
+        return str == null ? "" : str.toUpperCase(Locale.ENGLISH);
     }
 
     public static void main(String[] args) {
