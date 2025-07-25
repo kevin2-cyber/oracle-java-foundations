@@ -2,22 +2,23 @@ package com.kimikevin;
 
 public class HumanDemo {
     public static void main(String[] args) {
-        Human human = new Human();
-        human.printInstance();
-        Human.printStatic();
+        Human.averageWorking(); // "An average human works 40 hours per week."
+
+        Human peter =  new Human();
+        peter.name = "Peter";
+        peter.work(); // "Peter loves working!"
+
+
+        Human alice =  new Human();
+        alice.name = "Alice";
+        alice.work(); // "Alice loves working!"
+
+        peter.workTogetherWith(alice); // "Peter loves working with Alice!"
     }
 
     static class Human {
         String name;
         int age;
-
-        public static void printStatic() {
-            System.out.println("It's a static method");
-        }
-
-        public void printInstance() {
-            System.out.println("It's an instance method");
-        }
 
         public static void averageWorking() {
             System.out.println("An average human works 40 hours per week.");
