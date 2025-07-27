@@ -15,3 +15,13 @@ public class ComplexDemo {
         number.add(anotherNumber); // number = 16.0 + 10.0i
     }
 }
+
+class Complex {
+    double real;
+    double image;
+
+    void add(Complex anotherNumber) {
+        this.real += anotherNumber.real;
+        this.image += anotherNumber.image;
+    }
+}
