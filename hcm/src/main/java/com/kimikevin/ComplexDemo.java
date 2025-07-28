@@ -13,6 +13,7 @@ public class ComplexDemo {
         // math expression of anotherNumber = 6.0 + 6.0i
 
         number.add(anotherNumber); // number = 16.0 + 10.0i
+        number.subtract(anotherNumber);
     }
 }
 
@@ -23,5 +24,10 @@ class Complex {
     void add(Complex anotherNumber) {
         this.real += anotherNumber.real;
         this.image += anotherNumber.image;
+    }
+
+    void subtract(Complex anotherNumber) {
+        this.real -= anotherNumber.real;
+        this.image -= anotherNumber.image;
     }
 }
