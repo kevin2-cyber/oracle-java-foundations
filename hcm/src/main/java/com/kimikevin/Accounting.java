@@ -1,7 +1,19 @@
 package com.kimikevin;
 
 public class Accounting {
-    public static void main(String[] args) {}
+    public static void main(String[] args) {
+        Account account = new Account();
+
+        account.setId(1000);
+        account.setCode("62968503812");
+        account.setBalance(100_000_000);
+        account.setEnabled(true);
+
+        System.out.println("ID: " + account.getId());
+        System.out.println("Code: " + account.getCode());
+        System.out.println("Balance: " + account.getBalance());
+        System.out.println("Enabled status: " + account.isEnabled());
+    }
 }
 
 class Account {
