@@ -4,11 +4,17 @@ public class PatientDemo {
 
     public static void main(String[] args) {
 
-        Patient john = new Patient("John", 30, 180);
+        Patient john = new Patient();
+        john.setName("John");
+        john.setAge(30);
+        john.setHeight(180);
 
         System.out.println(john.getName() + " " + john.getAge() + " " + john.getHeight());
 
-        Patient alice = new Patient("Alice", 22, 165);
+        Patient alice = new Patient();
+        alice.setName("Alice");
+        alice.setAge(22);
+        alice.setHeight(165);
 
         System.out.println(alice.getName() + " " + alice.getAge() + " " + alice.getHeight());
     }
@@ -19,12 +25,7 @@ class Patient {
    private String name;
     private int age;
     private float height;
-
-    public Patient(String name,  int age, float height) {
-        this.name = name;
-        this.age = age;
-        this.height = height;
-    }
+    public Patient() {}
 
     public String getName() {
         return name;
