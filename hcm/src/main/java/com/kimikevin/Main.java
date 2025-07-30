@@ -1,9 +1,47 @@
 package com.kimikevin;
 
+import java.util.List;
+
 public class Main {
+    static class Employee {
+        private String name;
+        private Department departmentAssignedTo;
+
+        public String getName() {
+            return name;
+        }
+
+        public Department getDepartment() {
+            return departmentAssignedTo;
+        }
+    }
+
+    static class DepartmentFinder {
+        private int number;
+
+        public static Department find(int number) {
+            Department department = new Department();
+            department.getEmployees();
+            return department;
+        }
+    }
+
+    static class Department {
+        private String name;
+        private List<com.kimikevin.Employee> employees;
+
+        public void assignEmployee(com.kimikevin.Main.Employee employee) {
+            // do something
+            System.out.println("Assigned " + employee.getName() + " to " + name);
+        }
+
+        public List<com.kimikevin.Employee> getEmployees() {
+            return employees;
+        }
+    }
     public static void main(String[] args) {
         int departNumber = 1;
-        Employee newEmp = new Employee();
+        com.kimikevin.Main.Employee newEmp = new com.kimikevin.Main.Employee();
         Department aDept = DepartmentFinder.find(departNumber);
         aDept.assignEmployee(newEmp);
         System.out.println(aDept.getEmployees());
