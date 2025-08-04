@@ -4,9 +4,25 @@ import java.util.Date;
 
 public class SuperClassDemo {
     public static void main(String[] args) {
-        Person person = new Person();
+
+        Person person = new Employee();
+        person.setName("Ginger R. Lee");
+
         Client client = new Client();
+        client.setName("Pauline E. Morgan");
+
         Employee employee = new Employee();
+        employee.setName("Lawrence V. Jones");
+
+        Person[] persons = {person, client, employee};
+
+        printNames(persons);
+    }
+
+    private static void printNames(Person[] persons) {
+        for (Person person : persons) {
+            System.out.println(person.getName());
+        }
     }
 
     static class Person {
