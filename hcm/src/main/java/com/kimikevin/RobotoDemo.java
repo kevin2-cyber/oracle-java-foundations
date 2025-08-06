@@ -2,7 +2,7 @@ package com.kimikevin;
 
 public class RobotoDemo {
     public static void main(String[] args) {
-        RobotoDemo anon = new RobotoDemo();
+        Roboto anon = new Roboto();
         System.out.println(anon);
     }
 }
@@ -25,5 +25,10 @@ class Roboto{
         this.name = name;
         this.model = model;
         this.lifetime = lifetime;
+    }
+
+    @Override
+    public String toString() {
+        return "name=" + name + ", model=" + model + ", lifetime=" + lifetime;
     }
 }
