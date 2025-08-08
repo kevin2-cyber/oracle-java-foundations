@@ -1,6 +1,7 @@
 package com.kimikevin;
 
 import jakarta.validation.constraints.NotNull;
+import org.hibernate.validator.constraints.Range;
 
 class GameCharacter {
     @NotNull
