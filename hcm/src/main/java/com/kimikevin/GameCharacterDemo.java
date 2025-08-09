@@ -8,7 +8,7 @@ class GameCharacter {
     private String login;
 
     @Range(min = 1, max = 100)
-    private int level = 1;
+    private int level;
 
     public GameCharacter(
             @NotNull String login,
