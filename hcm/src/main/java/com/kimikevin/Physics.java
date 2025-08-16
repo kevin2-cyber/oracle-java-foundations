@@ -14,5 +14,6 @@ public class Physics {
 
     public static void main(String[] args) {
         System.out.println(Physics.SPEED_OF_LIGHT);
+        System.out.println(Physics.ELECTRON_MASS);
     }
 }
