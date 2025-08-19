@@ -3,6 +3,7 @@ package com.kimikevin;
 public class CatDemo {
     public static void main(String[] args) {
         Cat abel = new Cat("Abel", 10);
+        Cat abela = new Cat("Abela", 10);
         System.out.println(Cat.getNumberOfCats());
     }
 }
