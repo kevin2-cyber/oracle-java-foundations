@@ -1,7 +1,7 @@
 package com.kimikevin;
 
 public class NPETry {
-    public static void main(String[] args) {
+    public static void main(String[] args){
         String str = "hello";
         try {
             System.out.println(str.length());
