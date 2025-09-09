@@ -16,6 +16,8 @@ public class ReflectionDemo {
         Method[] declaredMethods = student.getDeclaredMethods();
         Method[] methods = student.getMethods();
 
+        Class<?> studentSuperClass = Student.class.getSuperclass();
+
         System.out.println("Superclass " + superclass);
 
         for (Constructor<?> dc : declaredConstructors) {
