@@ -2,6 +2,9 @@ package com.kimikevin.reflection;
 
 import java.util.Scanner;
 
+/**
+ * An Implementation of StringBuilder class
+ */
 public class Main {
 
     public static String concatenateStringsWithoutDigits(String[] strings) {
