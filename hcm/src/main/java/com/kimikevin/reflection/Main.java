@@ -56,5 +56,14 @@ public class Main {
 
         // Returns all the classes, interfaces, and enums that are explicitly declared in this class.
         String.class.getDeclaredClasses();
+        Main main = new Main();
+        String objectString = main.getObjectClassName(new Object());
+
+        System.out.println(objectString);
+    }
+
+    public String getObjectClassName(Object object) {
+        // Add implementation here
+        return object.getClass().getName();
     }
 }
