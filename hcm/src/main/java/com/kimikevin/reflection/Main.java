@@ -24,5 +24,12 @@ public class Main {
         Class<?> stringClass = String.class;
         Class<?> intClass = int.class;
         Class<?> voidClass = void.class;
+
+        System.out.println(stringClass.getName());
+        System.out.println(intClass.getName());
+        System.out.println(voidClass.getName());
+
+        Class<?> instanceClass = "abc".getClass();
+        System.out.println(instanceClass.getName());
     }
 }
