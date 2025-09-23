@@ -20,5 +20,9 @@ public class Main {
         String[] strings = scanner.nextLine().split("\\s+");
         String result = concatenateStringsWithoutDigits(strings);
         System.out.println(result);
+
+        Class<?> stringClass = String.class;
+        Class<?> intClass = int.class;
+        Class<?> voidClass = void.class;
     }
 }
