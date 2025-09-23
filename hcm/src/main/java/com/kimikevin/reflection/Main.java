@@ -45,5 +45,16 @@ public class Main {
         System.out.println(objectArrayClass.getName());
         System.out.println(scannerArrayClass.getName());
         System.out.println(floatArrayClass.getName());
+
+        // Methods that return classes
+
+        // Returns the super class for the given class
+        String.class.getSuperclass();
+
+        // Returns all the public classes, interfaces, and enums that are members of the class
+        String.class.getClasses();
+
+        // Returns all the classes, interfaces, and enums that are explicitly declared in this class.
+        String.class.getDeclaredClasses();
     }
 }
