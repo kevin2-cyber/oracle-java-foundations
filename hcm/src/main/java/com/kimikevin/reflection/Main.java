@@ -15,12 +15,13 @@ public class Main {
         return stringBuilder.toString();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ClassNotFoundException {
         Scanner scanner = new Scanner(System.in);
         String[] strings = scanner.nextLine().split("\\s+");
         String result = concatenateStringsWithoutDigits(strings);
         System.out.println(result);
 
+        // The .class Syntax
         Class<?> stringClass = String.class;
         Class<?> intClass = int.class;
         Class<?> voidClass = void.class;
@@ -29,7 +30,20 @@ public class Main {
         System.out.println(intClass.getName());
         System.out.println(voidClass.getName());
 
+        // Retrieve Class from an object instance
         Class<?> instanceClass = "abc".getClass();
         System.out.println(instanceClass.getName());
+
+        // Retrieve Class with a given name
+        Class<?> forName = Class.forName("java.lang.String");
+
+        Class<?> floatArrayClass = Class.forName("[F");
+        Class<?> objectArrayClass = Class.forName("[[Ljava.lang.Object;");
+        Class<?> scannerArrayClass = Class.forName("[Ljava.util.Scanner;");
+
+        System.out.println(forName.getName());
+        System.out.println(objectArrayClass.getName());
+        System.out.println(scannerArrayClass.getName());
+        System.out.println(floatArrayClass.getName());
     }
 }
