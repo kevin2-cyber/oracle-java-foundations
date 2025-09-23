@@ -25,10 +25,12 @@ public class Main {
         Class<?> stringClass = String.class;
         Class<?> intClass = int.class;
         Class<?> voidClass = void.class;
+        Class<?> arrayClass = String[].class;
 
         System.out.println(stringClass.getName());
         System.out.println(intClass.getName());
         System.out.println(voidClass.getName());
+        System.out.println(arrayClass.getName());
 
         // Retrieve Class from an object instance
         Class<?> instanceClass = "abc".getClass();
