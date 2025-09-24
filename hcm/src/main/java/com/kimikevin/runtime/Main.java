@@ -19,5 +19,9 @@ public class Main {
         boolean equalsCircle = circle.getClass() == Circle.class; // true
         boolean equalsShape = circle.getClass() == Shape.class;   // false
         boolean rectangle = circle.getClass() == Rectangle.class; // false
+
+        boolean isInstanceOfCircle = Circle.class.isInstance(circle); // true
+        boolean isInstanceOfShape = Shape.class.isInstance(circle); // true
+        boolean isInstanceOfRectangle = Rectangle.class.isInstance(circle); // false
     }
 }
