@@ -10,30 +10,33 @@ public class Main {
             }
         }
 
-        class Shape {}
-        class Circle extends Shape {}
-        class Rectangle extends Shape {}
+        class Shape {
+        }
 
-        Shape circle = new Circle();
+        class Shape2D extends Shape {
+        }
 
-        boolean equalsCircle = circle.getClass() == Circle.class; // true
-        boolean equalsShape = circle.getClass() == Shape.class;   // false
-        boolean rectangle = circle.getClass() == Rectangle.class; // false
+        class Shape3D extends Shape {
+        }
 
-        boolean isInstanceOfCircle = Circle.class.isInstance(circle); // true
-        boolean isInstanceOfShape = Shape.class.isInstance(circle); // true
-        boolean isInstanceOfRectangle = Rectangle.class.isInstance(circle); // false
 
-        class Person { }
+        class Circle extends Shape2D {
+        }
 
-        class Employee extends Person { }
+        class Shape2DSub1 extends Shape2D {
+        }
 
-        class Customer extends Person { }
+        class Shape2DSub2 extends Shape2D {
+        }
 
-        Person employee = new Employee();
 
-        Person customer = new Customer();
+        class Cube extends Shape3D {
+        }
 
-        boolean isPerson = customer instanceof Customer;
+        class Shape3DSub1 extends Shape3D {
+        }
+
+        class Shape3DSub2 extends Shape3D {
+        }
     }
 }
