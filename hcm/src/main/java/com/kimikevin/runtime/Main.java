@@ -23,5 +23,17 @@ public class Main {
         boolean isInstanceOfCircle = Circle.class.isInstance(circle); // true
         boolean isInstanceOfShape = Shape.class.isInstance(circle); // true
         boolean isInstanceOfRectangle = Rectangle.class.isInstance(circle); // false
+
+        class Person { }
+
+        class Employee extends Person { }
+
+        class Customer extends Person { }
+
+        Person employee = new Employee();
+
+        Person customer = new Customer();
+
+        boolean isPerson = customer instanceof Customer;
     }
 }
