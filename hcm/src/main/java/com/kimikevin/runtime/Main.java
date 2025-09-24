@@ -9,5 +9,15 @@ public class Main {
                 System.out.println("The variable is empty or contains only a whitespace");
             }
         }
+
+        class Shape {}
+        class Circle extends Shape {}
+        class Rectangle extends Shape {}
+
+        Shape circle = new Circle();
+
+        boolean equalsCircle = circle.getClass() == Circle.class; // true
+        boolean equalsShape = circle.getClass() == Shape.class;   // false
+        boolean rectangle = circle.getClass() == Rectangle.class; // false
     }
 }
