@@ -2,21 +2,14 @@ package com.kimikevin.runtime;
 
 public class Main {
     public static void main(String[] args) {
-        class Shape {}
+        Object obj = " ";
 
-        class Circle extends Shape {}
+        if (obj instanceof String) {
+            String str = (String) obj;
 
-        class Rectangle extends Shape {}
-
-        Shape circle = new Circle();  // the reference is Shape, the object is Circle
-        Shape rect = new Rectangle(); // the reference is Shape, the object is Rectangle
-
-        boolean circleIsCircle = circle instanceof Circle; // true
-        boolean circleIsRectangle = circle instanceof Rectangle; // false
-        boolean circleIsShape = circle instanceof Shape; // true
-
-        boolean rectIsRectangle = rect instanceof Rectangle; // true
-        boolean rectIsCircle = rect instanceof Circle; // false
-        boolean rectIsShape = rect instanceof Shape; // true
+            if (str.isBlank()) {
+                System.out.println("The variable is empty or contains only a whitespace");
+            }
+        }
     }
 }
