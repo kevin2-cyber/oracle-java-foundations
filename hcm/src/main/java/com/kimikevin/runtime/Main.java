@@ -10,33 +10,15 @@ public class Main {
             }
         }
 
-        class Shape {
-        }
+        class A { }
 
-        class Shape2D extends Shape {
-        }
+        class B extends A { }
 
-        class Shape3D extends Shape {
-        }
+        class C extends B { }
 
+        A ac = new C();
+        A ab = new B();
 
-        class Circle extends Shape2D {
-        }
-
-        class Shape2DSub1 extends Shape2D {
-        }
-
-        class Shape2DSub2 extends Shape2D {
-        }
-
-
-        class Cube extends Shape3D {
-        }
-
-        class Shape3DSub1 extends Shape3D {
-        }
-
-        class Shape3DSub2 extends Shape3D {
-        }
+        boolean test = ab instanceof A;
     }
 }
