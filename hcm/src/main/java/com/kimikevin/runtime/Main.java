@@ -9,8 +9,5 @@ public class Main {
                 System.out.println("The variable is empty or contains only a whitespace");
             }
         }
-
-        Class<?> clazz = "".getClass();
-        System.out.println(clazz);
     }
 }
