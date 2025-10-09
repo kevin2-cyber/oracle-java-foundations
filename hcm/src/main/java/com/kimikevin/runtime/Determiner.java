@@ -21,7 +21,7 @@ public class Determiner {
     }
 }
 
-// Don't change the code below
+// don't change the code below
 class Employee {
 
     protected String name;
