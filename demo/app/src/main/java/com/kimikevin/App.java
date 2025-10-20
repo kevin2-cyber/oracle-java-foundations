@@ -5,9 +5,8 @@ package com.kimikevin;
 
 public class App {
 
-    public static void main(String[] args) throws Exception {
-//        RuntimeException exception = new RuntimeException("Something went wrong");
-//        throw exception;
-        System.out.println(Class.forName(String.class.getClass().getName()));
+    public static void main(String[] args) {
+        RuntimeException exception = new RuntimeException("Something went wrong");
+        throw exception;
     }
 }
