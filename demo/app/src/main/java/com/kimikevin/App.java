@@ -4,11 +4,9 @@
 package com.kimikevin;
 
 public class App {
-    public String getGreeting() {
-        return "Hello World!";
-    }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        RuntimeException exception = new RuntimeException("Something went wrong");
+        throw exception;
     }
 }

@@ -42,3 +42,9 @@ application {
     // Define the main class for the application.
     mainClass = "com.kimikevin.App"
 }
+
+tasks.jar {
+    manifest {
+        attributes("Main-Class" to "com.kimikevin.App")
+    }
+}
