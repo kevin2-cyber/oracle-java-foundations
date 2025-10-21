@@ -17,6 +17,11 @@ public class App {
 //        } catch (IOException e) {
 //            System.out.println(e.getMessage());
 //        }
+
+        // throwing unchecked exceptions
+        Account account = new Account();
+        account.deposit(100);
+        System.out.println(account.getBalance());
     }
 
     public static String readTextFromFile(String path) throws IOException {
