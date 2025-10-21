@@ -8,8 +8,13 @@ import java.io.IOException;
 public class App {
 
     public static void main(String[] args) {
-        RuntimeException exception = new RuntimeException("Something went wrong");
-        throw exception;
+//        RuntimeException exception = new RuntimeException("Something went wrong");
+//        throw exception;
+        try {
+            System.out.println(readTextFromFile("path_to_file"));
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
     }
 
     public static String readTextFromFile(String path) throws IOException {
