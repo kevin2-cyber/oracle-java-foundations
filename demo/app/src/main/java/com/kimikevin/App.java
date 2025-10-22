@@ -4,6 +4,7 @@
 package com.kimikevin;
 
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.Scanner;
 
 public class App {
@@ -24,13 +25,48 @@ public class App {
 //        account.deposit(100);
 //        System.out.println(account.getBalance());
 
-        Scanner scanner = new Scanner(System.in);
-        int dayNumber = scanner.nextInt();
-        try {
-            System.out.println(getDayOfWeekName(dayNumber));
-        } catch (Exception e) {
-            System.out.println(e.getClass().getName());
-        }
+//        // example of throwing unchecked exceptions
+//        Scanner scanner = new Scanner(System.in);
+//        int dayNumber = scanner.nextInt();
+//        try {
+//            System.out.println(getDayOfWeekName(dayNumber));
+//        } catch (Exception e) {
+//            System.out.println(e.getClass().getName());
+//        }
+
+        // local date
+        LocalDate now = LocalDate.now();
+        LocalDate date1 = LocalDate.of(2025, 10, 22); // 2025-10-22 (22 October 2025)
+        LocalDate date2 = LocalDate.parse("2025-10-22"); // 2025-10-22 (22 October 2025)
+
+        System.out.println(now);
+        System.out.println(date1);
+        System.out.println(date2);
+
+        System.out.println(LocalDate.ofYearDay(2016, 365)); // 2016-12-30 (30 December 2016)
+        System.out.println(LocalDate.ofYearDay(2017, 365)); // 2017-12-31 (31 December 2017)
+
+        System.out.println(LocalDate.ofYearDay(2017, 366)); // here an exception occurs, because the year is not a leap year
+
+        LocalDate date = getLocalDate();
+        LocalDate in2016 = date.withYear(2016);   // 2016-01-01 (1 January 2016)
+    }
+
+    private static LocalDate getLocalDate() {
+        LocalDate date = LocalDate.of(2017, 11, 25); // 2017-11-25 (25 November 2017)
+
+        int year = date.getYear(); // 2017
+        int month = date.getMonthValue(); // 11
+        int dayOfMonth = date.getDayOfMonth(); // 25
+        int dayOfYear = date.getDayOfYear();  // 329
+
+        int lenOfYear = date.lengthOfYear(); // 365
+        int lenOfMonth = date.lengthOfMonth(); // 30
+
+        LocalDate tomorrow = date.plusDays(1);    // 2017-01-02 (2 January 2017)
+        LocalDate yesterday = date.minusDays(1);  // 2016-12-31 (31 December 2016)
+        LocalDate inTwoYears = date.plusYears(2); // 2019-01-01 (1 January 2019)
+        return date;
     }
 
     public static String readTextFromFile(String path) throws IOException {
