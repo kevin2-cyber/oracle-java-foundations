@@ -3,10 +3,38 @@
  */
 package com.kimikevin;
 
+import java.io.IOException;
+
 public class App {
 
     public static void main(String[] args) {
-        RuntimeException exception = new RuntimeException("Something went wrong");
-        throw exception;
+        // throwing a runtime exception(Throwable)
+//        RuntimeException exception = new RuntimeException("Something went wrong");
+//        throw exception;
+        // throwing a checked exception
+//        try {
+//            System.out.println(readTextFromFile("path_to_file"));
+//        } catch (IOException e) {
+//            System.out.println(e.getMessage());
+//        }
+
+        // throwing unchecked exceptions
+        Account account = new Account();
+        account.deposit(100);
+        System.out.println(account.getBalance());
+    }
+
+    public static String readTextFromFile(String path) throws IOException {
+        boolean found = false; // assuming some file finding logic here
+        // find a file by the specified path
+        found = true; // for demonstration
+
+        if (!found) {
+            throw new IOException("The file " + path + " does not exist");
+        }
+
+        // read and return text from the file
+        // for demonstration, assuming file reading logic here
+        return "text from file";
     }
 }
