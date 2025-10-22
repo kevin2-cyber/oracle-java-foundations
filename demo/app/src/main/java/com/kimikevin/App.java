@@ -4,6 +4,7 @@
 package com.kimikevin;
 
 import java.io.IOException;
+import java.util.Scanner;
 
 public class App {
 
@@ -18,10 +19,18 @@ public class App {
 //            System.out.println(e.getMessage());
 //        }
 
-        // throwing unchecked exceptions
-        Account account = new Account();
-        account.deposit(100);
-        System.out.println(account.getBalance());
+//        // throwing unchecked exceptions
+//        Account account = new Account();
+//        account.deposit(100);
+//        System.out.println(account.getBalance());
+
+        Scanner scanner = new Scanner(System.in);
+        int dayNumber = scanner.nextInt();
+        try {
+            System.out.println(getDayOfWeekName(dayNumber));
+        } catch (Exception e) {
+            System.out.println(e.getClass().getName());
+        }
     }
 
     public static String readTextFromFile(String path) throws IOException {
@@ -36,5 +45,18 @@ public class App {
         // read and return text from the file
         // for demonstration, assuming file reading logic here
         return "text from file";
+    }
+
+    public static String getDayOfWeekName(int number) {
+        return switch (number) {
+            case 1 -> "Mon";
+            case 2 -> "Tue";
+            case 3 -> "Wed";
+            case 4 -> "Thu";
+            case 5 -> "Fri";
+            case 6 -> "Sat";
+            case 7 -> "Sun";
+            default -> throw new IllegalArgumentException("Invalid day");
+        };
     }
 }
