@@ -34,22 +34,29 @@ public class App {
 //            System.out.println(e.getClass().getName());
 //        }
 
-        // local date
-        LocalDate now = LocalDate.now();
-        LocalDate date1 = LocalDate.of(2025, 10, 22); // 2025-10-22 (22 October 2025)
-        LocalDate date2 = LocalDate.parse("2025-10-22"); // 2025-10-22 (22 October 2025)
+//        // local date
+//        LocalDate now = LocalDate.now();
+//        LocalDate date1 = LocalDate.of(2025, 10, 22); // 2025-10-22 (22 October 2025)
+//        LocalDate date2 = LocalDate.parse("2025-10-22"); // 2025-10-22 (22 October 2025)
+//
+//        System.out.println(now);
+//        System.out.println(date1);
+//        System.out.println(date2);
+//
+//        System.out.println(LocalDate.ofYearDay(2016, 365)); // 2016-12-30 (30 December 2016)
+//        System.out.println(LocalDate.ofYearDay(2017, 365)); // 2017-12-31 (31 December 2017)
+//
+//        System.out.println(LocalDate.ofYearDay(2017, 366)); // here an exception occurs, because the year is not a leap year
+//
+//        LocalDate date = getLocalDate();
+//        LocalDate in2016 = date.withYear(2016);   // 2016-01-01 (1 January 2016)
 
-        System.out.println(now);
-        System.out.println(date1);
-        System.out.println(date2);
+        // 2 weeks after
+        Scanner scanner = new Scanner(System.in);
+        String date = scanner.nextLine();
 
-        System.out.println(LocalDate.ofYearDay(2016, 365)); // 2016-12-30 (30 December 2016)
-        System.out.println(LocalDate.ofYearDay(2017, 365)); // 2017-12-31 (31 December 2017)
-
-        System.out.println(LocalDate.ofYearDay(2017, 366)); // here an exception occurs, because the year is not a leap year
-
-        LocalDate date = getLocalDate();
-        LocalDate in2016 = date.withYear(2016);   // 2016-01-01 (1 January 2016)
+        LocalDate localDate = LocalDate.parse(date);
+        System.out.println(localDate.plusWeeks(2));
     }
 
     private static LocalDate getLocalDate() {
