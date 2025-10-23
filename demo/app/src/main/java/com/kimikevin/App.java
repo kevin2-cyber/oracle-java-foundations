@@ -64,13 +64,15 @@ public class App {
         int year = scanner.nextInt();
         int month = scanner.nextInt();
 
-        LocalDate date = LocalDate.of(year, month, 1);
+        int dayOfMonth = 1;
 
-        for (int i= 1; i < date.lengthOfMonth(); i++) {
+        LocalDate date = LocalDate.of(year, month, dayOfMonth);
+
+        for (int i= dayOfMonth; i < date.lengthOfMonth(); i++) {
             if (date.getDayOfWeek() == DayOfWeek.MONDAY) {
-                System.out.println(date.plusDays(1));
+                System.out.println(date.plusWeeks(dayOfMonth));
             }
-//            date.plusDays(1);
+            System.out.println(date.plusWeeks(dayOfMonth));
         }
 
     }
