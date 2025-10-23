@@ -4,6 +4,7 @@
 package com.kimikevin;
 
 import java.io.IOException;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.Scanner;
 
@@ -51,12 +52,27 @@ public class App {
 //        LocalDate date = getLocalDate();
 //        LocalDate in2016 = date.withYear(2016);   // 2016-01-01 (1 January 2016)
 
-        // 2 weeks after
-        Scanner scanner = new Scanner(System.in);
-        String date = scanner.nextLine();
+//        // 2 weeks after
+//        Scanner scanner = new Scanner(System.in);
+//        String date = scanner.nextLine();
+//
+//        LocalDate localDate = LocalDate.parse(date);
+//        System.out.println(localDate.plusWeeks(2));
 
-        LocalDate localDate = LocalDate.parse(date);
-        System.out.println(localDate.plusWeeks(2));
+        // find all mondays
+        Scanner scanner = new Scanner(System.in);
+        int year = scanner.nextInt();
+        int month = scanner.nextInt();
+
+        LocalDate date = LocalDate.of(year, month, 1);
+
+        for (int i= 1; i < date.lengthOfMonth(); i++) {
+            if (date.getDayOfWeek() == DayOfWeek.MONDAY) {
+                System.out.println(date.plusDays(1));
+            }
+//            date.plusDays(1);
+        }
+
     }
 
     private static LocalDate getLocalDate() {
