@@ -1,5 +1,6 @@
 package com.kimikevin;
 
+import java.io.IOException;
 import java.time.LocalDate;
 
 public class UtilityFx {
@@ -18,5 +19,19 @@ public class UtilityFx {
         LocalDate yesterday = date.minusDays(1);  // 2016-12-31 (31 December 2016)
         LocalDate inTwoYears = date.plusYears(2); // 2019-01-01 (1 January 2019)
         return date;
+    }
+
+    public static String readTextFromFile(String path) throws IOException {
+        boolean found = false; // assuming some file finding logic here
+        // find a file by the specified path
+        found = true; // for demonstration
+
+        if (!found) {
+            throw new IOException("The file " + path + " does not exist");
+        }
+
+        // read and return text from the file
+        // for demonstration, assuming file reading logic here
+        return "text from file";
     }
 }
