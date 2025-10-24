@@ -6,6 +6,9 @@ package com.kimikevin;
 import java.io.IOException;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.YearMonth;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class App {
@@ -64,15 +67,9 @@ public class App {
         int year = scanner.nextInt();
         int month = scanner.nextInt();
 
-        int dayOfMonth = 1;
-
-        LocalDate date = LocalDate.of(year, month, dayOfMonth);
-
-        for (int i= dayOfMonth; i < date.lengthOfMonth(); i++) {
-            if (date.getDayOfWeek() == DayOfWeek.MONDAY) {
-                System.out.println(date.plusWeeks(dayOfMonth));
-            }
-            System.out.println(date.plusWeeks(dayOfMonth));
+        List<LocalDate> mondays = getMondays(year, month);
+        for (LocalDate monday : mondays) {
+            System.out.println(monday);
         }
 
     }
@@ -119,5 +116,23 @@ public class App {
             case 7 -> "Sun";
             default -> throw new IllegalArgumentException("Invalid day");
         };
+    }
+
+
+    public static List<LocalDate> getMondays(int year, int month) {
+        List<LocalDate> mondays = new ArrayList<>();
+        YearMonth yearMonth = YearMonth.of(year, month);
+        // start from the first day of the month
+        LocalDate date = yearMonth.atDay(1);
+
+        //  iterate through the month
+        while (date.getMonthValue() == month) {
+            if (date.getDayOfWeek() == DayOfWeek.MONDAY) {
+                mondays.add(date);
+            }
+
+            date = date.plusDays(1);
+        }
+        return  mondays;
     }
 }
