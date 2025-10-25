@@ -93,5 +93,21 @@ public class App {
 //        System.out.println(localDate.minusYears(30));
 //        System.out.println(localDate.plusYears(30));
 
+        // Convert numbers to days
+        Scanner scanner = new Scanner(System.in);
+        int year = scanner.nextInt();
+        int day1 = scanner.nextInt();
+        int day2 = scanner.nextInt();
+        int day3 = scanner.nextInt();
+
+        LocalDate date1 = LocalDate.ofYearDay(year, day1);
+        LocalDate date2 = LocalDate.ofYearDay(year, day2);
+        LocalDate date3 = LocalDate.ofYearDay(year, day3);
+
+        LocalDate[] dates = new LocalDate[]{date1, date2, date3};
+        for (LocalDate date : dates) {
+            System.out.println(date);
+        }
+
     }
 }
