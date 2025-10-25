@@ -75,18 +75,7 @@ public class App {
     }
 
 
-    public static String getDayOfWeekName(int number) {
-        return switch (number) {
-            case 1 -> "Mon";
-            case 2 -> "Tue";
-            case 3 -> "Wed";
-            case 4 -> "Thu";
-            case 5 -> "Fri";
-            case 6 -> "Sat";
-            case 7 -> "Sun";
-            default -> throw new IllegalArgumentException("Invalid day");
-        };
-    }
+
 
 
     public static List<LocalDate> getMondays(int year, int month) {
