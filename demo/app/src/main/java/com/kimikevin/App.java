@@ -60,14 +60,28 @@ public class App {
 //        LocalDate localDate = LocalDate.parse(date);
 //        System.out.println(localDate.plusWeeks(2));
 
-        // find all mondays
-        Scanner scanner = new Scanner(System.in);
-        int year = scanner.nextInt();
-        int month = scanner.nextInt();
+//        // find all mondays
+//        Scanner scanner = new Scanner(System.in);
+//        int year = scanner.nextInt();
+//        int month = scanner.nextInt();
+//
+//        List<LocalDate> mondays = getMondays(year, month);
+//        for (LocalDate monday : mondays) {
+//            System.out.println(monday);
+//        }
 
-        List<LocalDate> mondays = getMondays(year, month);
-        for (LocalDate monday : mondays) {
-            System.out.println(monday);
+        // Print dates of a year with an offset
+        Scanner scanner = new Scanner(System.in);
+        String date = scanner.nextLine();
+        int offset = scanner.nextInt();
+
+        LocalDate localDate =  LocalDate.parse(date);
+
+        LocalDate endOfYear = localDate.withDayOfYear(localDate.lengthOfYear());
+
+        for (int i = localDate.getDayOfYear(); !localDate.isAfter(endOfYear) ; i += offset ) {
+            System.out.println(localDate);
+            localDate = localDate.plusDays(offset);
         }
 
     }
