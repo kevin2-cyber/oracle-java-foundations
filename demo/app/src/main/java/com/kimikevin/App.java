@@ -70,19 +70,28 @@ public class App {
 //            System.out.println(monday);
 //        }
 
-        // Print dates of a year with an offset
+//        // Print dates of a year with an offset
+//        Scanner scanner = new Scanner(System.in);
+//        String date = scanner.nextLine();
+//        int offset = scanner.nextInt();
+//
+//        LocalDate localDate =  LocalDate.parse(date);
+//
+//        LocalDate endOfYear = localDate.withDayOfYear(localDate.lengthOfYear());
+//
+//        for (int i = localDate.getDayOfYear(); !localDate.isAfter(endOfYear) ; i += offset ) {
+//            System.out.println(localDate);
+//            localDate = localDate.plusDays(offset);
+//        }
+
+        // 30 years before and after
         Scanner scanner = new Scanner(System.in);
-        String date = scanner.nextLine();
-        int offset = scanner.nextInt();
+        String date  = scanner.nextLine();
 
-        LocalDate localDate =  LocalDate.parse(date);
+        LocalDate localDate = LocalDate.parse(date);
 
-        LocalDate endOfYear = localDate.withDayOfYear(localDate.lengthOfYear());
-
-        for (int i = localDate.getDayOfYear(); !localDate.isAfter(endOfYear) ; i += offset ) {
-            System.out.println(localDate);
-            localDate = localDate.plusDays(offset);
-        }
+        System.out.println(localDate.minusYears(30));
+        System.out.println(localDate.plusYears(30));
 
     }
 }
