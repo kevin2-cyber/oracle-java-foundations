@@ -1,7 +1,11 @@
 package com.kimikevin;
 
 import java.io.IOException;
+import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.YearMonth;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UtilityFx {
     private static LocalDate getLocalDate() {
@@ -46,5 +50,22 @@ public class UtilityFx {
             case 7 -> "Sun";
             default -> throw new IllegalArgumentException("Invalid day");
         };
+    }
+
+    public static List<LocalDate> getMondays(int year, int month) {
+        List<LocalDate> mondays = new ArrayList<>();
+        YearMonth yearMonth = YearMonth.of(year, month);
+        // start from the first day of the month
+        LocalDate date = yearMonth.atDay(1);
+
+        //  iterate through the month
+        while (date.getMonthValue() == month) {
+            if (date.getDayOfWeek() == DayOfWeek.MONDAY) {
+                mondays.add(date);
+            }
+
+            date = date.plusDays(1);
+        }
+        return  mondays;
     }
 }
