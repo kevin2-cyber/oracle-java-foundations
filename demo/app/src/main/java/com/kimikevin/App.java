@@ -84,14 +84,14 @@ public class App {
 //            localDate = localDate.plusDays(offset);
 //        }
 
-        // 30 years before and after
-        Scanner scanner = new Scanner(System.in);
-        String date  = scanner.nextLine();
-
-        LocalDate localDate = LocalDate.parse(date);
-
-        System.out.println(localDate.minusYears(30));
-        System.out.println(localDate.plusYears(30));
+//        // 30 years before and after
+//        Scanner scanner = new Scanner(System.in);
+//        String date  = scanner.nextLine();
+//
+//        LocalDate localDate = LocalDate.parse(date);
+//
+//        System.out.println(localDate.minusYears(30));
+//        System.out.println(localDate.plusYears(30));
 
     }
 }
