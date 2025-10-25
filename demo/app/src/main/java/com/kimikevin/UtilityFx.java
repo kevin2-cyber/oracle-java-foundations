@@ -1,0 +1,71 @@
+package com.kimikevin;
+
+import java.io.IOException;
+import java.time.DayOfWeek;
+import java.time.LocalDate;
+import java.time.YearMonth;
+import java.util.ArrayList;
+import java.util.List;
+
+public class UtilityFx {
+    private static LocalDate getLocalDate() {
+        LocalDate date = LocalDate.of(2017, 11, 25); // 2017-11-25 (25 November 2017)
+
+        int year = date.getYear(); // 2017
+        int month = date.getMonthValue(); // 11
+        int dayOfMonth = date.getDayOfMonth(); // 25
+        int dayOfYear = date.getDayOfYear();  // 329
+
+        int lenOfYear = date.lengthOfYear(); // 365
+        int lenOfMonth = date.lengthOfMonth(); // 30
+
+        LocalDate tomorrow = date.plusDays(1);    // 2017-01-02 (2 January 2017)
+        LocalDate yesterday = date.minusDays(1);  // 2016-12-31 (31 December 2016)
+        LocalDate inTwoYears = date.plusYears(2); // 2019-01-01 (1 January 2019)
+        return date;
+    }
+
+    public static String readTextFromFile(String path) throws IOException {
+        boolean found = false; // assuming some file finding logic here
+        // find a file by the specified path
+        found = true; // for demonstration
+
+        if (!found) {
+            throw new IOException("The file " + path + " does not exist");
+        }
+
+        // read and return text from the file
+        // for demonstration, assuming file reading logic here
+        return "text from file";
+    }
+
+    public static String getDayOfWeekName(int number) {
+        return switch (number) {
+            case 1 -> "Mon";
+            case 2 -> "Tue";
+            case 3 -> "Wed";
+            case 4 -> "Thu";
+            case 5 -> "Fri";
+            case 6 -> "Sat";
+            case 7 -> "Sun";
+            default -> throw new IllegalArgumentException("Invalid day");
+        };
+    }
+
+    public static List<LocalDate> getMondays(int year, int month) {
+        List<LocalDate> mondays = new ArrayList<>();
+        YearMonth yearMonth = YearMonth.of(year, month);
+        // start from the first day of the month
+        LocalDate date = yearMonth.atDay(1);
+
+        //  iterate through the month
+        while (date.getMonthValue() == month) {
+            if (date.getDayOfWeek() == DayOfWeek.MONDAY) {
+                mondays.add(date);
+            }
+
+            date = date.plusDays(1);
+        }
+        return  mondays;
+    }
+}

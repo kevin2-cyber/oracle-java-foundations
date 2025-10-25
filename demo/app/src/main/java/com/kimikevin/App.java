@@ -3,7 +3,11 @@
  */
 package com.kimikevin;
 
-import java.io.IOException;
+import java.time.LocalDate;
+import java.util.List;
+import java.util.Scanner;
+
+import static com.kimikevin.UtilityFx.getMondays;
 
 public class App {
 
@@ -18,23 +22,53 @@ public class App {
 //            System.out.println(e.getMessage());
 //        }
 
-        // throwing unchecked exceptions
-        Account account = new Account();
-        account.deposit(100);
-        System.out.println(account.getBalance());
-    }
+//        // throwing unchecked exceptions
+//        Account account = new Account();
+//        account.deposit(100);
+//        System.out.println(account.getBalance());
 
-    public static String readTextFromFile(String path) throws IOException {
-        boolean found = false; // assuming some file finding logic here
-        // find a file by the specified path
-        found = true; // for demonstration
+//        // example of throwing unchecked exceptions
+//        Scanner scanner = new Scanner(System.in);
+//        int dayNumber = scanner.nextInt();
+//        try {
+//            System.out.println(getDayOfWeekName(dayNumber));
+//        } catch (Exception e) {
+//            System.out.println(e.getClass().getName());
+//        }
 
-        if (!found) {
-            throw new IOException("The file " + path + " does not exist");
+//        // local date
+//        LocalDate now = LocalDate.now();
+//        LocalDate date1 = LocalDate.of(2025, 10, 22); // 2025-10-22 (22 October 2025)
+//        LocalDate date2 = LocalDate.parse("2025-10-22"); // 2025-10-22 (22 October 2025)
+//
+//        System.out.println(now);
+//        System.out.println(date1);
+//        System.out.println(date2);
+//
+//        System.out.println(LocalDate.ofYearDay(2016, 365)); // 2016-12-30 (30 December 2016)
+//        System.out.println(LocalDate.ofYearDay(2017, 365)); // 2017-12-31 (31 December 2017)
+//
+//        System.out.println(LocalDate.ofYearDay(2017, 366)); // here an exception occurs, because the year is not a leap year
+//
+//        LocalDate date = getLocalDate();
+//        LocalDate in2016 = date.withYear(2016);   // 2016-01-01 (1 January 2016)
+
+//        // 2 weeks after
+//        Scanner scanner = new Scanner(System.in);
+//        String date = scanner.nextLine();
+//
+//        LocalDate localDate = LocalDate.parse(date);
+//        System.out.println(localDate.plusWeeks(2));
+
+        // find all mondays
+        Scanner scanner = new Scanner(System.in);
+        int year = scanner.nextInt();
+        int month = scanner.nextInt();
+
+        List<LocalDate> mondays = getMondays(year, month);
+        for (LocalDate monday : mondays) {
+            System.out.println(monday);
         }
 
-        // read and return text from the file
-        // for demonstration, assuming file reading logic here
-        return "text from file";
     }
 }
