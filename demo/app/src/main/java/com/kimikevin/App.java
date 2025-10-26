@@ -119,13 +119,21 @@ public class App {
 //
 //        System.out.println(firstDay + " " + lastDay);
 
-        // 10 days before
+//        // 10 days before
+//        Scanner scanner = new Scanner(System.in);
+//        String day = scanner.nextLine();
+//
+//        LocalDate date = LocalDate.parse(day);
+//
+//        System.out.println(date.minusDays(10));
+
+        // Leap Year Check: A Date's True Colors
         Scanner scanner = new Scanner(System.in);
         String day = scanner.nextLine();
 
-        LocalDate date = LocalDate.parse(day);
+        LocalDate localDate = LocalDate.parse(day);
 
-        System.out.println(date.minusDays(10));
+        System.out.println(localDate.isLeapYear());
 
     }
 }
