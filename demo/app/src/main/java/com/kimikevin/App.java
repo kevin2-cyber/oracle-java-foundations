@@ -109,15 +109,23 @@ public class App {
 //            System.out.println(date);
 //        }
 
-        // The first and the last day of a month
+//        // The first and the last day of a month
+//        Scanner scanner = new Scanner(System.in);
+//        int year = scanner.nextInt();
+//        int month = scanner.nextInt();
+//
+//        LocalDate firstDay = LocalDate.of(year, month, 1);
+//        LocalDate lastDay = LocalDate.of(year, month, firstDay.lengthOfMonth());
+//
+//        System.out.println(firstDay + " " + lastDay);
+
+        // 10 days before
         Scanner scanner = new Scanner(System.in);
-        int year = scanner.nextInt();
-        int month = scanner.nextInt();
+        String day = scanner.nextLine();
 
-        LocalDate firstDay = LocalDate.of(year, month, 1);
-        LocalDate lastDay = LocalDate.of(year, month, firstDay.lengthOfMonth());
+        LocalDate date = LocalDate.parse(day);
 
-        System.out.println(firstDay + " " + lastDay);
+        System.out.println(date.minusDays(10));
 
     }
 }
