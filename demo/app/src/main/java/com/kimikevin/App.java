@@ -4,6 +4,7 @@
 package com.kimikevin;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -60,15 +61,145 @@ public class App {
 //        LocalDate localDate = LocalDate.parse(date);
 //        System.out.println(localDate.plusWeeks(2));
 
-        // find all mondays
-        Scanner scanner = new Scanner(System.in);
-        int year = scanner.nextInt();
-        int month = scanner.nextInt();
+//        // find all mondays
+//        Scanner scanner = new Scanner(System.in);
+//        int year = scanner.nextInt();
+//        int month = scanner.nextInt();
+//
+//        List<LocalDate> mondays = getMondays(year, month);
+//        for (LocalDate monday : mondays) {
+//            System.out.println(monday);
+//        }
 
-        List<LocalDate> mondays = getMondays(year, month);
-        for (LocalDate monday : mondays) {
-            System.out.println(monday);
-        }
+//        // Print dates of a year with an offset
+//        Scanner scanner = new Scanner(System.in);
+//        String date = scanner.nextLine();
+//        int offset = scanner.nextInt();
+//
+//        LocalDate localDate =  LocalDate.parse(date);
+//
+//        LocalDate endOfYear = localDate.withDayOfYear(localDate.lengthOfYear());
+//
+//        for (int i = localDate.getDayOfYear(); !localDate.isAfter(endOfYear) ; i += offset ) {
+//            System.out.println(localDate);
+//            localDate = localDate.plusDays(offset);
+//        }
 
+//        // 30 years before and after
+//        Scanner scanner = new Scanner(System.in);
+//        String date  = scanner.nextLine();
+//
+//        LocalDate localDate = LocalDate.parse(date);
+//
+//        System.out.println(localDate.minusYears(30));
+//        System.out.println(localDate.plusYears(30));
+
+//        // Convert numbers to days
+//        Scanner scanner = new Scanner(System.in);
+//        int year = scanner.nextInt();
+//        int day1 = scanner.nextInt();
+//        int day2 = scanner.nextInt();
+//        int day3 = scanner.nextInt();
+//
+//        LocalDate date1 = LocalDate.ofYearDay(year, day1);
+//        LocalDate date2 = LocalDate.ofYearDay(year, day2);
+//        LocalDate date3 = LocalDate.ofYearDay(year, day3);
+//
+//        LocalDate[] dates = new LocalDate[]{date1, date2, date3};
+//        for (LocalDate date : dates) {
+//            System.out.println(date);
+//        }
+
+//        // The first and the last day of a month
+//        Scanner scanner = new Scanner(System.in);
+//        int year = scanner.nextInt();
+//        int month = scanner.nextInt();
+//
+//        LocalDate firstDay = LocalDate.of(year, month, 1);
+//        LocalDate lastDay = LocalDate.of(year, month, firstDay.lengthOfMonth());
+//
+//        System.out.println(firstDay + " " + lastDay);
+
+//        // 10 days before
+//        Scanner scanner = new Scanner(System.in);
+//        String day = scanner.nextLine();
+//
+//        LocalDate date = LocalDate.parse(day);
+//
+//        System.out.println(date.minusDays(10));
+
+//        // Leap Year Check: A Date's True Colors
+//        Scanner scanner = new Scanner(System.in);
+//        String day = scanner.nextLine();
+//
+//        LocalDate localDate = LocalDate.parse(day);
+//
+//        System.out.println(localDate.isLeapYear());
+
+//        // accessing with the name() method
+//        UserStatus active = UserStatus.ACTIVE;
+//        System.out.println(active.name());
+//
+//        // accessing by it\'s name with the valueOf() method
+//        UserStatus blocked = UserStatus.valueOf("BLOCKED");
+//        System.out.println(blocked.name());
+//
+//        // accessing all the values
+//        UserStatus[] statuses = UserStatus.values();
+//        System.out.println(Arrays.toString(statuses));
+//
+//        // accessing the position using the ordinal() method
+//        System.out.println(active.ordinal());
+//        System.out.println(blocked.ordinal());
+//        System.out.println(UserStatus.PENDING.ordinal());
+//
+//        // using the equals() method and the '==' operator
+//        System.out.println(active.equals(UserStatus.ACTIVE));
+//        System.out.println(active == UserStatus.ACTIVE);
+//
+//        // using enums in switch statements
+//        UserStatus test = UserStatus.PENDING;
+//
+//        switch (test) {
+//            case PENDING -> {
+//                System.out.println("You need to wait a little.");
+//                break;
+//            }
+//            case ACTIVE -> {
+//                System.out.println("No problems, you may pass here.");
+//                break;
+//            }
+//            case BLOCKED -> {
+//                System.out.println("Stop! You can't pass here.");
+//                break;
+//            }
+//            default -> System.out.println("Unsupported enum constant.");
+//        }
+//
+//        // iterating over an enum
+//        for (UserStatus status : UserStatus.values()) {
+//            System.out.println(status.name().startsWith("BLOCKED"));
+//        }
+
+        int tasteValue = 0;
+        ThingsToTaste taste = ThingsToTaste.values()[tasteValue];
+
+        tasteValue = switch (taste) {
+            case SUGAR, PIZZA, CHOCOLATE -> 10;
+            case MEATBALLS, STEAK -> 7;
+            case BROCCOLI -> 4;
+            case DIRT -> 1;
+            default -> throw new IllegalStateException("Invalid tastable object: " + taste);
+        };
+
+        System.out.println(taste + ": " + tasteValue);
     }
+
+    private enum ThingsToTaste {
+        PIZZA, BROCCOLI,
+        STEAK, SUGAR,
+        DIRT, MEATBALLS,
+        CHOCOLATE,
+    }
+
 }
