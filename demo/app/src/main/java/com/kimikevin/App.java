@@ -4,6 +4,7 @@
 package com.kimikevin;
 
 import java.time.LocalDate;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -127,13 +128,57 @@ public class App {
 //
 //        System.out.println(date.minusDays(10));
 
-        // Leap Year Check: A Date's True Colors
-        Scanner scanner = new Scanner(System.in);
-        String day = scanner.nextLine();
+//        // Leap Year Check: A Date's True Colors
+//        Scanner scanner = new Scanner(System.in);
+//        String day = scanner.nextLine();
+//
+//        LocalDate localDate = LocalDate.parse(day);
+//
+//        System.out.println(localDate.isLeapYear());
 
-        LocalDate localDate = LocalDate.parse(day);
+        // accessing with the name() method
+        UserStatus active = UserStatus.ACTIVE;
+        System.out.println(active.name());
 
-        System.out.println(localDate.isLeapYear());
+        // accessing by it\'s name with the valueOf() method
+        UserStatus blocked = UserStatus.valueOf("BLOCKED");
+        System.out.println(blocked.name());
 
+        // accessing all the values
+        UserStatus[] statuses = UserStatus.values();
+        System.out.println(Arrays.toString(statuses));
+
+        // accessing the position using the ordinal() method
+        System.out.println(active.ordinal());
+        System.out.println(blocked.ordinal());
+        System.out.println(UserStatus.PENDING.ordinal());
+
+        // using the equals() method and the '==' operator
+        System.out.println(active.equals(UserStatus.ACTIVE));
+        System.out.println(active == UserStatus.ACTIVE);
+
+        // using enums in switch statements
+        UserStatus test = UserStatus.PENDING;
+
+        switch (test) {
+            case PENDING -> {
+                System.out.println("You need to wait a little.");
+                break;
+            }
+            case ACTIVE -> {
+                System.out.println("No problems, you may pass here.");
+                break;
+            }
+            case BLOCKED -> {
+                System.out.println("Stop! You can't pass here.");
+                break;
+            }
+            default -> System.out.println("Unsupported enum constant.");
+        }
+
+        // iterating over an enum
+        for (UserStatus status : UserStatus.values()) {
+            System.out.println(status);
+        }
     }
 }
