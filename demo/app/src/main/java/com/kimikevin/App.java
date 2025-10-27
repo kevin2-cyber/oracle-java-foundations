@@ -136,66 +136,82 @@ public class App {
 //
 //        System.out.println(localDate.isLeapYear());
 
-        // accessing with the name() method
-        UserStatus active = UserStatus.ACTIVE;
-        System.out.println(active.name());
+//        // accessing with the name() method
+//        UserStatus active = UserStatus.ACTIVE;
+//        System.out.println(active.name());
+//
+//        // accessing by it\'s name with the valueOf() method
+//        UserStatus blocked = UserStatus.valueOf("BLOCKED");
+//        System.out.println(blocked.name());
+//
+//        // accessing all the values
+//        UserStatus[] statuses = UserStatus.values();
+//        System.out.println(Arrays.toString(statuses));
+//
+//        // accessing the position using the ordinal() method
+//        System.out.println(active.ordinal());
+//        System.out.println(blocked.ordinal());
+//        System.out.println(UserStatus.PENDING.ordinal());
+//
+//        // using the equals() method and the '==' operator
+//        System.out.println(active.equals(UserStatus.ACTIVE));
+//        System.out.println(active == UserStatus.ACTIVE);
+//
+//        // using enums in switch statements
+//        UserStatus test = UserStatus.PENDING;
+//
+//        switch (test) {
+//            case PENDING -> {
+//                System.out.println("You need to wait a little.");
+//                break;
+//            }
+//            case ACTIVE -> {
+//                System.out.println("No problems, you may pass here.");
+//                break;
+//            }
+//            case BLOCKED -> {
+//                System.out.println("Stop! You can't pass here.");
+//                break;
+//            }
+//            default -> System.out.println("Unsupported enum constant.");
+//        }
+//
+//        // iterating over an enum
+//        for (UserStatus status : UserStatus.values()) {
+//            System.out.println(status.name().startsWith("BLOCKED"));
+//        }
 
-        // accessing by it\'s name with the valueOf() method
-        UserStatus blocked = UserStatus.valueOf("BLOCKED");
-        System.out.println(blocked.name());
+        int tasteValue = 0;
+        ThingsToTaste taste = ThingsToTaste.DIRT;
 
-        // accessing all the values
-        UserStatus[] statuses = UserStatus.values();
-        System.out.println(Arrays.toString(statuses));
-
-        // accessing the position using the ordinal() method
-        System.out.println(active.ordinal());
-        System.out.println(blocked.ordinal());
-        System.out.println(UserStatus.PENDING.ordinal());
-
-        // using the equals() method and the '==' operator
-        System.out.println(active.equals(UserStatus.ACTIVE));
-        System.out.println(active == UserStatus.ACTIVE);
-
-        // using enums in switch statements
-        UserStatus test = UserStatus.PENDING;
-
-        switch (test) {
-            case PENDING -> {
-                System.out.println("You need to wait a little.");
+        switch (taste) {
+            case SUGAR:
+            case PIZZA:
+            case CHOCOLATE:
+                tasteValue = 10;
                 break;
-            }
-            case ACTIVE -> {
-                System.out.println("No problems, you may pass here.");
+            case MEATBALLS:
+            case STEAK:
+                tasteValue = 7;
                 break;
-            }
-            case BLOCKED -> {
-                System.out.println("Stop! You can't pass here.");
+            case BROCCOLI:
+                tasteValue = 4;
                 break;
-            }
-            default -> System.out.println("Unsupported enum constant.");
+            case DIRT:
+                tasteValue = 1;
+                break;
+            default:
+                throw new IllegalStateException("Invalid tastable object: " + taste);
         }
 
-        // iterating over an enum
-        for (UserStatus status : UserStatus.values()) {
-            System.out.println(status);
-        }
+        System.out.println(taste + ": " + tasteValue);
     }
 
-    public enum Day {
-        SUNDAY, MONDAY, TUESDAY, WEDNESDAY, THURSDAY, FRIDAY, SATURDAY;
-
-        public static void printDay(Day day) {
-            switch(day) {
-                case SUNDAY: System.out.println("It's Sunday!"); break;
-                case MONDAY: System.out.println("It's Monday!"); break;
-                case TUESDAY: System.out.println("It's Tuesday!"); break;
-                case WEDNESDAY: System.out.println("It's Wednesday!"); break;
-                case THURSDAY: System.out.println("It's Thursday!"); break;
-                case FRIDAY: System.out.println("It's Friday!"); break;
-                case SATURDAY: System.out.println("It's Saturday!"); break;
-                // Other cases...
-            }
-        }
+    private enum ThingsToTaste {
+        PIZZA, BROCCOLI,
+        STEAK, SUGAR,
+        DIRT, MEATBALLS,
+        CHOCOLATE,
     }
+
 }
