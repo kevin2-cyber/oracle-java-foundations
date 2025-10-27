@@ -181,28 +181,16 @@ public class App {
 //            System.out.println(status.name().startsWith("BLOCKED"));
 //        }
 
-        int tasteValue = 0;
+        int tasteValue;
         ThingsToTaste taste = ThingsToTaste.DIRT;
 
-        switch (taste) {
-            case SUGAR:
-            case PIZZA:
-            case CHOCOLATE:
-                tasteValue = 10;
-                break;
-            case MEATBALLS:
-            case STEAK:
-                tasteValue = 7;
-                break;
-            case BROCCOLI:
-                tasteValue = 4;
-                break;
-            case DIRT:
-                tasteValue = 1;
-                break;
-            default:
-                throw new IllegalStateException("Invalid tastable object: " + taste);
-        }
+        tasteValue = switch (taste) {
+            case SUGAR, PIZZA, CHOCOLATE -> 10;
+            case MEATBALLS, STEAK -> 7;
+            case BROCCOLI -> 4;
+            case DIRT -> 1;
+            default -> throw new IllegalStateException("Invalid tastable object: " + taste);
+        };
 
         System.out.println(taste + ": " + tasteValue);
     }
