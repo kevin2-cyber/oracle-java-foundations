@@ -181,8 +181,8 @@ public class App {
 //            System.out.println(status.name().startsWith("BLOCKED"));
 //        }
 
-        int tasteValue;
-        ThingsToTaste taste = ThingsToTaste.DIRT;
+        int tasteValue = 0;
+        ThingsToTaste taste = ThingsToTaste.values()[tasteValue];
 
         tasteValue = switch (taste) {
             case SUGAR, PIZZA, CHOCOLATE -> 10;
