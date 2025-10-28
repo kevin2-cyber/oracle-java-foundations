@@ -195,8 +195,19 @@ public class App {
 //
 //        System.out.println(taste + ": " + tasteValue);
 
-        File fileOnUnix = new File("/Users/kimi-kevin/Documents");
-        System.out.println("fileOnUnix: " + fileOnUnix.getAbsolutePath());
+        // macOS style
+        File file = new File("/Users/kimi-kevin/Documents"); // a directory on a UNIX-like system
+        System.out.println("file: " + file.getAbsolutePath());
+
+        // character for separating the path to a file
+        System.out.println(File.separator);
+
+        System.out.println("File name: " + file.getName());
+        System.out.println("File path: " + file.getPath());
+        System.out.println("Is file: " + file.isFile());
+        System.out.println("Is directory: " + file.isDirectory());
+        System.out.println("Exists: " + file.exists());
+        System.out.println("Parent path: " + file.getParent());
     }
 
 //    private enum ThingsToTaste {
