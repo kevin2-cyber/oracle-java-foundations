@@ -181,35 +181,25 @@ public class App {
 //            System.out.println(status.name().startsWith("BLOCKED"));
 //        }
 
-        int tasteValue = 0;
-        ThingsToTaste taste = ThingsToTaste.values()[tasteValue];
-
-        tasteValue = switch (taste) {
-            case SUGAR, PIZZA, CHOCOLATE -> 10;
-            case MEATBALLS, STEAK -> 7;
-            case BROCCOLI -> 4;
-            case DIRT -> 1;
-            default -> throw new IllegalStateException("Invalid tastable object: " + taste);
-        };
-
-        System.out.println(taste + ": " + tasteValue);
-
-        int howHungryAmI = 0; // 1 is stuffed, 10 is starving
-
-        int numberOfHamburgersToEat = switch (howHungryAmI) {
-            case 1, 2, 3 -> 0;
-            case 4, 5, 6 -> 1;
-            case 7, 8, 9 -> 2;
-            case 10 -> 3;
-            default -> throw new IllegalStateException("Unexpected value: " + howHungryAmI);
-        };
+//        int tasteValue = 0;
+//        ThingsToTaste taste = ThingsToTaste.values()[tasteValue];
+//
+//        tasteValue = switch (taste) {
+//            case SUGAR, PIZZA, CHOCOLATE -> 10;
+//            case MEATBALLS, STEAK -> 7;
+//            case BROCCOLI -> 4;
+//            case DIRT -> 1;
+//            default -> throw new IllegalStateException("Invalid tastable object: " + taste);
+//        };
+//
+//        System.out.println(taste + ": " + tasteValue);
     }
 
-    private enum ThingsToTaste {
-        PIZZA, BROCCOLI,
-        STEAK, SUGAR,
-        DIRT, MEATBALLS,
-        CHOCOLATE,
-    }
+//    private enum ThingsToTaste {
+//        PIZZA, BROCCOLI,
+//        STEAK, SUGAR,
+//        DIRT, MEATBALLS,
+//        CHOCOLATE,
+//    }
 
 }
