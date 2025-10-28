@@ -3,6 +3,7 @@
  */
 package com.kimikevin;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
@@ -181,25 +182,39 @@ public class App {
 //            System.out.println(status.name().startsWith("BLOCKED"));
 //        }
 
-        int tasteValue = 0;
-        ThingsToTaste taste = ThingsToTaste.values()[tasteValue];
+//        int tasteValue = 0;
+//        ThingsToTaste taste = ThingsToTaste.values()[tasteValue];
+//
+//        tasteValue = switch (taste) {
+//            case SUGAR, PIZZA, CHOCOLATE -> 10;
+//            case MEATBALLS, STEAK -> 7;
+//            case BROCCOLI -> 4;
+//            case DIRT -> 1;
+//            default -> throw new IllegalStateException("Invalid tastable object: " + taste);
+//        };
+//
+//        System.out.println(taste + ": " + tasteValue);
 
-        tasteValue = switch (taste) {
-            case SUGAR, PIZZA, CHOCOLATE -> 10;
-            case MEATBALLS, STEAK -> 7;
-            case BROCCOLI -> 4;
-            case DIRT -> 1;
-            default -> throw new IllegalStateException("Invalid tastable object: " + taste);
-        };
+        // macOS style
+        File file = new File("/Users/kimi-kevin/Documents"); // a directory on a UNIX-like system
+        System.out.println("file: " + file.getAbsolutePath());
 
-        System.out.println(taste + ": " + tasteValue);
+        // character for separating the path to a file
+        System.out.println(File.separator);
+
+        System.out.println("File name: " + file.getName());
+        System.out.println("File path: " + file.getPath());
+        System.out.println("Is file: " + file.isFile());
+        System.out.println("Is directory: " + file.isDirectory());
+        System.out.println("Exists: " + file.exists());
+        System.out.println("Parent path: " + file.getParent());
     }
 
-    private enum ThingsToTaste {
-        PIZZA, BROCCOLI,
-        STEAK, SUGAR,
-        DIRT, MEATBALLS,
-        CHOCOLATE,
-    }
+//    private enum ThingsToTaste {
+//        PIZZA, BROCCOLI,
+//        STEAK, SUGAR,
+//        DIRT, MEATBALLS,
+//        CHOCOLATE,
+//    }
 
 }
