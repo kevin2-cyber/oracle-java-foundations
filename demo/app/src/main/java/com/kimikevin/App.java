@@ -3,6 +3,7 @@
  */
 package com.kimikevin;
 
+import java.io.File;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
@@ -193,6 +194,9 @@ public class App {
 //        };
 //
 //        System.out.println(taste + ": " + tasteValue);
+
+        File fileOnUnix = new File("/Users/kimi-kevin/Documents");
+        System.out.println("fileOnUnix: " + fileOnUnix.getAbsolutePath());
     }
 
 //    private enum ThingsToTaste {
