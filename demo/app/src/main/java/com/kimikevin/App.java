@@ -251,12 +251,21 @@ public class App {
 //        }
 
         // The sum of numbers in a file
-        String pathToFile = "/Users/kimi-kevin/Documents/dataset.txt";
+        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/dataset.txt";
 
 
         try{
-            System.out.println(UtilityFx.readFileAsString(pathToFile));
-        } catch (IOException e) {
+           Scanner scanner = new Scanner(new File(pathToFile));
+            scanner.useDelimiter("[,\\s]+");
+           int sum = 0;
+           while (scanner.hasNext()) {
+               int num = Integer.parseInt(scanner.nextLine());
+               sum += num;
+           }
+            System.out.println(sum);
+
+           scanner.close();
+        } catch (FileNotFoundException e) {
             System.out.println("File not found" + e.getMessage());
         }
     }
