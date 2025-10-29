@@ -13,7 +13,7 @@ public class Siblings {
     }
 
     // deleting old files
-    public void deleteOldFiles(File rootDir, long thresholdDate) {
+    public static void deleteOldFiles(File rootDir, long thresholdDate) {
         Deque<File> files = new ArrayDeque<>(getChildren(rootDir));
 
         while (files.size() != 0) {
@@ -29,7 +29,7 @@ public class Siblings {
         }
     }
 
-    private List<File> getChildren(File dir) {
+    private static List<File> getChildren(File dir) {
         File[] children = dir.listFiles();
 
         return children == null || children.length == 0 ?
