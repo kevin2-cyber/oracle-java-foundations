@@ -74,4 +74,36 @@ public class UtilityFx {
     public static String readFileAsString(String fileName) throws IOException {
         return new String(Files.readAllBytes(Paths.get(fileName)));
     }
+
+    public static int findFirstIndexOfMax(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return -1; // Handle empty or null array case
+        }
+
+        int maxIndex = 0; // Initialize with the index of the first element
+        int maxValue = arr[0]; // Initialize with the value of the first element
+
+        // Iterate from the second element
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > maxValue) {
+                maxValue = arr[i]; // Update the maximum value
+                maxIndex = i; // Update the index of the first occurrence of the new maximum
+            }
+        }
+        return maxIndex;
+    }
+
+    public static int findMaxOfAnArray(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return -1;
+        }
+
+        int maxValue = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > maxValue) {
+                maxValue = arr[i];
+            }
+        }
+        return maxValue;
+    }
 }

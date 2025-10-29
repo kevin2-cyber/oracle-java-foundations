@@ -8,6 +8,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.text.NumberFormat;
+import java.text.ParseException;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -270,44 +272,54 @@ public class App {
 //            System.out.println("File not found" + e.getMessage());
 //        }
 
-        // Find the greatest number in a file
+//        // Find the greatest number in a file
+//        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/dataset.txt";
+//
+//        try {
+//            Scanner scanner = new Scanner(new File(pathToFile));
+//            scanner.useDelimiter("[,\\s]+");
+//
+//            ArrayList<Integer> list = new ArrayList<>();
+//
+//            while (scanner.hasNextInt()) {
+//                list.add(scanner.nextInt());
+//            }
+//
+//            int[] numbers = list.stream().mapToInt(Integer::intValue).toArray();
+//
+//            System.out.println(findFirstIndexOfMax(numbers));
+//        } catch (FileNotFoundException e) {
+//            System.out.println("File not found " + e.getMessage());
+//        }
+
+        // World population
         String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/dataset.txt";
+        String year = "";
+        long diffMax = 0;
+        long temp = 0;
+        File file = new File(pathToFile);
 
-        try {
-            Scanner scanner = new Scanner(new File(pathToFile));
-            scanner.useDelimiter("[,\\s]+");
 
-            ArrayList<Integer> list = new ArrayList<>();
-
-            while (scanner.hasNextInt()) {
-                list.add(scanner.nextInt());
+        try (Scanner scanner = new Scanner(file)){
+            StringBuilder input = new StringBuilder();
+            while (scanner.hasNext()){
+                input.append(scanner.next().replace(",", "")).append(" ");
             }
+            String[] inputArray = input.toString().split(" ");
 
-            int[] numbers = list.stream().mapToInt(Integer::intValue).toArray();
-
-            System.out.println(findFirstIndexOfMax(numbers));
-        } catch (FileNotFoundException e) {
-            System.out.println("File not found " + e.getMessage());
+            for(int i = 5; i < inputArray.length; i += 2){
+                temp = Long.parseLong(inputArray[i]) - Long.parseLong(inputArray[i-2]);
+                if (temp > diffMax){
+                    diffMax = temp;
+                    year = inputArray[i-1];
+                }
+            }
+        } catch (FileNotFoundException e){
+            System.out.println(e.getMessage());
         }
+        System.out.println("Maximum growth in: " + year);
     }
 
-    public static int findFirstIndexOfMax(int[] arr) {
-        if (arr == null || arr.length == 0) {
-            return -1; // Handle empty or null array case
-        }
-
-        int maxIndex = 0; // Initialize with the index of the first element
-        int maxValue = arr[0]; // Initialize with the value of the first element
-
-        // Iterate from the second element
-        for (int i = 1; i < arr.length; i++) {
-            if (arr[i] > maxValue) {
-                maxValue = arr[i]; // Update the maximum value
-                maxIndex = i; // Update the index of the first occurrence of the new maximum
-            }
-        }
-        return maxValue;
-    }
 
 //    private enum ThingsToTaste {
 //        PIZZA, BROCCOLI,
