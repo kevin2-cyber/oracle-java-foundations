@@ -241,14 +241,17 @@ public class App {
 //            System.out.println("Cannot read file: " + e.getMessage());
 //        }
 
-        String pathToFile = "/Users/kimi-kevin/Documents/file.txt";
-        try (Scanner scanner = new Scanner(new File(pathToFile))) {
-            scanner.nextLine();
-            scanner.nextLine();
-            System.out.println(scanner.nextLine());
-        } catch (FileNotFoundException e) {
-            System.out.println(e.getMessage());
-        }
+//        String pathToFile = "/Users/kimi-kevin/Documents/file.txt";
+//        try (Scanner scanner = new Scanner(new File(pathToFile))) {
+//            scanner.nextLine();
+//            scanner.nextLine();
+//            System.out.println(scanner.nextLine());
+//        } catch (FileNotFoundException e) {
+//            System.out.println(e.getMessage());
+//        }
+
+
+
     }
 
 //    private enum ThingsToTaste {
@@ -257,8 +260,5 @@ public class App {
 //        DIRT, MEATBALLS,
 //        CHOCOLATE,
 //    }
-    public static String readFileAsString(String fileName) throws IOException {
-        return new String(Files.readAllBytes(Paths.get(fileName)));
-    }
 
 }

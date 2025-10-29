@@ -1,6 +1,8 @@
 package com.kimikevin;
 
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.YearMonth;
@@ -67,5 +69,9 @@ public class UtilityFx {
             date = date.plusDays(1);
         }
         return  mondays;
+    }
+
+    public static String readFileAsString(String fileName) throws IOException {
+        return new String(Files.readAllBytes(Paths.get(fileName)));
     }
 }
