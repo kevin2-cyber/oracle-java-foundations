@@ -222,8 +222,8 @@ public class App {
 //            System.out.println("File not found");
 //        }
 
-        // Reading data using Scanner
-        String pathToFile = "/Users/kimi-kevin/Documents/readme.txt";
+//        // Reading data using Scanner
+//        String pathToFile = "/Users/kimi-kevin/Documents/readme.txt";
 //        File file = new File(pathToFile);
 //
 //        try(Scanner scanner = new Scanner(file)) {
@@ -234,11 +234,20 @@ public class App {
 //        } catch (FileNotFoundException exception) {
 //            System.out.println("File not found: " + exception.getMessage());
 //        }
-        // Reading all text from a file as a single string
-        try {
-            System.out.println(readFileAsString(pathToFile));
-        } catch (IOException e) {
-            System.out.println("Cannot read file: " + e.getMessage());
+//        // Reading all text from a file as a single string
+//        try {
+//            System.out.println(readFileAsString(pathToFile));
+//        } catch (IOException e) {
+//            System.out.println("Cannot read file: " + e.getMessage());
+//        }
+
+        String pathToFile = "/Users/kimi-kevin/Documents/file.txt";
+        try (Scanner scanner = new Scanner(new File(pathToFile))) {
+            scanner.nextLine();
+            scanner.nextLine();
+            System.out.println(scanner.nextLine());
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
         }
     }
 
