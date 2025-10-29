@@ -219,13 +219,14 @@ public class App {
 //            System.out.println("File not found");
 //        }
 
+        // Reading data using Scanner
         String pathToFile = "/Users/kimi-kevin/Documents/readme.txt";
-        try {
-            File file = new File(pathToFile);
-            Scanner scanner = new Scanner(file);
+        File file = new File(pathToFile);
+
+        try(Scanner scanner = new Scanner(file)) {
 
             while (scanner.hasNext()) {
-                System.out.print(scanner.nextLine());
+                System.out.print(scanner.nextLine() + "\n");
             }
         } catch (FileNotFoundException exception) {
             System.out.println("File not found: " + exception.getMessage());
