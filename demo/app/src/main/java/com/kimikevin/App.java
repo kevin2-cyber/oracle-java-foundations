@@ -209,13 +209,14 @@ public class App {
 //        System.out.println("Exists: " + file.exists());
 //        System.out.println("Parent path: " + file.getParent());
 
-        File file = new File("/Users/kimi-kevin/Documents/Example.txt");
-        if (file.exists()) {
-            System.out.println(file.getName() + " exists");
-            file.delete();
-        } else {
-            System.out.println("File not found");
-        }
+//        // files
+//        File file = new File("/Users/kimi-kevin/Documents/Example.txt");
+//        if (file.exists()) {
+//            System.out.println(file.getName() + " exists");
+//            file.delete();
+//        } else {
+//            System.out.println("File not found");
+//        }
     }
 
 //    private enum ThingsToTaste {
