@@ -4,6 +4,7 @@
 package com.kimikevin;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
@@ -217,6 +218,18 @@ public class App {
 //        } else {
 //            System.out.println("File not found");
 //        }
+
+        String pathToFile = "/Users/kimi-kevin/Documents/readme.txt";
+        try {
+            File file = new File(pathToFile);
+            Scanner scanner = new Scanner(file);
+
+            while (scanner.hasNext()) {
+                System.out.print(scanner.nextLine());
+            }
+        } catch (FileNotFoundException exception) {
+            System.out.println("File not found: " + exception.getMessage());
+        }
     }
 
 //    private enum ThingsToTaste {
