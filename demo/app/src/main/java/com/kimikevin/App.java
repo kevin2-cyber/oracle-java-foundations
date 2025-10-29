@@ -319,12 +319,27 @@ public class App {
 //        }
 //        System.out.println("Maximum growth in: " + year);
 
-        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/java/com/kimikevin/file.txt";
-        try (Scanner scanner = new Scanner(new File(pathToFile))) {
-            System.out.println(scanner.nextInt());
-        } catch (FileNotFoundException e) {
+//        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/java/com/kimikevin/file.txt";
+//        try (Scanner scanner = new Scanner(new File(pathToFile))) {
+//            System.out.println(scanner.nextInt());
+//        } catch (FileNotFoundException e) {
+//            System.out.println(e.getMessage());
+//        }
+
+        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/dataset.txt";
+        int evenCounter = 0;
+        File file = new File(pathToFile);
+
+        try (Scanner scanner = new Scanner(file)){
+            int temp = scanner.nextInt();
+            while (scanner.hasNext() && temp != 0){
+                evenCounter += temp % 2 == 0 ? 1 : 0;
+                temp = scanner.nextInt();
+            }
+        } catch (FileNotFoundException e){
             System.out.println(e.getMessage());
         }
+        System.out.println(evenCounter);
     }
 
 
