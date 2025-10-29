@@ -250,8 +250,15 @@ public class App {
 //            System.out.println(e.getMessage());
 //        }
 
+        // The sum of numbers in a file
+        String pathToFile = "/Users/kimi-kevin/Documents/dataset.txt";
 
 
+        try{
+            System.out.println(UtilityFx.readFileAsString(pathToFile));
+        } catch (IOException e) {
+            System.out.println("File not found" + e.getMessage());
+        }
     }
 
 //    private enum ThingsToTaste {
