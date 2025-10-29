@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -250,24 +251,62 @@ public class App {
 //            System.out.println(e.getMessage());
 //        }
 
-        // The sum of numbers in a file
+//        // The sum of numbers in a file
+//        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/dataset.txt";
+//
+//
+//        try{
+//           Scanner scanner = new Scanner(new File(pathToFile));
+//            scanner.useDelimiter("[,\\s]+");
+//           int sum = 0;
+//           while (scanner.hasNext()) {
+//               int num = Integer.parseInt(scanner.nextLine());
+//               sum += num;
+//           }
+//            System.out.println(sum);
+//
+//           scanner.close();
+//        } catch (FileNotFoundException e) {
+//            System.out.println("File not found" + e.getMessage());
+//        }
+
+        // Find the greatest number in a file
         String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/dataset.txt";
 
-
-        try{
-           Scanner scanner = new Scanner(new File(pathToFile));
+        try {
+            Scanner scanner = new Scanner(new File(pathToFile));
             scanner.useDelimiter("[,\\s]+");
-           int sum = 0;
-           while (scanner.hasNext()) {
-               int num = Integer.parseInt(scanner.nextLine());
-               sum += num;
-           }
-            System.out.println(sum);
 
-           scanner.close();
+            ArrayList<Integer> list = new ArrayList<>();
+
+            while (scanner.hasNextInt()) {
+                list.add(scanner.nextInt());
+            }
+
+            int[] numbers = list.stream().mapToInt(Integer::intValue).toArray();
+
+            System.out.println(findFirstIndexOfMax(numbers));
         } catch (FileNotFoundException e) {
-            System.out.println("File not found" + e.getMessage());
+            System.out.println("File not found " + e.getMessage());
         }
+    }
+
+    public static int findFirstIndexOfMax(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return -1; // Handle empty or null array case
+        }
+
+        int maxIndex = 0; // Initialize with the index of the first element
+        int maxValue = arr[0]; // Initialize with the value of the first element
+
+        // Iterate from the second element
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > maxValue) {
+                maxValue = arr[i]; // Update the maximum value
+                maxIndex = i; // Update the index of the first occurrence of the new maximum
+            }
+        }
+        return maxValue;
     }
 
 //    private enum ThingsToTaste {
