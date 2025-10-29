@@ -5,6 +5,9 @@ package com.kimikevin;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDate;
 import java.util.Arrays;
 import java.util.List;
@@ -221,16 +224,16 @@ public class App {
 
         // Reading data using Scanner
         String pathToFile = "/Users/kimi-kevin/Documents/readme.txt";
-        File file = new File(pathToFile);
-
-        try(Scanner scanner = new Scanner(file)) {
-
-            while (scanner.hasNext()) {
-                System.out.print(scanner.nextLine() + "\n");
-            }
-        } catch (FileNotFoundException exception) {
-            System.out.println("File not found: " + exception.getMessage());
-        }
+//        File file = new File(pathToFile);
+//
+//        try(Scanner scanner = new Scanner(file)) {
+//
+//            while (scanner.hasNext()) {
+//                System.out.print(scanner.nextLine() + "\n");
+//            }
+//        } catch (FileNotFoundException exception) {
+//            System.out.println("File not found: " + exception.getMessage());
+//        }
     }
 
 //    private enum ThingsToTaste {
@@ -239,5 +242,8 @@ public class App {
 //        DIRT, MEATBALLS,
 //        CHOCOLATE,
 //    }
+    public static String readFileAsString(String fileName) throws IOException {
+        return new String(Files.readAllBytes(Paths.get(fileName)));
+    }
 
 }
