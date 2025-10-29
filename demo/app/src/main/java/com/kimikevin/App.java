@@ -292,32 +292,39 @@ public class App {
 //            System.out.println("File not found " + e.getMessage());
 //        }
 
-        // World population
-        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/dataset.txt";
-        String year = "";
-        long diffMax = 0;
-        long temp = 0;
-        File file = new File(pathToFile);
+//        // World population
+//        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/dataset.txt";
+//        String year = "";
+//        long diffMax = 0;
+//        long temp = 0;
+//        File file = new File(pathToFile);
+//
+//
+//        try (Scanner scanner = new Scanner(file)){
+//            StringBuilder input = new StringBuilder();
+//            while (scanner.hasNext()){
+//                input.append(scanner.next().replace(",", "")).append(" ");
+//            }
+//            String[] inputArray = input.toString().split(" ");
+//
+//            for(int i = 5; i < inputArray.length; i += 2){
+//                temp = Long.parseLong(inputArray[i]) - Long.parseLong(inputArray[i-2]);
+//                if (temp > diffMax){
+//                    diffMax = temp;
+//                    year = inputArray[i-1];
+//                }
+//            }
+//        } catch (FileNotFoundException e){
+//            System.out.println(e.getMessage());
+//        }
+//        System.out.println("Maximum growth in: " + year);
 
-
-        try (Scanner scanner = new Scanner(file)){
-            StringBuilder input = new StringBuilder();
-            while (scanner.hasNext()){
-                input.append(scanner.next().replace(",", "")).append(" ");
-            }
-            String[] inputArray = input.toString().split(" ");
-
-            for(int i = 5; i < inputArray.length; i += 2){
-                temp = Long.parseLong(inputArray[i]) - Long.parseLong(inputArray[i-2]);
-                if (temp > diffMax){
-                    diffMax = temp;
-                    year = inputArray[i-1];
-                }
-            }
-        } catch (FileNotFoundException e){
+        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/java/com/kimikevin/file.txt";
+        try (Scanner scanner = new Scanner(new File(pathToFile))) {
+            System.out.println(scanner.nextInt());
+        } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         }
-        System.out.println("Maximum growth in: " + year);
     }
 
 
