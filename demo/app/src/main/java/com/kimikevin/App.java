@@ -234,6 +234,12 @@ public class App {
 //        } catch (FileNotFoundException exception) {
 //            System.out.println("File not found: " + exception.getMessage());
 //        }
+        // Reading all text from a file as a single string
+        try {
+            System.out.println(readFileAsString(pathToFile));
+        } catch (IOException e) {
+            System.out.println("Cannot read file: " + e.getMessage());
+        }
     }
 
 //    private enum ThingsToTaste {
