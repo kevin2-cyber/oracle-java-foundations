@@ -4,11 +4,19 @@
 package com.kimikevin;
 
 import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.text.NumberFormat;
+import java.text.ParseException;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import static com.kimikevin.UtilityFx.deleteDirRecursively;
 import static com.kimikevin.UtilityFx.getMondays;
 
 public class App {
@@ -195,20 +203,217 @@ public class App {
 //
 //        System.out.println(taste + ": " + tasteValue);
 
-        // macOS style
-        File file = new File("/Users/kimi-kevin/Documents"); // a directory on a UNIX-like system
-        System.out.println("file: " + file.getAbsolutePath());
+//        // macOS style
+//        File file = new File("/Users/kimi-kevin/Documents"); // a directory on a UNIX-like system
+//        System.out.println("file: " + file.getAbsolutePath());
+//
+//        // character for separating the path to a file
+//        System.out.println(File.separator);
+//
+//        System.out.println("File name: " + file.getName());
+//        System.out.println("File path: " + file.getPath());
+//        System.out.println("Is file: " + file.isFile());
+//        System.out.println("Is directory: " + file.isDirectory());
+//        System.out.println("Exists: " + file.exists());
+//        System.out.println("Parent path: " + file.getParent());
 
-        // character for separating the path to a file
-        System.out.println(File.separator);
+//        // files
+//        File file = new File("/Users/kimi-kevin/Documents/Example.txt");
+//        if (file.exists()) {
+//            System.out.println(file.getName() + " exists");
+//            file.delete();
+//        } else {
+//            System.out.println("File not found");
+//        }
 
-        System.out.println("File name: " + file.getName());
-        System.out.println("File path: " + file.getPath());
-        System.out.println("Is file: " + file.isFile());
-        System.out.println("Is directory: " + file.isDirectory());
-        System.out.println("Exists: " + file.exists());
-        System.out.println("Parent path: " + file.getParent());
+//        // Reading data using Scanner
+//        String pathToFile = "/Users/kimi-kevin/Documents/readme.txt";
+//        File file = new File(pathToFile);
+//
+//        try(Scanner scanner = new Scanner(file)) {
+//
+//            while (scanner.hasNext()) {
+//                System.out.print(scanner.nextLine() + "\n");
+//            }
+//        } catch (FileNotFoundException exception) {
+//            System.out.println("File not found: " + exception.getMessage());
+//        }
+//        // Reading all text from a file as a single string
+//        try {
+//            System.out.println(readFileAsString(pathToFile));
+//        } catch (IOException e) {
+//            System.out.println("Cannot read file: " + e.getMessage());
+//        }
+
+//        String pathToFile = "/Users/kimi-kevin/Documents/file.txt";
+//        try (Scanner scanner = new Scanner(new File(pathToFile))) {
+//            scanner.nextLine();
+//            scanner.nextLine();
+//            System.out.println(scanner.nextLine());
+//        } catch (FileNotFoundException e) {
+//            System.out.println(e.getMessage());
+//        }
+
+//        // The sum of numbers in a file
+//        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/dataset.txt";
+//
+//
+//        try{
+//           Scanner scanner = new Scanner(new File(pathToFile));
+//            scanner.useDelimiter("[,\\s]+");
+//           int sum = 0;
+//           while (scanner.hasNext()) {
+//               int num = Integer.parseInt(scanner.nextLine());
+//               sum += num;
+//           }
+//            System.out.println(sum);
+//
+//           scanner.close();
+//        } catch (FileNotFoundException e) {
+//            System.out.println("File not found" + e.getMessage());
+//        }
+
+//        // Find the greatest number in a file
+//        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/dataset.txt";
+//
+//        try {
+//            Scanner scanner = new Scanner(new File(pathToFile));
+//            scanner.useDelimiter("[,\\s]+");
+//
+//            ArrayList<Integer> list = new ArrayList<>();
+//
+//            while (scanner.hasNextInt()) {
+//                list.add(scanner.nextInt());
+//            }
+//
+//            int[] numbers = list.stream().mapToInt(Integer::intValue).toArray();
+//
+//            System.out.println(findFirstIndexOfMax(numbers));
+//        } catch (FileNotFoundException e) {
+//            System.out.println("File not found " + e.getMessage());
+//        }
+
+//        // World population
+//        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/dataset.txt";
+//        String year = "";
+//        long diffMax = 0;
+//        long temp = 0;
+//        File file = new File(pathToFile);
+//
+//
+//        try (Scanner scanner = new Scanner(file)){
+//            StringBuilder input = new StringBuilder();
+//            while (scanner.hasNext()){
+//                input.append(scanner.next().replace(",", "")).append(" ");
+//            }
+//            String[] inputArray = input.toString().split(" ");
+//
+//            for(int i = 5; i < inputArray.length; i += 2){
+//                temp = Long.parseLong(inputArray[i]) - Long.parseLong(inputArray[i-2]);
+//                if (temp > diffMax){
+//                    diffMax = temp;
+//                    year = inputArray[i-1];
+//                }
+//            }
+//        } catch (FileNotFoundException e){
+//            System.out.println(e.getMessage());
+//        }
+//        System.out.println("Maximum growth in: " + year);
+
+//        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/java/com/kimikevin/file.txt";
+//        try (Scanner scanner = new Scanner(new File(pathToFile))) {
+//            System.out.println(scanner.nextInt());
+//        } catch (FileNotFoundException e) {
+//            System.out.println(e.getMessage());
+//        }
+
+//        // even counter
+//        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/dataset.txt";
+//        int evenCounter = 0;
+//        File file = new File(pathToFile);
+//
+//        try (Scanner scanner = new Scanner(file)){
+//            int temp = scanner.nextInt();
+//            while (scanner.hasNext() && temp != 0){
+//                evenCounter += temp % 2 == 0 ? 1 : 0;
+//                temp = scanner.nextInt();
+//            }
+//        } catch (FileNotFoundException e){
+//            System.out.println(e.getMessage());
+//        }
+//        System.out.println(evenCounter);
+
+//        // creating files
+//        File file = new File("/Users/kimi-kevin/Documents/file.txt");
+//        try {
+//            boolean createdNew = file.createNewFile();
+//            if (createdNew) {
+//                System.out.println("The file was successfully created.");
+//            } else {
+//                System.out.println("The file already exists.");
+//            }
+//        } catch (IOException e) {
+//            System.out.println("Cannot create the file: " + file.getPath());
+//        }
+
+//        // creating directory
+//        File file = new File("/Users/kimi-kevin/Documents/dir");
+//
+//        boolean createdNewDirectory = file.mkdir();
+//        if (createdNewDirectory) {
+//            System.out.println("It was successfully created.");
+//        } else {
+//            System.out.println("It was not created.");
+//        }
+//
+//        // creating directories
+//        File directory = new File("/Users/kimi-kevin/Documents/dir/dir/dir");
+//
+//        boolean createdNewDirectories = directory.mkdirs();
+//        if (createdNewDirectories) {
+//            System.out.println("It was successfully created.");
+//        }  else {
+//            System.out.println("It was not created.");
+//        }
+
+//        // removing files and directories
+//        File directory = new File("/Users/kimi-kevin/Documents/dir/dir/dir");
+//
+//        if (directory.delete()) {
+//            System.out.println("It was successfully removed.");
+//        } else {
+//            System.out.println("It was not removed.");
+//        }
+
+//        // removing subdirectories and subfiles
+//        File directory = new File("/Users/kimi-kevin/Documents/dir/dir");
+//        deleteDirRecursively(directory);
+
+//        // renaming files
+//        File file = new File("/Users/kimi-kevin/Documents/file.txt");
+//        File renamedFile = new File("/Users/kimi-kevin/Documents/refill.txt");
+//
+//        boolean renamed = file.renameTo(renamedFile);
+//        if (renamed) {
+//            System.out.println("It was successfully renamed.");
+//        } else {
+//            System.out.println("It was not renamed.");
+//        }
+
+//        // moving files
+//        File file = new File("/Users/kimi-kevin/Documents/refill.txt");
+//        File renamedFile = new File("/Users/kimi-kevin/Documents/dir/refill.txt");
+//
+//        boolean renamed = file.renameTo(renamedFile);
+//        if (renamed) {
+//            System.out.println("It was successfully moved.");
+//        } else {
+//            System.out.println("It was not moved.");
+//        }
+
+
     }
+
 
 //    private enum ThingsToTaste {
 //        PIZZA, BROCCOLI,

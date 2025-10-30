@@ -1,6 +1,9 @@
 package com.kimikevin;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.time.YearMonth;
@@ -67,5 +70,54 @@ public class UtilityFx {
             date = date.plusDays(1);
         }
         return  mondays;
+    }
+
+    public static String readFileAsString(String fileName) throws IOException {
+        return new String(Files.readAllBytes(Paths.get(fileName)));
+    }
+
+    public static int findFirstIndexOfMax(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return -1; // Handle empty or null array case
+        }
+
+        int maxIndex = 0; // Initialize with the index of the first element
+        int maxValue = arr[0]; // Initialize with the value of the first element
+
+        // Iterate from the second element
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > maxValue) {
+                maxValue = arr[i]; // Update the maximum value
+                maxIndex = i; // Update the index of the first occurrence of the new maximum
+            }
+        }
+        return maxIndex;
+    }
+
+    public static int findMaxOfAnArray(int[] arr) {
+        if (arr == null || arr.length == 0) {
+            return -1;
+        }
+
+        int maxValue = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            if (arr[i] > maxValue) {
+                maxValue = arr[i];
+            }
+        }
+        return maxValue;
+    }
+
+    public static void deleteDirRecursively(File dir) {
+        File[] children = dir.listFiles();
+        assert children != null;
+        for (File child : children) {
+            if (child.isDirectory()) {
+                deleteDirRecursively(child);
+            } else {
+                child.delete();
+            }
+        }
+        dir.delete();
     }
 }
