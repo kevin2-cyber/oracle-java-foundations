@@ -355,7 +355,7 @@ public class App {
 //            System.out.println("Cannot create the file: " + file.getPath());
 //        }
 
-        // creating directories
+        // creating directory
         File file = new File("/Users/kimi-kevin/Documents/dir");
 
         boolean createdNewDirectory = file.mkdir();
@@ -364,6 +364,17 @@ public class App {
         } else {
             System.out.println("It was not created.");
         }
+
+        // creating directories
+        File directory = new File("/Users/kimi-kevin/Documents/dir/dir/dir");
+
+        boolean createdNewDirectories = directory.mkdirs();
+        if (createdNewDirectories) {
+            System.out.println("It was successfully created.");
+        }  else {
+            System.out.println("It was not created.");
+        }
+
     }
 
 
