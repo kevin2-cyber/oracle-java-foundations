@@ -416,6 +416,12 @@ public class App {
 //        System.out.println(ChargeLevel.LOW.getSections()); // 1
 //        System.out.println(ChargeLevel.LOW.getColor()); // red
 //        System.out.println(ChargeLevel.findByNumberOfSections(2)); // MEDIUM
+
+        for (Planet planet : Planet.values()) {
+            if (planet.mass() > 5.0e+24 && planet.radius() > 6.0e+7) {
+                System.out.println(planet);
+            }
+        }
     }
 
 
