@@ -56,20 +56,5 @@ public class Main {
         account.setBalance(balance - sum);
         return true;
     }
-//        return switch (operation) {
-//            case DEPOSIT -> {
-//                if (account.getBalance() < sum) {
-//                    account.setBalance(account.getBalance() + sum);
-//                }
-//            }
-//            case WITHDRAW -> {
-//                if (account.getBalance() > sum) {
-//                    account.setBalance(account.getBalance() - sum);
-//                } else {
-//                    System.out.println("Not enough money to withdraw");
-//                }
-//
-//            }
-//        };
 
 }
