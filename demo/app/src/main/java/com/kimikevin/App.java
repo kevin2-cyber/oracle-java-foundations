@@ -389,15 +389,26 @@ public class App {
 //        File directory = new File("/Users/kimi-kevin/Documents/dir/dir");
 //        deleteDirRecursively(directory);
 
-        // renaming files
-        File file = new File("/Users/kimi-kevin/Documents/file.txt");
-        File renamedFile = new File("/Users/kimi-kevin/Documents/refill.txt");
+//        // renaming files
+//        File file = new File("/Users/kimi-kevin/Documents/file.txt");
+//        File renamedFile = new File("/Users/kimi-kevin/Documents/refill.txt");
+//
+//        boolean renamed = file.renameTo(renamedFile);
+//        if (renamed) {
+//            System.out.println("It was successfully renamed.");
+//        } else {
+//            System.out.println("It was not renamed.");
+//        }
+
+        // moving files
+        File file = new File("/Users/kimi-kevin/Documents/refill.txt");
+        File renamedFile = new File("/Users/kimi-kevin/Documents/dir/refill.txt");
 
         boolean renamed = file.renameTo(renamedFile);
         if (renamed) {
-            System.out.println("It was successfully renamed.");
+            System.out.println("It was successfully moved.");
         } else {
-            System.out.println("It was not renamed.");
+            System.out.println("It was not moved.");
         }
 
 
