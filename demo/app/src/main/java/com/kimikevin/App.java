@@ -412,6 +412,10 @@ public class App {
 //        }
 
 
+        // fields and methods in enum
+        System.out.println(ChargeLevel.LOW.getSections()); // 1
+        System.out.println(ChargeLevel.LOW.getColor()); // red
+        System.out.println(ChargeLevel.findByNumberOfSections(2)); // MEDIUM
     }
 
 
