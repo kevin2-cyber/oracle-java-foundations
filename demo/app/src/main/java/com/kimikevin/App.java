@@ -400,16 +400,16 @@ public class App {
 //            System.out.println("It was not renamed.");
 //        }
 
-        // moving files
-        File file = new File("/Users/kimi-kevin/Documents/refill.txt");
-        File renamedFile = new File("/Users/kimi-kevin/Documents/dir/refill.txt");
-
-        boolean renamed = file.renameTo(renamedFile);
-        if (renamed) {
-            System.out.println("It was successfully moved.");
-        } else {
-            System.out.println("It was not moved.");
-        }
+//        // moving files
+//        File file = new File("/Users/kimi-kevin/Documents/refill.txt");
+//        File renamedFile = new File("/Users/kimi-kevin/Documents/dir/refill.txt");
+//
+//        boolean renamed = file.renameTo(renamedFile);
+//        if (renamed) {
+//            System.out.println("It was successfully moved.");
+//        } else {
+//            System.out.println("It was not moved.");
+//        }
 
 
     }
