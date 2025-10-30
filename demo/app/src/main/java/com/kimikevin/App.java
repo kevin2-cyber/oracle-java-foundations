@@ -16,6 +16,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
+import static com.kimikevin.UtilityFx.deleteDirRecursively;
 import static com.kimikevin.UtilityFx.getMondays;
 
 public class App {
@@ -389,19 +390,6 @@ public class App {
         deleteDirRecursively(directory);
 
 
-    }
-
-    public static void deleteDirRecursively(File dir) {
-        File[] children = dir.listFiles();
-        assert children != null;
-        for (File child : children) {
-            if (child.isDirectory()) {
-                deleteDirRecursively(child);
-            } else {
-                child.delete();
-            }
-        }
-        dir.delete();
     }
 
 

@@ -1,5 +1,6 @@
 package com.kimikevin;
 
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -105,5 +106,18 @@ public class UtilityFx {
             }
         }
         return maxValue;
+    }
+
+    public static void deleteDirRecursively(File dir) {
+        File[] children = dir.listFiles();
+        assert children != null;
+        for (File child : children) {
+            if (child.isDirectory()) {
+                deleteDirRecursively(child);
+            } else {
+                child.delete();
+            }
+        }
+        dir.delete();
     }
 }
