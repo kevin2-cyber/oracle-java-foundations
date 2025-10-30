@@ -326,20 +326,21 @@ public class App {
 //            System.out.println(e.getMessage());
 //        }
 
-        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/dataset.txt";
-        int evenCounter = 0;
-        File file = new File(pathToFile);
-
-        try (Scanner scanner = new Scanner(file)){
-            int temp = scanner.nextInt();
-            while (scanner.hasNext() && temp != 0){
-                evenCounter += temp % 2 == 0 ? 1 : 0;
-                temp = scanner.nextInt();
-            }
-        } catch (FileNotFoundException e){
-            System.out.println(e.getMessage());
-        }
-        System.out.println(evenCounter);
+//        // even counter
+//        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/dataset.txt";
+//        int evenCounter = 0;
+//        File file = new File(pathToFile);
+//
+//        try (Scanner scanner = new Scanner(file)){
+//            int temp = scanner.nextInt();
+//            while (scanner.hasNext() && temp != 0){
+//                evenCounter += temp % 2 == 0 ? 1 : 0;
+//                temp = scanner.nextInt();
+//            }
+//        } catch (FileNotFoundException e){
+//            System.out.println(e.getMessage());
+//        }
+//        System.out.println(evenCounter);
     }
 
 
