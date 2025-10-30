@@ -375,15 +375,33 @@ public class App {
 //            System.out.println("It was not created.");
 //        }
 
-        // removing files and directories
-        File directory = new File("/Users/kimi-kevin/Documents/dir/dir/dir");
+//        // removing files and directories
+//        File directory = new File("/Users/kimi-kevin/Documents/dir/dir/dir");
+//
+//        if (directory.delete()) {
+//            System.out.println("It was successfully removed.");
+//        } else {
+//            System.out.println("It was not removed.");
+//        }
 
-        if (directory.delete()) {
-            System.out.println("It was successfully removed.");
-        } else {
-            System.out.println("It was not removed.");
+        // removing subdirectories and subfiles
+        File directory = new File("/Users/kimi-kevin/Documents/dir/dir");
+        deleteDirRecursively(directory);
+
+
+    }
+
+    public static void deleteDirRecursively(File dir) {
+        File[] children = dir.listFiles();
+        assert children != null;
+        for (File child : children) {
+            if (child.isDirectory()) {
+                deleteDirRecursively(child);
+            } else {
+                child.delete();
+            }
         }
-
+        dir.delete();
     }
 
 
