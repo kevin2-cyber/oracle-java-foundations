@@ -342,17 +342,27 @@ public class App {
 //        }
 //        System.out.println(evenCounter);
 
-        // creating files
-        File file = new File("/Users/kimi-kevin/Documents/file.txt");
-        try {
-            boolean createdNew = file.createNewFile();
-            if (createdNew) {
-                System.out.println("The file was successfully created.");
-            } else {
-                System.out.println("The file already exists.");
-            }
-        } catch (IOException e) {
-            System.out.println("Cannot create the file: " + file.getPath());
+//        // creating files
+//        File file = new File("/Users/kimi-kevin/Documents/file.txt");
+//        try {
+//            boolean createdNew = file.createNewFile();
+//            if (createdNew) {
+//                System.out.println("The file was successfully created.");
+//            } else {
+//                System.out.println("The file already exists.");
+//            }
+//        } catch (IOException e) {
+//            System.out.println("Cannot create the file: " + file.getPath());
+//        }
+
+        // creating directories
+        File file = new File("/Users/kimi-kevin/Documents/dir");
+
+        boolean createdNewDirectory = file.mkdir();
+        if (createdNewDirectory) {
+            System.out.println("It was successfully created.");
+        } else {
+            System.out.println("It was not created.");
         }
     }
 
