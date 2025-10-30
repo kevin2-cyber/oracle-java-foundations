@@ -385,9 +385,20 @@ public class App {
 //            System.out.println("It was not removed.");
 //        }
 
-        // removing subdirectories and subfiles
-        File directory = new File("/Users/kimi-kevin/Documents/dir/dir");
-        deleteDirRecursively(directory);
+//        // removing subdirectories and subfiles
+//        File directory = new File("/Users/kimi-kevin/Documents/dir/dir");
+//        deleteDirRecursively(directory);
+
+        // renaming files
+        File file = new File("/Users/kimi-kevin/Documents/file.txt");
+        File renamedFile = new File("/Users/kimi-kevin/Documents/refill.txt");
+
+        boolean renamed = file.renameTo(renamedFile);
+        if (renamed) {
+            System.out.println("It was successfully renamed.");
+        } else {
+            System.out.println("It was not renamed.");
+        }
 
 
     }
