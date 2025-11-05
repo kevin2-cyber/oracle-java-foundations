@@ -10,6 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.NumberFormat;
 import java.text.ParseException;
+import java.time.Duration;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
@@ -465,18 +466,38 @@ public class App {
 //        LocalTime time6 = time.withMinute(50); // 11:50:30
 //        LocalTime time7 = time.withSecond(0); // 11:45
 
-        // Some hours and minutes ago
+//        // Some hours and minutes ago
+//        Scanner scanner = new Scanner(System.in);
+//        String firstPointInTime = scanner.nextLine();
+//        int hour = scanner.nextInt();
+//        int minute = scanner.nextInt();
+//
+//        LocalTime timeParser = LocalTime.parse(firstPointInTime);
+//        timeParser.minusHours(hour).minusMinutes(minute);
+//
+//        System.out.println(timeParser);
+
+        // seconds between two time points
         Scanner scanner = new Scanner(System.in);
-        String firstPointInTime = scanner.nextLine();
-        int hour = scanner.nextInt();
-        int minute = scanner.nextInt();
+        String firstTime = scanner.nextLine();
+        String secondTime = scanner.nextLine();
 
-        LocalTime timeParser = LocalTime.parse(firstPointInTime);
-        timeParser.minusHours(hour).minusMinutes(minute);
+        LocalTime startTime = LocalTime.parse(firstTime);
+        LocalTime endTime = LocalTime.parse(secondTime);
 
-        System.out.println(timeParser);
+        long a = endTime
+                .minusHours(startTime.getHour())
+                .minusMinutes(startTime.getMinute())
+                .minusSeconds(startTime.getSecond())
+                .toSecondOfDay();
 
+        long b = startTime
+                .minusHours(endTime.getHour())
+                .minusMinutes(endTime.getMinute())
+                .minusSeconds(endTime.getSecond())
+                .toSecondOfDay();
 
+        System.out.println(Math.abs(Duration.between(startTime, endTime).toSeconds()));
     }
 
 
