@@ -11,6 +11,7 @@ import java.nio.file.Paths;
 import java.text.NumberFormat;
 import java.text.ParseException;
 import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -422,6 +423,48 @@ public class App {
 //                System.out.println(planet);
 //            }
 //        }
+
+        LocalTime now = LocalTime.now();
+        System.out.println(now);
+
+        // using the of() and parse() methods
+        System.out.println(LocalTime.of(11, 45));        // 11:45
+        System.out.println(LocalTime.of(11, 45, 30));    // 11:45:30
+        System.out.println(LocalTime.parse("11:45:30")); // 11:45:30 (hours, minutes, seconds)
+
+        // using the ofSecondOfDay() and ofNanoOfDay() methods
+        LocalTime secondTime = LocalTime.ofSecondOfDay(12345);
+        LocalTime nanotime = LocalTime.ofNanoOfDay(1234567890);
+        System.out.println(secondTime);
+        System.out.println(nanotime);
+
+        // some predefined constants
+        LocalTime min = LocalTime.MIN;// 00:00
+        LocalTime max = LocalTime.MAX;// 23:59:59.999999999
+        LocalTime noon = LocalTime.NOON;// 12:00
+        LocalTime midnight = LocalTime.MIDNIGHT;// 00:00
+
+        // getting hours, minutes, seconds and nanoseconds
+        LocalTime time = LocalTime.of(11, 45, 30);
+        System.out.println(time.getHour());
+        System.out.println(time.getMinute());
+        System.out.println(time.getSecond());
+        System.out.println(time.getNano());
+
+        // using the toSecondOfDay() method
+        System.out.println(time.toSecondOfDay());
+
+        // arithmetic methods of LocalTime(add and subtract hours, minutes, seconds, and nanoseconds
+        LocalTime time1 = time.plusHours(5); // 16:45:30
+        LocalTime time2 = time.plusHours(22); // 09:45:30
+        LocalTime time3 = time.minusMinutes(10); // 11:35:30
+        LocalTime time4 = time.minusSeconds(30); // 11:45
+
+        // return a copy of an instance with one altered part
+        LocalTime time5 = time.withHour(23); // 23:45:30
+        LocalTime time6 = time.withMinute(50); // 11:50:30
+        LocalTime time7 = time.withSecond(0); // 11:45
+
 
     }
 
