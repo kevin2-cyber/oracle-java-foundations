@@ -485,18 +485,6 @@ public class App {
         LocalTime startTime = LocalTime.parse(firstTime);
         LocalTime endTime = LocalTime.parse(secondTime);
 
-        long a = endTime
-                .minusHours(startTime.getHour())
-                .minusMinutes(startTime.getMinute())
-                .minusSeconds(startTime.getSecond())
-                .toSecondOfDay();
-
-        long b = startTime
-                .minusHours(endTime.getHour())
-                .minusMinutes(endTime.getMinute())
-                .minusSeconds(endTime.getSecond())
-                .toSecondOfDay();
-
         System.out.println(Math.abs(Duration.between(startTime, endTime).toSeconds()));
     }
 
