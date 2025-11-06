@@ -12,6 +12,7 @@ import java.text.NumberFormat;
 import java.text.ParseException;
 import java.time.Duration;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -487,13 +488,50 @@ public class App {
 //
 //        System.out.println(Math.abs(Duration.between(startTime, endTime).toSeconds()));
 
-        // seconds since start of the day
-        Scanner scanner = new Scanner(System.in);
-        long seconds = scanner.nextLong();
+//        // seconds since start of the day
+//        Scanner scanner = new Scanner(System.in);
+//        long seconds = scanner.nextLong();
+//
+//        LocalTime midnight = LocalTime.MIDNIGHT;
+//
+//        System.out.println(midnight.plusSeconds(seconds));
 
-        LocalTime midnight = LocalTime.MIDNIGHT;
+        // creating LocalDateTime and current time
+        LocalDateTime currentDateTime = LocalDateTime.now();
+        System.out.println("Current time is: " + currentDateTime);
 
-        System.out.println(midnight.plusSeconds(seconds));
+        LocalDateTime dt1 = LocalDateTime.of(2017, 11, 25, 22, 30);  // 25 November 2017, 22:30
+        LocalDateTime dt2 = LocalDateTime.parse("2017-11-25T22:30"); // 25 November 2017, 22:30
+        System.out.println("Dt1 is: " + dt1);
+        System.out.println("Dt2 is: " + dt2);
+
+        // obtaining instances from LocalDate and LocalTime
+        LocalDate date = LocalDate.of(2017, 11, 25); // 2017-11-25
+        LocalTime time = LocalTime.of(21, 30); // 21:30
+
+        LocalDateTime dateTime1 = date.atTime(time); // 2017-11-25T21:30
+        LocalDateTime dateTime2 = time.atDate(date); // 2017-11-25T21:30
+        System.out.println("Date1 is: " + dateTime1);
+        System.out.println("Date2 is: " + dateTime2);
+
+        // LocalDateTime: from years to minutes
+        LocalDateTime dateTime = LocalDateTime.of(2017, 11, 25, 22, 30);
+
+        int month = date.getMonthValue();
+        int day = date.getDayOfMonth();
+        int year = date.getYear();
+        int hour = dateTime.getHour();
+        int minute = dateTime.getMinute();
+
+        // getting date and time from LocalDateTime
+        LocalDate dateOf = dateTime.toLocalDate(); // 2017-11-25
+        LocalTime timeOf = dateTime.toLocalTime(); // 22:30
+
+        // arithmetic methods of LocalDateTime
+        LocalDateTime endOf2017 = LocalDateTime.of(2017, 12, 31, 23, 59, 59); // 2017-12-31T23:59:59
+
+        LocalDateTime beginningOf2018 = endOf2017.plusSeconds(1); // 2018-01-01T00:00
+        LocalDateTime beginningOf2020 = beginningOf2018.plusYears(2); // 2020-01-01T00:00
     }
 
 
