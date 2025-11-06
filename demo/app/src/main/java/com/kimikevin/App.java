@@ -477,15 +477,23 @@ public class App {
 //
 //        System.out.println(timeParser);
 
-        // seconds between two time points
+//        // seconds between two time points
+//        Scanner scanner = new Scanner(System.in);
+//        String firstTime = scanner.nextLine();
+//        String secondTime = scanner.nextLine();
+//
+//        LocalTime startTime = LocalTime.parse(firstTime);
+//        LocalTime endTime = LocalTime.parse(secondTime);
+//
+//        System.out.println(Math.abs(Duration.between(startTime, endTime).toSeconds()));
+
+        // seconds since start of the day
         Scanner scanner = new Scanner(System.in);
-        String firstTime = scanner.nextLine();
-        String secondTime = scanner.nextLine();
+        long seconds = scanner.nextLong();
 
-        LocalTime startTime = LocalTime.parse(firstTime);
-        LocalTime endTime = LocalTime.parse(secondTime);
+        LocalTime midnight = LocalTime.MIDNIGHT;
 
-        System.out.println(Math.abs(Duration.between(startTime, endTime).toSeconds()));
+        System.out.println(midnight.plusSeconds(seconds));
     }
 
 
