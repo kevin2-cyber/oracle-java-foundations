@@ -120,4 +120,11 @@ public class UtilityFx {
         }
         dir.delete();
     }
+
+        private enum ThingsToTaste {
+        PIZZA, BROCCOLI,
+        STEAK, SUGAR,
+        DIRT, MEATBALLS,
+        CHOCOLATE,
+    }
 }
