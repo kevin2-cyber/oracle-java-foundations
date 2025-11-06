@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.time.DayOfWeek;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.YearMonth;
 import java.util.ArrayList;
 import java.util.List;
@@ -119,6 +120,16 @@ public class UtilityFx {
             }
         }
         dir.delete();
+    }
+
+    public static LocalDateTime merge(LocalDateTime firstDateTime, LocalDateTime secondDateTime) {
+        int year   = Math.max(firstDateTime.getYear(),   secondDateTime.getYear());
+        int month  = Math.max(firstDateTime.getMonthValue(), secondDateTime.getMonthValue());
+        int day    = Math.max(firstDateTime.getDayOfMonth(), secondDateTime.getDayOfMonth());
+        int hour   = Math.max(firstDateTime.getHour(),   secondDateTime.getHour());
+        int minute = Math.max(firstDateTime.getMinute(), secondDateTime.getMinute());
+        int second = Math.max(firstDateTime.getSecond(), secondDateTime.getSecond());
+        return LocalDateTime.of(year, month, day, hour, minute, second);
     }
 
         private enum ThingsToTaste {

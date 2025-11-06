@@ -19,8 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import static com.kimikevin.UtilityFx.deleteDirRecursively;
-import static com.kimikevin.UtilityFx.getMondays;
+import static com.kimikevin.UtilityFx.*;
 
 public class App {
 
@@ -533,21 +532,30 @@ public class App {
 //        LocalDateTime beginningOf2018 = endOf2017.plusSeconds(1); // 2018-01-01T00:00
 //        LocalDateTime beginningOf2020 = beginningOf2018.plusYears(2); // 2020-01-01T00:00
 
-        // merging date-time instances
-        final Scanner scanner = new Scanner(System.in);
-        final LocalDateTime firstDateTime = LocalDateTime.parse(scanner.nextLine());
-        final LocalDateTime secondDateTime = LocalDateTime.parse(scanner.nextLine());
-        System.out.println(merge(firstDateTime, secondDateTime));
+//        // merging date-time instances
+//        final Scanner scanner = new Scanner(System.in);
+//        final LocalDateTime firstDateTime = LocalDateTime.parse(scanner.nextLine());
+//        final LocalDateTime secondDateTime = LocalDateTime.parse(scanner.nextLine());
+//        System.out.println(merge(firstDateTime, secondDateTime));
+
+        // subtracting hours and adding minutes
+        Scanner scanner = new Scanner(System.in);
+
+        String inputDateTime = scanner.nextLine();
+        LocalDateTime dateTime = LocalDateTime.parse(inputDateTime);
+
+        int hoursToSubtract = scanner.nextInt();
+        int minutesToAdd = scanner.nextInt();
+
+        LocalDateTime result = dateTime
+                .minusHours(hoursToSubtract)
+                .plusMinutes(minutesToAdd);
+
+        // Print result in the same format
+        System.out.println(result);
+
     }
 
-    public static LocalDateTime merge(LocalDateTime firstDateTime, LocalDateTime secondDateTime) {
-        int year   = Math.max(firstDateTime.getYear(),   secondDateTime.getYear());
-        int month  = Math.max(firstDateTime.getMonthValue(), secondDateTime.getMonthValue());
-        int day    = Math.max(firstDateTime.getDayOfMonth(), secondDateTime.getDayOfMonth());
-        int hour   = Math.max(firstDateTime.getHour(),   secondDateTime.getHour());
-        int minute = Math.max(firstDateTime.getMinute(), secondDateTime.getMinute());
-        int second = Math.max(firstDateTime.getSecond(), secondDateTime.getSecond());
-        return LocalDateTime.of(year, month, day, hour, minute, second);
-    }
+
 
 }
