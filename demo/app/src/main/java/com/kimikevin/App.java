@@ -554,15 +554,27 @@ public class App {
 //        // Print result in the same format
 //        System.out.println(result);
 
-        // add 11 hours and print the date
+//        // add 11 hours and print the date
+//        Scanner scanner = new Scanner(System.in);
+//
+//        String inputDateTime = scanner.nextLine();
+//        LocalDateTime dateTime = LocalDateTime.parse(inputDateTime);
+//
+//        LocalDateTime result = dateTime.plusHours(11);
+//
+//        System.out.println(result.toLocalDate());
+
+        // the passed hours since the beginning of the year
         Scanner scanner = new Scanner(System.in);
 
         String inputDateTime = scanner.nextLine();
         LocalDateTime dateTime = LocalDateTime.parse(inputDateTime);
 
-        LocalDateTime result = dateTime.plusHours(11);
+        LocalDateTime startOfYear = LocalDateTime.of(dateTime.getYear(), 1, 1, 0, 0);
+        long hoursPassed = Duration.between(startOfYear, dateTime).toHours();
 
-        System.out.println(result.toLocalDate());
+        System.out.println(hoursPassed);
+
 
     }
 
