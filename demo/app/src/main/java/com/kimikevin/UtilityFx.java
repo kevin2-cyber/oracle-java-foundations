@@ -138,4 +138,8 @@ public class UtilityFx {
         DIRT, MEATBALLS,
         CHOCOLATE,
     }
+
+    private enum UserStatus {
+        PENDING, ACTIVE, BLOCKED
+    }
 }
