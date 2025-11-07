@@ -10,14 +10,16 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.NumberFormat;
 import java.text.ParseException;
+import java.time.Duration;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
-import static com.kimikevin.UtilityFx.deleteDirRecursively;
-import static com.kimikevin.UtilityFx.getMondays;
+import static com.kimikevin.UtilityFx.*;
 
 public class App {
 
@@ -423,14 +425,161 @@ public class App {
 //            }
 //        }
 
+//        LocalTime now = LocalTime.now();
+//        System.out.println(now);
+//
+//        // using the of() and parse() methods
+//        System.out.println(LocalTime.of(11, 45));        // 11:45
+//        System.out.println(LocalTime.of(11, 45, 30));    // 11:45:30
+//        System.out.println(LocalTime.parse("11:45:30")); // 11:45:30 (hours, minutes, seconds)
+//
+//        // using the ofSecondOfDay() and ofNanoOfDay() methods
+//        LocalTime secondTime = LocalTime.ofSecondOfDay(12345);
+//        LocalTime nanotime = LocalTime.ofNanoOfDay(1234567890);
+//        System.out.println(secondTime);
+//        System.out.println(nanotime);
+//
+//        // some predefined constants
+//        LocalTime min = LocalTime.MIN;// 00:00
+//        LocalTime max = LocalTime.MAX;// 23:59:59.999999999
+//        LocalTime noon = LocalTime.NOON;// 12:00
+//        LocalTime midnight = LocalTime.MIDNIGHT;// 00:00
+//
+//        // getting hours, minutes, seconds and nanoseconds
+//        LocalTime time = LocalTime.of(11, 45, 30);
+//        System.out.println(time.getHour());
+//        System.out.println(time.getMinute());
+//        System.out.println(time.getSecond());
+//        System.out.println(time.getNano());
+//
+//        // using the toSecondOfDay() method
+//        System.out.println(time.toSecondOfDay());
+//
+//        // arithmetic methods of LocalTime(add and subtract hours, minutes, seconds, and nanoseconds
+//        LocalTime time1 = time.plusHours(5); // 16:45:30
+//        LocalTime time2 = time.plusHours(22); // 09:45:30
+//        LocalTime time3 = time.minusMinutes(10); // 11:35:30
+//        LocalTime time4 = time.minusSeconds(30); // 11:45
+//
+//        // return a copy of an instance with one altered part
+//        LocalTime time5 = time.withHour(23); // 23:45:30
+//        LocalTime time6 = time.withMinute(50); // 11:50:30
+//        LocalTime time7 = time.withSecond(0); // 11:45
+
+//        // Some hours and minutes ago
+//        Scanner scanner = new Scanner(System.in);
+//        String firstPointInTime = scanner.nextLine();
+//        int hour = scanner.nextInt();
+//        int minute = scanner.nextInt();
+//
+//        LocalTime timeParser = LocalTime.parse(firstPointInTime);
+//        timeParser.minusHours(hour).minusMinutes(minute);
+//
+//        System.out.println(timeParser);
+
+//        // seconds between two time points
+//        Scanner scanner = new Scanner(System.in);
+//        String firstTime = scanner.nextLine();
+//        String secondTime = scanner.nextLine();
+//
+//        LocalTime startTime = LocalTime.parse(firstTime);
+//        LocalTime endTime = LocalTime.parse(secondTime);
+//
+//        System.out.println(Math.abs(Duration.between(startTime, endTime).toSeconds()));
+
+//        // seconds since start of the day
+//        Scanner scanner = new Scanner(System.in);
+//        long seconds = scanner.nextLong();
+//
+//        LocalTime midnight = LocalTime.MIDNIGHT;
+//
+//        System.out.println(midnight.plusSeconds(seconds));
+
+//        // creating LocalDateTime and current time
+//        LocalDateTime currentDateTime = LocalDateTime.now();
+//        System.out.println("Current time is: " + currentDateTime);
+//
+//        LocalDateTime dt1 = LocalDateTime.of(2017, 11, 25, 22, 30);  // 25 November 2017, 22:30
+//        LocalDateTime dt2 = LocalDateTime.parse("2017-11-25T22:30"); // 25 November 2017, 22:30
+//        System.out.println("Dt1 is: " + dt1);
+//        System.out.println("Dt2 is: " + dt2);
+//
+//        // obtaining instances from LocalDate and LocalTime
+//        LocalDate date = LocalDate.of(2017, 11, 25); // 2017-11-25
+//        LocalTime time = LocalTime.of(21, 30); // 21:30
+//
+//        LocalDateTime dateTime1 = date.atTime(time); // 2017-11-25T21:30
+//        LocalDateTime dateTime2 = time.atDate(date); // 2017-11-25T21:30
+//        System.out.println("Date1 is: " + dateTime1);
+//        System.out.println("Date2 is: " + dateTime2);
+//
+//        // LocalDateTime: from years to minutes
+//        LocalDateTime dateTime = LocalDateTime.of(2017, 11, 25, 22, 30);
+//
+//        int month = date.getMonthValue();
+//        int day = date.getDayOfMonth();
+//        int year = date.getYear();
+//        int hour = dateTime.getHour();
+//        int minute = dateTime.getMinute();
+//
+//        // getting date and time from LocalDateTime
+//        LocalDate dateOf = dateTime.toLocalDate(); // 2017-11-25
+//        LocalTime timeOf = dateTime.toLocalTime(); // 22:30
+//
+//        // arithmetic methods of LocalDateTime
+//        LocalDateTime endOf2017 = LocalDateTime.of(2017, 12, 31, 23, 59, 59); // 2017-12-31T23:59:59
+//
+//        LocalDateTime beginningOf2018 = endOf2017.plusSeconds(1); // 2018-01-01T00:00
+//        LocalDateTime beginningOf2020 = beginningOf2018.plusYears(2); // 2020-01-01T00:00
+
+//        // merging date-time instances
+//        final Scanner scanner = new Scanner(System.in);
+//        final LocalDateTime firstDateTime = LocalDateTime.parse(scanner.nextLine());
+//        final LocalDateTime secondDateTime = LocalDateTime.parse(scanner.nextLine());
+//        System.out.println(merge(firstDateTime, secondDateTime));
+
+//        // subtracting hours and adding minutes
+//        Scanner scanner = new Scanner(System.in);
+//
+//        String inputDateTime = scanner.nextLine();
+//        LocalDateTime dateTime = LocalDateTime.parse(inputDateTime);
+//
+//        int hoursToSubtract = scanner.nextInt();
+//        int minutesToAdd = scanner.nextInt();
+//
+//        LocalDateTime result = dateTime
+//                .minusHours(hoursToSubtract)
+//                .plusMinutes(minutesToAdd);
+//
+//        // Print result in the same format
+//        System.out.println(result);
+
+//        // add 11 hours and print the date
+//        Scanner scanner = new Scanner(System.in);
+//
+//        String inputDateTime = scanner.nextLine();
+//        LocalDateTime dateTime = LocalDateTime.parse(inputDateTime);
+//
+//        LocalDateTime result = dateTime.plusHours(11);
+//
+//        System.out.println(result.toLocalDate());
+
+//        // the passed hours since the beginning of the year
+//        Scanner scanner = new Scanner(System.in);
+//
+//        String inputDateTime = scanner.nextLine();
+//        LocalDateTime dateTime = LocalDateTime.parse(inputDateTime);
+//
+//        LocalDateTime startOfYear = LocalDateTime.of(dateTime.getYear(), 1, 1, 0, 0);
+//        long hoursPassed = Duration.between(startOfYear, dateTime).toHours();
+//
+//        System.out.println(hoursPassed);
+
+        System.out.println(LocalDateTime.of(LocalDate.of(2020, 1, 1), LocalTime.MIDNIGHT).minusSeconds(1));
+
+
     }
 
 
-//    private enum ThingsToTaste {
-//        PIZZA, BROCCOLI,
-//        STEAK, SUGAR,
-//        DIRT, MEATBALLS,
-//        CHOCOLATE,
-//    }
 
 }
