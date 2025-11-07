@@ -564,16 +564,18 @@ public class App {
 //
 //        System.out.println(result.toLocalDate());
 
-        // the passed hours since the beginning of the year
-        Scanner scanner = new Scanner(System.in);
+//        // the passed hours since the beginning of the year
+//        Scanner scanner = new Scanner(System.in);
+//
+//        String inputDateTime = scanner.nextLine();
+//        LocalDateTime dateTime = LocalDateTime.parse(inputDateTime);
+//
+//        LocalDateTime startOfYear = LocalDateTime.of(dateTime.getYear(), 1, 1, 0, 0);
+//        long hoursPassed = Duration.between(startOfYear, dateTime).toHours();
+//
+//        System.out.println(hoursPassed);
 
-        String inputDateTime = scanner.nextLine();
-        LocalDateTime dateTime = LocalDateTime.parse(inputDateTime);
-
-        LocalDateTime startOfYear = LocalDateTime.of(dateTime.getYear(), 1, 1, 0, 0);
-        long hoursPassed = Duration.between(startOfYear, dateTime).toHours();
-
-        System.out.println(hoursPassed);
+        System.out.println(LocalDateTime.of(LocalDate.of(2020, 1, 1), LocalTime.MIDNIGHT).minusSeconds(1));
 
 
     }
