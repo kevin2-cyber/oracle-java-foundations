@@ -538,21 +538,31 @@ public class App {
 //        final LocalDateTime secondDateTime = LocalDateTime.parse(scanner.nextLine());
 //        System.out.println(merge(firstDateTime, secondDateTime));
 
-        // subtracting hours and adding minutes
+//        // subtracting hours and adding minutes
+//        Scanner scanner = new Scanner(System.in);
+//
+//        String inputDateTime = scanner.nextLine();
+//        LocalDateTime dateTime = LocalDateTime.parse(inputDateTime);
+//
+//        int hoursToSubtract = scanner.nextInt();
+//        int minutesToAdd = scanner.nextInt();
+//
+//        LocalDateTime result = dateTime
+//                .minusHours(hoursToSubtract)
+//                .plusMinutes(minutesToAdd);
+//
+//        // Print result in the same format
+//        System.out.println(result);
+
+        // add 11 hours and print the date
         Scanner scanner = new Scanner(System.in);
 
         String inputDateTime = scanner.nextLine();
         LocalDateTime dateTime = LocalDateTime.parse(inputDateTime);
 
-        int hoursToSubtract = scanner.nextInt();
-        int minutesToAdd = scanner.nextInt();
+        LocalDateTime result = dateTime.plusHours(11);
 
-        LocalDateTime result = dateTime
-                .minusHours(hoursToSubtract)
-                .plusMinutes(minutesToAdd);
-
-        // Print result in the same format
-        System.out.println(result);
+        System.out.println(result.toLocalDate());
 
     }
 
