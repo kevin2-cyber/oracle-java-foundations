@@ -142,4 +142,8 @@ public class UtilityFx {
     private enum UserStatus {
         PENDING, ACTIVE, BLOCKED
     }
+
+    private enum Season {
+        SPRING, SUMMER, AUTUMN, WINTER
+    }
 }
