@@ -78,7 +78,7 @@ public class App {
 //        int month = scanner.nextInt();
 //
 //        List<LocalDate> mondays = getMondays(year, month);
-//        for (LocalDate monday : mondays) {
+//        for (LocalDate monday: mondays) {
 //            System.out.println(monday);
 //        }
 
@@ -87,7 +87,7 @@ public class App {
 //        String date = scanner.nextLine();
 //        int offset = scanner.nextInt();
 //
-//        LocalDate localDate =  LocalDate.parse(date);
+//        LocalDate localDate = LocalDate.parse(date);
 //
 //        LocalDate endOfYear = localDate.withDayOfYear(localDate.lengthOfYear());
 //
@@ -117,7 +117,7 @@ public class App {
 //        LocalDate date3 = LocalDate.ofYearDay(year, day3);
 //
 //        LocalDate[] dates = new LocalDate[]{date1, date2, date3};
-//        for (LocalDate date : dates) {
+//        for (LocalDate date: dates) {
 //            System.out.println(date);
 //        }
 
@@ -248,7 +248,7 @@ public class App {
 //        }
 
 //        String pathToFile = "/Users/kimi-kevin/Documents/file.txt";
-//        try (Scanner scanner = new Scanner(new File(pathToFile))) {
+//        try (Scanner scanner = new Scanner (new File(pathToFile))) {
 //            scanner.nextLine();
 //            scanner.nextLine();
 //            System.out.println(scanner.nextLine());
@@ -487,7 +487,7 @@ public class App {
 //
 //        System.out.println(Math.abs(Duration.between(startTime, endTime).toSeconds()));
 
-//        // seconds since start of the day
+//        // seconds since the start of the day
 //        Scanner scanner = new Scanner(System.in);
 //        long seconds = scanner.nextLong();
 //
@@ -551,7 +551,7 @@ public class App {
 //                .minusHours(hoursToSubtract)
 //                .plusMinutes(minutesToAdd);
 //
-//        // Print result in the same format
+//        // Print a result in the same format
 //        System.out.println(result);
 
 //        // add 11 hours and print the date
@@ -575,7 +575,7 @@ public class App {
 //
 //        System.out.println(hoursPassed);
 
-        System.out.println(LocalDateTime.of(LocalDate.of(2020, 1, 1), LocalTime.MIDNIGHT).minusSeconds(1));
+//        System.out.println(LocalDateTime.of(LocalDate.of(2020, 1, 1), LocalTime.MIDNIGHT).minusSeconds(1));
 
 
     }
