@@ -13,3 +13,7 @@ plugins {
 
 rootProject.name = "demo"
 include("app")
+
+include("myModuleName")
+include("superUtilities")
+include("worldChanger")
