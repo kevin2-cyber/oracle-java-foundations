@@ -576,6 +576,7 @@ public class App {
 //        System.out.println(hoursPassed);
 
 //        System.out.println(LocalDateTime.of(LocalDate.of(2020, 1, 1), LocalTime.MIDNIGHT).minusSeconds(1));
+        System.out.println(LocalDate.parse("2017-01-01").withMonth(11).withDayOfMonth(11));
 
 
     }
