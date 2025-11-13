@@ -7,6 +7,9 @@ import com.kimikevin.career.Engineer;
 import com.kimikevin.customer.Customer;
 import com.kimikevin.customer.Premium;
 import com.kimikevin.customer.Standard;
+import com.kimikevin.house.House;
+import com.kimikevin.house.Stone;
+import com.kimikevin.house.Wooden;
 import com.kimikevin.meal.Meal;
 import com.kimikevin.meal.Sandwich;
 import com.kimikevin.meal.Steak;
@@ -85,20 +88,35 @@ public class Main {
 //        }
 //        network.connect();
 
-        // customer template method demo
+//        // customer template method demo
+//        final Scanner scanner = new Scanner(System.in);
+//        final String type = scanner.nextLine();
+//        scanner.close();
+//        Customer customer = null;
+//        if ("premium".equalsIgnoreCase(type)) {
+//            customer = new Premium();
+//        } else if ("standard".equalsIgnoreCase(type)) {
+//            customer = new Standard();
+//        } else {
+//            System.out.println("Error!");
+//            System.exit(0);
+//        }
+//        customer.creatAccount();
+
+        // build a house with template method pattern
         final Scanner scanner = new Scanner(System.in);
         final String type = scanner.nextLine();
         scanner.close();
-        Customer customer = null;
-        if ("premium".equalsIgnoreCase(type)) {
-            customer = new Premium();
-        } else if ("standard".equalsIgnoreCase(type)) {
-            customer = new Standard();
+        House house = null;
+        if ("wooden".equalsIgnoreCase(type)) {
+            house = new Wooden();
+        } else if ("stone".equalsIgnoreCase(type)) {
+            house = new Stone();
         } else {
             System.out.println("Error!");
             System.exit(0);
         }
-        customer.creatAccount();
+        house.build();
 
     }
 }
