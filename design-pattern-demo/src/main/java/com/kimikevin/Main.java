@@ -5,6 +5,7 @@ import com.kimikevin.career.Career;
 import com.kimikevin.career.DataScientist;
 import com.kimikevin.career.Engineer;
 import com.kimikevin.meal.Meal;
+import com.kimikevin.meal.Sandwich;
 import com.kimikevin.meal.Steak;
 import com.kimikevin.templatemethod.Actor;
 import com.kimikevin.templatemethod.Programmer;
@@ -32,20 +33,36 @@ public class Main {
 //        System.out.println(author + " decides to cook meal");
 //        meal.doMeal();
 
-        // career template method demo
+//        // career template method demo
+//        final Scanner scanner = new Scanner(System.in);
+//        final String type = scanner.nextLine();
+//        scanner.close();
+//        Career plan = null;
+//        if ("engineer".equalsIgnoreCase(type)) {
+//            plan = new Engineer();
+//        } else if ("scientist".equalsIgnoreCase(type)) {
+//            plan = new DataScientist();
+//        } else {
+//            System.out.println("Error!");
+//            System.exit(0);
+//        }
+//        plan.execute();
+
+        // meal template method demo
         final Scanner scanner = new Scanner(System.in);
-        final String type = scanner.nextLine();
+        final String order = scanner.nextLine();
         scanner.close();
-        Career plan = null;
-        if ("engineer".equalsIgnoreCase(type)) {
-            plan = new Engineer();
-        } else if ("scientist".equalsIgnoreCase(type)) {
-            plan = new DataScientist();
+        Meal meal = null;
+        if ("Sandwich".equalsIgnoreCase(order)) {
+            meal = new Sandwich();
+            meal.doMeal();
+        } else if ("Steak".equalsIgnoreCase(order)) {
+            meal = new Steak();
+            meal.doMeal();
         } else {
             System.out.println("Error!");
             System.exit(0);
         }
-        plan.execute();
 
     }
 }
