@@ -1,6 +1,9 @@
 package com.kimikevin;
 
 
+import com.kimikevin.career.Career;
+import com.kimikevin.career.DataScientist;
+import com.kimikevin.career.Engineer;
 import com.kimikevin.meal.Meal;
 import com.kimikevin.meal.Steak;
 import com.kimikevin.templatemethod.Actor;
@@ -17,16 +20,32 @@ public class Main {
 //        programmer.work();
 //        System.out.println("------------------------------------------");
 //        actor.work();
+//
+//        // practical of template method
+//        final Scanner scanner = new Scanner(System.in);
+//        final String author = scanner.nextLine();
+//
+//        scanner.close();
+//
+//        Meal meal = new Steak();
+//        System.out.println(author + " wants to eat");
+//        System.out.println(author + " decides to cook meal");
+//        meal.doMeal();
 
-        // practical of template method
+        // career template method demo
         final Scanner scanner = new Scanner(System.in);
-        final String author = scanner.nextLine();
-
+        final String type = scanner.nextLine();
         scanner.close();
+        Career plan = null;
+        if ("engineer".equalsIgnoreCase(type)) {
+            plan = new Engineer();
+        } else if ("scientist".equalsIgnoreCase(type)) {
+            plan = new DataScientist();
+        } else {
+            System.out.println("Error!");
+            System.exit(0);
+        }
+        plan.execute();
 
-        Meal meal = new Steak();
-        System.out.println(author + " wants to eat");
-        System.out.println(author + " decides to cook meal");
-        meal.doMeal();
     }
 }
