@@ -4,6 +4,9 @@ package com.kimikevin;
 import com.kimikevin.career.Career;
 import com.kimikevin.career.DataScientist;
 import com.kimikevin.career.Engineer;
+import com.kimikevin.customer.Customer;
+import com.kimikevin.customer.Premium;
+import com.kimikevin.customer.Standard;
 import com.kimikevin.meal.Meal;
 import com.kimikevin.meal.Sandwich;
 import com.kimikevin.meal.Steak;
@@ -67,20 +70,35 @@ public class Main {
 //            System.exit(0);
 //        }
 
-        // social network template method demo
+//        // social network template method demo
+//        final Scanner scanner = new Scanner(System.in);
+//        final String type = scanner.nextLine();
+//        scanner.close();
+//        SocialNetwork network = null;
+//        if ("facebook".equalsIgnoreCase(type)) {
+//            network = new Facebook();
+//        } else if ("instagram".equalsIgnoreCase(type)) {
+//            network = new Instagram();
+//        } else {
+//            System.out.println("Error!");
+//            System.exit(0);
+//        }
+//        network.connect();
+
+        // customer template method demo
         final Scanner scanner = new Scanner(System.in);
         final String type = scanner.nextLine();
         scanner.close();
-        SocialNetwork network = null;
-        if ("facebook".equalsIgnoreCase(type)) {
-            network = new Facebook();
-        } else if ("instagram".equalsIgnoreCase(type)) {
-            network = new Instagram();
+        Customer customer = null;
+        if ("premium".equalsIgnoreCase(type)) {
+            customer = new Premium();
+        } else if ("standard".equalsIgnoreCase(type)) {
+            customer = new Standard();
         } else {
             System.out.println("Error!");
             System.exit(0);
         }
-        network.connect();
+        customer.creatAccount();
 
     }
 }
