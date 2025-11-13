@@ -7,6 +7,9 @@ import com.kimikevin.career.Engineer;
 import com.kimikevin.meal.Meal;
 import com.kimikevin.meal.Sandwich;
 import com.kimikevin.meal.Steak;
+import com.kimikevin.social.Facebook;
+import com.kimikevin.social.Instagram;
+import com.kimikevin.social.SocialNetwork;
 import com.kimikevin.templatemethod.Actor;
 import com.kimikevin.templatemethod.Programmer;
 import com.kimikevin.templatemethod.Worker;
@@ -48,21 +51,36 @@ public class Main {
 //        }
 //        plan.execute();
 
-        // meal template method demo
+//        // meal template method demo
+//        final Scanner scanner = new Scanner(System.in);
+//        final String order = scanner.nextLine();
+//        scanner.close();
+//        Meal meal = null;
+//        if ("Sandwich".equalsIgnoreCase(order)) {
+//            meal = new Sandwich();
+//            meal.doMeal();
+//        } else if ("Steak".equalsIgnoreCase(order)) {
+//            meal = new Steak();
+//            meal.doMeal();
+//        } else {
+//            System.out.println("Error!");
+//            System.exit(0);
+//        }
+
+        // social network template method demo
         final Scanner scanner = new Scanner(System.in);
-        final String order = scanner.nextLine();
+        final String type = scanner.nextLine();
         scanner.close();
-        Meal meal = null;
-        if ("Sandwich".equalsIgnoreCase(order)) {
-            meal = new Sandwich();
-            meal.doMeal();
-        } else if ("Steak".equalsIgnoreCase(order)) {
-            meal = new Steak();
-            meal.doMeal();
+        SocialNetwork network = null;
+        if ("facebook".equalsIgnoreCase(type)) {
+            network = new Facebook();
+        } else if ("instagram".equalsIgnoreCase(type)) {
+            network = new Instagram();
         } else {
             System.out.println("Error!");
             System.exit(0);
         }
+        network.connect();
 
     }
 }
