@@ -11,5 +11,8 @@ public class Main {
         double hexDouble = 0xf.8p3; // 15.5 x 2^3 = 124.0 Here 'f' is part of number f.8
         System.out.println(hexFloat);
         System.out.println(hexDouble);
+
+        int num = 034;
+        System.out.println(num);
     }
 }
