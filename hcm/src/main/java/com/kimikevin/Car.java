@@ -5,6 +5,10 @@ public class Car {
     private static int totalCars = 0;
     private String model;
 
+    public Car() {
+        this("Unknown");
+    }
+
     public Car(String model) {
         this.model = model;
         totalCars++;
