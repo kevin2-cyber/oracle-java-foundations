@@ -12,7 +12,7 @@ public class Main {
         System.out.println(hexFloat);
         System.out.println(hexDouble);
 
-        int num = 28;
+        int num = 034;
         System.out.println(num);
     }
 }
