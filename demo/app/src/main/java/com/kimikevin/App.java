@@ -583,6 +583,10 @@ public class App {
         Integer reference = Integer.valueOf(primitive); // boxing
         int anotherPrimitive = reference.intValue();    // unboxing
 
+        // NPE when unboxing null value
+        Long val = null;
+        long unboxed = val != null ? val : 0;
+
 
     }
 
