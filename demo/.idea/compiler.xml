@@ -3,6 +3,8 @@
   <component name="CompilerConfiguration">
     <bytecodeTargetLevel target="17">
       <module name="demo.baseUtilities" target="21" />
+      <module name="demo.baseUtilities.main" target="21" />
+      <module name="demo.baseUtilities.test" target="21" />
     </bytecodeTargetLevel>
   </component>
 </project>

@@ -578,7 +578,19 @@ public class App {
 //        System.out.println(LocalDateTime.of(LocalDate.of(2020, 1, 1), LocalTime.MIDNIGHT).minusSeconds(1));
 //        System.out.println(LocalDate.parse("2017-01-01").withMonth(11).withDayOfMonth(11));
 
+        // boxing and unboxing
+        int primitive = 100;
+        Integer reference = Integer.valueOf(primitive); // boxing
+        int anotherPrimitive = reference.intValue();    // unboxing
 
+        // NPE when unboxing null value
+        Long val = null;
+        long unboxed = val != null ? val : 0;
+
+        // NPE may be caused since auto-unboxing is involved
+        Integer n1 = 50;
+        Integer n2 = null;
+        Integer result = n1 / n2; // It throws an NPE
     }
 
 
