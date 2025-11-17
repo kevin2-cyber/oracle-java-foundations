@@ -587,7 +587,10 @@ public class App {
         Long val = null;
         long unboxed = val != null ? val : 0;
 
-
+        // NPE may be caused since auto-unboxing is involved
+        Integer n1 = 50;
+        Integer n2 = null;
+        Integer result = n1 / n2; // It throws an NPE
     }
 
 
