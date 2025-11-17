@@ -9,9 +9,9 @@
           <set>
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
-            <option value="$PROJECT_DIR$/baseUtilities" />
             <option value="$PROJECT_DIR$/myModuleName" />
             <option value="$PROJECT_DIR$/superUtilities" />
+            <option value="$PROJECT_DIR$/worldChanger" />
           </set>
         </option>
       </GradleProjectSettings>
