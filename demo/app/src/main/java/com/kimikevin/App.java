@@ -10,10 +10,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.text.NumberFormat;
 import java.text.ParseException;
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
+import java.time.*;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -578,25 +575,42 @@ public class App {
 //        System.out.println(LocalDateTime.of(LocalDate.of(2020, 1, 1), LocalTime.MIDNIGHT).minusSeconds(1));
 //        System.out.println(LocalDate.parse("2017-01-01").withMonth(11).withDayOfMonth(11));
 
-        // boxing and unboxing
-        int primitive = 100;
-        Integer reference = Integer.valueOf(primitive); // boxing
-        int anotherPrimitive = reference.intValue();    // unboxing
+//        // boxing and unboxing
+//        int primitive = 100;
+//        Integer reference = Integer.valueOf(primitive); // boxing
+//        int anotherPrimitive = reference.intValue();    // unboxing
+//
+//        // NPE when unboxing null value
+//        Long val = null;
+//        long unboxed = val != null ? val : 0;
+//
+//        // NPE may be caused since auto-unboxing is involved
+//        Integer n1 = 50;
+//        Integer n2 = null;
+//        Integer result = n1 / n2; // It throws an NPE
+//
+//        // null reference
+//        Long longReference = null;
+//        long longValue = longReference;
+//        System.out.println(longValue);
 
-        // NPE when unboxing null value
-        Long val = null;
-        long unboxed = val != null ? val : 0;
+        Scanner scanner = new Scanner(System.in);
+        int monthValue = scanner.nextInt();
+        String month = getMonth(monthValue);
+        System.out.println(month);
 
-        // NPE may be caused since auto-unboxing is involved
-        Integer n1 = 50;
-        Integer n2 = null;
-        Integer result = n1 / n2; // It throws an NPE
+    }
 
-        // null reference
-        Long longReference = null;
-        long longValue = longReference;
-        System.out.println(longValue);
-
+    public static String getMonth(int monthValue) {
+        return switch (monthValue) {
+            case 1 -> "January";
+            case 2 -> "February";
+            case 3 -> "March";
+            case 4 -> "April";
+            case 5 -> "May";
+            case 6 -> "June";
+            default -> "error!";
+        };
     }
 
 
