@@ -591,6 +591,12 @@ public class App {
         Integer n1 = 50;
         Integer n2 = null;
         Integer result = n1 / n2; // It throws an NPE
+
+        // null reference
+        Long longReference = null;
+        long longValue = longReference;
+        System.out.println(longValue);
+
     }
 
 
