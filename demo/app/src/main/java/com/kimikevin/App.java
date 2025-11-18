@@ -3,23 +3,8 @@
  */
 package com.kimikevin;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.text.NumberFormat;
-import java.text.ParseException;
-import java.time.Duration;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-
-import static com.kimikevin.UtilityFx.*;
+import com.kimikevin.generics.GenericType;
+import com.kimikevin.generics.ImmutableArray;
 
 public class App {
 
@@ -578,19 +563,58 @@ public class App {
 //        System.out.println(LocalDateTime.of(LocalDate.of(2020, 1, 1), LocalTime.MIDNIGHT).minusSeconds(1));
 //        System.out.println(LocalDate.parse("2017-01-01").withMonth(11).withDayOfMonth(11));
 
-        // boxing and unboxing
-        int primitive = 100;
-        Integer reference = Integer.valueOf(primitive); // boxing
-        int anotherPrimitive = reference.intValue();    // unboxing
+//        // boxing and unboxing
+//        int primitive = 100;
+//        Integer reference = Integer.valueOf(primitive); // boxing
+//        int anotherPrimitive = reference.intValue();    // unboxing
+//
+//        // NPE when unboxing null value
+//        Long val = null;
+//        long unboxed = val != null ? val : 0;
+//
+//        // NPE may be caused since auto-unboxing is involved
+//        Integer n1 = 50;
+//        Integer n2 = null;
+//        Integer result = n1 / n2; // It throws an NPE
+//
+//        // null reference
+//        Long longReference = null;
+//        long longValue = longReference;
+//        System.out.println(longValue);
 
-        // NPE when unboxing null value
-        Long val = null;
-        long unboxed = val != null ? val : 0;
+//        // month of year using strings
+//        Scanner scanner = new Scanner(System.in);
+//        int monthValue = scanner.nextInt();
+//        String month = getMonth(monthValue);
+//        System.out.println(month);
 
-        // NPE may be caused since auto-unboxing is involved
-        Integer n1 = 50;
-        Integer n2 = null;
-        Integer result = n1 / n2; // It throws an NPE
+        // creating objects of generic classes
+        GenericType<Integer> obj1 = new GenericType<>(10);
+        GenericType<String> obj2 = new GenericType<>("abc");
+
+        var obj3 = new GenericType<>("abc");
+
+        Integer number = obj1.get();
+        String string = obj2.get();
+
+        System.out.println(obj1.set(20));
+        System.out.println(obj2.set("def"));
+
+        System.out.println(number);
+        System.out.println(string);
+
+        // creating a custom generic array
+        var stringArray = new ImmutableArray<>(new String[]{"item1", "item2", "item3"});
+
+        for (int i=0; i< stringArray.length(); i++) {
+            System.out.println(stringArray.get(i) + " ");
+        }
+
+        var doubleArray = new ImmutableArray<>(new Double[]{1.03, 2.04});
+        for(int i = 0; i < doubleArray.length(); i++){
+            System.out.println(doubleArray.get(i));
+        }
+
     }
 
 
