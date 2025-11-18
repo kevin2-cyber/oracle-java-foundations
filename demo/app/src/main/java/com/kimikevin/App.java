@@ -600,6 +600,21 @@ public class App {
 //        String month = getMonth(monthValue);
 //        System.out.println(month);
 
+        // creating objects of generic classes
+        GenericType<Integer> obj1 = new GenericType<>(10);
+        GenericType<String> obj2 = new GenericType<>("abc");
+
+        var obj3 = new GenericType<>("abc");
+
+        Integer number = obj1.get();
+        String string = obj2.get();
+
+        System.out.println(obj1.set(20));
+        System.out.println(obj2.set("def"));
+
+        System.out.println(number);
+        System.out.println(string);
+
     }
 
 
