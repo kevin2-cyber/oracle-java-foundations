@@ -594,23 +594,12 @@ public class App {
 //        long longValue = longReference;
 //        System.out.println(longValue);
 
-        Scanner scanner = new Scanner(System.in);
-        int monthValue = scanner.nextInt();
-        String month = getMonth(monthValue);
-        System.out.println(month);
+//        // month of year using strings
+//        Scanner scanner = new Scanner(System.in);
+//        int monthValue = scanner.nextInt();
+//        String month = getMonth(monthValue);
+//        System.out.println(month);
 
-    }
-
-    public static String getMonth(int monthValue) {
-        return switch (monthValue) {
-            case 1 -> "January";
-            case 2 -> "February";
-            case 3 -> "March";
-            case 4 -> "April";
-            case 5 -> "May";
-            case 6 -> "June";
-            default -> "error!";
-        };
     }
 
 

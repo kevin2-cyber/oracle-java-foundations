@@ -132,6 +132,18 @@ public class UtilityFx {
         return LocalDateTime.of(year, month, day, hour, minute, second);
     }
 
+    public static String getMonth(int monthValue) {
+        return switch (monthValue) {
+            case 1 -> "January";
+            case 2 -> "February";
+            case 3 -> "March";
+            case 4 -> "April";
+            case 5 -> "May";
+            case 6 -> "June";
+            default -> "error!";
+        };
+    }
+
         private enum ThingsToTaste {
         PIZZA, BROCCOLI,
         STEAK, SUGAR,
