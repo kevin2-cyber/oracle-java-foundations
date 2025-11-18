@@ -1,4 +1,4 @@
-package com.kimikevin;
+package com.kimikevin.generics;
 
 public class GenericType<T> {
     /**

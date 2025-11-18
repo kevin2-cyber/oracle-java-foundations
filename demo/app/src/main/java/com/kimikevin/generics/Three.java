@@ -1,4 +1,4 @@
-package com.kimikevin;
+package com.kimikevin.generics;
 
 public class Three<T,U,V> {
     T t;

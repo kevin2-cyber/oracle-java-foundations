@@ -3,20 +3,8 @@
  */
 package com.kimikevin;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-import java.text.NumberFormat;
-import java.text.ParseException;
-import java.time.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.Scanner;
-
-import static com.kimikevin.UtilityFx.*;
+import com.kimikevin.generics.GenericType;
+import com.kimikevin.generics.ImmutableArray;
 
 public class App {
 
@@ -614,6 +602,18 @@ public class App {
 
         System.out.println(number);
         System.out.println(string);
+
+        // creating a custom generic array
+        var stringArray = new ImmutableArray<>(new String[]{"item1", "item2", "item3"});
+
+        for (int i=0; i< stringArray.length(); i++) {
+            System.out.println(stringArray.get(i) + " ");
+        }
+
+        var doubleArray = new ImmutableArray<>(new Double[]{1.03, 2.04});
+        for(int i = 0; i < doubleArray.length(); i++){
+            System.out.println(doubleArray.get(i));
+        }
 
     }
 
