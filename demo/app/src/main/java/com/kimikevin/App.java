@@ -7,6 +7,8 @@ import com.kimikevin.generics.GenericType;
 import com.kimikevin.generics.ImmutableArray;
 import com.kimikevin.generics.NonGenericClass;
 
+import java.util.EnumSet;
+
 public class App {
 
     public static void main(String[] args) {
@@ -636,20 +638,16 @@ public class App {
 //        System.out.println(instance5);
 //        System.out.println(instance6);
 
-        MyClass instance = new MyClass("Hello!");
-        System.out.println(instance.getT());
+//        MyClass instance = new MyClass("Hello!");
+//        System.out.println(instance.getT());
+
+
+        EnumSet<Direction> enumSet = EnumSet.allOf(Direction.class);
+        for (Direction direction : enumSet) {
+            System.out.println(direction.getShortCode());
+        }
 
     }
 }
 
-class MyClass<T> {
-    private T t;
 
-    public MyClass(T t) {
-        this.t = t;
-    }
-
-    public T getT() {
-        return t;
-    }
-}
