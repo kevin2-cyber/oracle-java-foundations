@@ -57,6 +57,8 @@ public class Main {
 
         System.out.println(adder100.apply(200));
         System.out.println(adder100.apply(300));
+
+        System.out.println(Operation.binaryOperator.applyAsInt(2,3));
     }
 
     private static void printResultOfLambda(Function<String, Integer> function) {
