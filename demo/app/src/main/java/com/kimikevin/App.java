@@ -5,6 +5,14 @@ package com.kimikevin;
 
 import com.kimikevin.generics.GenericType;
 import com.kimikevin.generics.ImmutableArray;
+import com.kimikevin.generics.NonGenericClass;
+import com.kimikevin.lambdas.Operation;
+import com.kimikevin.lambdas.Person;
+
+import java.time.LocalDateTime;
+import java.util.EnumSet;
+import java.util.Scanner;
+import java.util.function.Function;
 
 public class App {
 
@@ -588,35 +596,106 @@ public class App {
 //        String month = getMonth(monthValue);
 //        System.out.println(month);
 
-        // creating objects of generic classes
-        GenericType<Integer> obj1 = new GenericType<>(10);
-        GenericType<String> obj2 = new GenericType<>("abc");
+//        // creating objects of generic classes
+//        GenericType<Integer> obj1 = new GenericType<>(10);
+//        GenericType<String> obj2 = new GenericType<>("abc");
+//
+//        var obj3 = new GenericType<>("abc");
+//
+//        Integer number = obj1.get();
+//        String string = obj2.get();
+//
+//        System.out.println(obj1.set(20));
+//        System.out.println(obj2.set("def"));
+//
+//        System.out.println(number);
+//        System.out.println(string);
+//
+//        // creating a custom generic array
+//        var stringArray = new ImmutableArray<>(new String[]{"item1", "item2", "item3"});
+//
+//        for (int i=0; i< stringArray.length(); i++) {
+//            System.out.println(stringArray.get(i) + " ");
+//        }
+//
+//        var doubleArray = new ImmutableArray<>(new Double[]{1.03, 2.04});
+//        for(int i = 0; i < doubleArray.length(); i++){
+//            System.out.println(doubleArray.get(i));
+//        }
 
-        var obj3 = new GenericType<>("abc");
+//        // reusing code with Object
+//        NonGenericClass instance2 = new NonGenericClass("abc");
+//
+//        String str = (String) instance2.get();
+//        System.out.println(str);
+//
+//        NonGenericClass instance3 = new NonGenericClass(123);
+//        Integer int2 = (Integer) instance3.get();
+//        System.out.println(int2);
+//
+//        GenericType<String> instance4 = new GenericType<>("abc");
+//
+//        String str4 = instance4.get();
+//        System.out.println(str4);
+//
+//        GenericType instance5 = new GenericType("my-string");
+//        GenericType<Object> instance6 = new GenericType<>("my-string");
+//        System.out.println(instance5);
+//        System.out.println(instance6);
 
-        Integer number = obj1.get();
-        String string = obj2.get();
+//        MyClass instance = new MyClass("Hello!");
+//        System.out.println(instance.getT());
 
-        System.out.println(obj1.set(20));
-        System.out.println(obj2.set("def"));
 
-        System.out.println(number);
-        System.out.println(string);
+//        EnumSet<Direction> enumSet = EnumSet.allOf(Direction.class);
+//        for (Direction direction : enumSet) {
+//            System.out.println(direction.getShortCode());
+//        }
 
-        // creating a custom generic array
-        var stringArray = new ImmutableArray<>(new String[]{"item1", "item2", "item3"});
+//        Scanner scanner = new Scanner(System.in);
+//        int n = scanner.nextInt();
+//
+//        System.out.println(Operation.isDivisibleBy3And5.test(n));
 
-        for (int i=0; i< stringArray.length(); i++) {
-            System.out.println(stringArray.get(i) + " ");
-        }
+//        // days
+//        Scanner scanner = new Scanner(System.in);
+//        String input = scanner.nextLine();
+//        String[] parts = input.split(" ");
+//
+//        LocalDateTime dateTime = LocalDateTime.parse(parts[0]);
+//        int daysToAdd = Integer.parseInt(parts[1]);
+//        int hoursToSubtract = Integer.parseInt(parts[2]);
+//
+//        LocalDateTime newDateTime = dateTime.plusDays(daysToAdd).minusHours(hoursToSubtract);
+//
+//        System.out.println(newDateTime);
 
-        var doubleArray = new ImmutableArray<>(new Double[]{1.03, 2.04});
-        for(int i = 0; i < doubleArray.length(); i++){
-            System.out.println(doubleArray.get(i));
-        }
+//        System.out.println(Operation.max.apply(50,70));
+
+        // reference to a static method
+//        Function<Double, Double> sqrt = Math::sqrt;
+//        System.out.println(sqrt.apply(100.0d));
+//
+        // reference to an instance method of an object
+//        String whatGoingOnText = "What's going on here?";
+//        Function<String, Integer> indexWithinWhatsGoingOnText = whatGoingOnText::indexOf;
+//        System.out.println(indexWithinWhatsGoingOnText.apply("?"));
+//
+//        System.out.println(indexWithinWhatsGoingOnText.apply("going")); // 7
+//        System.out.println(indexWithinWhatsGoingOnText.apply("Hi"));    // -1
+
+        // reference to an instance method of an object of a particular type
+//        Function<Long, Double> converter = Long::doubleValue;
+//
+//        System.out.println(converter.apply(100L)); // the result is 100.0d
+//        System.out.println(converter.apply(200L)); // the result is 200.0d
+
+        // reference to a constructor
+        Function<String, Person> personGenerator = Person::new;
+        Person johnFoster = personGenerator.apply("John Foster"); // we have a John Foster object
+        System.out.println(johnFoster.name);
 
     }
-
-
-
 }
+
+
