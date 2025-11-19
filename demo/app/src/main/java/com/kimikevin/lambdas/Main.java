@@ -71,6 +71,8 @@ public class Main {
                                 "new".equals(method) ? String::new :
                                         "trim".equals(method) ? String::trim : String::intern);
         Arrays.stream(array).forEach(e -> System.out.print(e + " "));
+
+        System.out.println(PrefixSuffixOperator.operator.apply("Hi"));
     }
 
     private static void printResultOfLambda(Function<String, Integer> function) {
