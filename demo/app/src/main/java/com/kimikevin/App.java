@@ -11,6 +11,7 @@ import com.kimikevin.lambdas.Operation;
 import java.time.LocalDateTime;
 import java.util.EnumSet;
 import java.util.Scanner;
+import java.util.function.Function;
 
 public class App {
 
@@ -668,7 +669,13 @@ public class App {
 //
 //        System.out.println(newDateTime);
 
-        System.out.println(Operation.max.apply(50,70));
+//        System.out.println(Operation.max.apply(50,70));
+        Function<Double, Double> sqrt = Math::sqrt;
+        System.out.println(sqrt.apply(100.0d));
+
+        String whatGoingOnText = "What's going on here?";
+        Function<String, Integer> indexWithinWhatGoingOnText = whatGoingOnText::indexOf;
+        System.out.println(indexWithinWhatGoingOnText.apply("?"));
 
     }
 }
