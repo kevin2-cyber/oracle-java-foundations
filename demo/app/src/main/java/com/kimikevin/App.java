@@ -616,29 +616,40 @@ public class App {
 //            System.out.println(doubleArray.get(i));
 //        }
 
-        // reusing code with Object
-        NonGenericClass instance2 = new NonGenericClass("abc");
+//        // reusing code with Object
+//        NonGenericClass instance2 = new NonGenericClass("abc");
+//
+//        String str = (String) instance2.get();
+//        System.out.println(str);
+//
+//        NonGenericClass instance3 = new NonGenericClass(123);
+//        Integer int2 = (Integer) instance3.get();
+//        System.out.println(int2);
+//
+//        GenericType<String> instance4 = new GenericType<>("abc");
+//
+//        String str4 = instance4.get();
+//        System.out.println(str4);
+//
+//        GenericType instance5 = new GenericType("my-string");
+//        GenericType<Object> instance6 = new GenericType<>("my-string");
+//        System.out.println(instance5);
+//        System.out.println(instance6);
 
-        String str = (String) instance2.get();
-        System.out.println(str);
-
-        NonGenericClass instance3 = new NonGenericClass(123);
-        Integer int2 = (Integer) instance3.get();
-        System.out.println(int2);
-
-        GenericType<String> instance4 = new GenericType<>("abc");
-
-        String str4 = instance4.get();
-        System.out.println(str4);
-
-        GenericType instance5 = new GenericType("my-string");
-        GenericType<Object> instance6 = new GenericType<>("my-string");
-        System.out.println(instance5);
-        System.out.println(instance6);
-
+        MyClass instance = new MyClass("Hello!");
+        System.out.println(instance.getT());
 
     }
+}
 
+class MyClass<T> {
+    private T t;
 
+    public MyClass(T t) {
+        this.t = t;
+    }
 
+    public T getT() {
+        return t;
+    }
 }
