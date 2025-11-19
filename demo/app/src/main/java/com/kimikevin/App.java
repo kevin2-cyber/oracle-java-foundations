@@ -655,18 +655,20 @@ public class App {
 //
 //        System.out.println(Operation.isDivisibleBy3And5.test(n));
 
-        // days
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
-        String[] parts = input.split(" ");
+//        // days
+//        Scanner scanner = new Scanner(System.in);
+//        String input = scanner.nextLine();
+//        String[] parts = input.split(" ");
+//
+//        LocalDateTime dateTime = LocalDateTime.parse(parts[0]);
+//        int daysToAdd = Integer.parseInt(parts[1]);
+//        int hoursToSubtract = Integer.parseInt(parts[2]);
+//
+//        LocalDateTime newDateTime = dateTime.plusDays(daysToAdd).minusHours(hoursToSubtract);
+//
+//        System.out.println(newDateTime);
 
-        LocalDateTime dateTime = LocalDateTime.parse(parts[0]);
-        int daysToAdd = Integer.parseInt(parts[1]);
-        int hoursToSubtract = Integer.parseInt(parts[2]);
-
-        LocalDateTime newDateTime = dateTime.plusDays(daysToAdd).minusHours(hoursToSubtract);
-
-        System.out.println(newDateTime);
+        System.out.println(Operation.max.apply(50,70));
 
     }
 }

@@ -10,6 +10,9 @@ public class Main {
         // single line of lambda
         BiFunction<Integer, Integer, Boolean> isDivisible = (x, y) -> x % y == 0;
 
+        // method reference
+        BiFunction<Integer, Integer, Integer> max =Integer::max;
+
         // if it has only one argument, "()" are optional
         Function<Integer, Integer> adder1 = x -> x + 1;
 
@@ -28,6 +31,8 @@ public class Main {
 
         System.out.println(result4Div2);
         System.out.println(result3Div5);
+
+        System.out.println(max.apply(30,40));
 
         // returns the length of the string
         Function<String, Integer> f = String::length; // Function<String, Integer> f = s -> s.length();
