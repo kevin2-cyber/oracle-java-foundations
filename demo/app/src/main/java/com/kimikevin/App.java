@@ -6,8 +6,10 @@ package com.kimikevin;
 import com.kimikevin.generics.GenericType;
 import com.kimikevin.generics.ImmutableArray;
 import com.kimikevin.generics.NonGenericClass;
+import com.kimikevin.lambdas.Operation;
 
 import java.util.EnumSet;
+import java.util.Scanner;
 
 public class App {
 
@@ -646,6 +648,11 @@ public class App {
 //        for (Direction direction : enumSet) {
 //            System.out.println(direction.getShortCode());
 //        }
+
+        Scanner scanner = new Scanner(System.in);
+        int n = scanner.nextInt();
+
+        System.out.println(Operation.isDivisibleBy3And5.test(n));
 
     }
 }
