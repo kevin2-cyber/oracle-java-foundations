@@ -30,11 +30,11 @@ public class Main {
         System.out.println(result3Div5);
 
         // returns the length of the string
-        Function<String, Integer> f = s -> s.length();
+        Function<String, Integer> f = String::length; // Function<String, Integer> f = s -> s.length();
         printResultOfLambda(f);
 
         // passing without a reference
-        printResultOfLambda(s -> s.length());
+        printResultOfLambda(String::length); // replaced with a method reference
 
         // prints the number of digits: 4
         printResultOfLambda(s -> {
