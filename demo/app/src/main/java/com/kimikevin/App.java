@@ -5,6 +5,7 @@ package com.kimikevin;
 
 import com.kimikevin.generics.GenericType;
 import com.kimikevin.generics.ImmutableArray;
+import com.kimikevin.generics.NonGenericClass;
 
 public class App {
 
@@ -588,32 +589,53 @@ public class App {
 //        String month = getMonth(monthValue);
 //        System.out.println(month);
 
-        // creating objects of generic classes
-        GenericType<Integer> obj1 = new GenericType<>(10);
-        GenericType<String> obj2 = new GenericType<>("abc");
+//        // creating objects of generic classes
+//        GenericType<Integer> obj1 = new GenericType<>(10);
+//        GenericType<String> obj2 = new GenericType<>("abc");
+//
+//        var obj3 = new GenericType<>("abc");
+//
+//        Integer number = obj1.get();
+//        String string = obj2.get();
+//
+//        System.out.println(obj1.set(20));
+//        System.out.println(obj2.set("def"));
+//
+//        System.out.println(number);
+//        System.out.println(string);
+//
+//        // creating a custom generic array
+//        var stringArray = new ImmutableArray<>(new String[]{"item1", "item2", "item3"});
+//
+//        for (int i=0; i< stringArray.length(); i++) {
+//            System.out.println(stringArray.get(i) + " ");
+//        }
+//
+//        var doubleArray = new ImmutableArray<>(new Double[]{1.03, 2.04});
+//        for(int i = 0; i < doubleArray.length(); i++){
+//            System.out.println(doubleArray.get(i));
+//        }
 
-        var obj3 = new GenericType<>("abc");
+        // reusing code with Object
+        NonGenericClass instance2 = new NonGenericClass("abc");
 
-        Integer number = obj1.get();
-        String string = obj2.get();
+        String str = (String) instance2.get();
+        System.out.println(str);
 
-        System.out.println(obj1.set(20));
-        System.out.println(obj2.set("def"));
+        NonGenericClass instance3 = new NonGenericClass(123);
+        Integer int2 = (Integer) instance3.get();
+        System.out.println(int2);
 
-        System.out.println(number);
-        System.out.println(string);
+        GenericType<String> instance4 = new GenericType<>("abc");
 
-        // creating a custom generic array
-        var stringArray = new ImmutableArray<>(new String[]{"item1", "item2", "item3"});
+        String str4 = instance4.get();
+        System.out.println(str4);
 
-        for (int i=0; i< stringArray.length(); i++) {
-            System.out.println(stringArray.get(i) + " ");
-        }
+        GenericType instance5 = new GenericType("my-string");
+        GenericType<Object> instance6 = new GenericType<>("my-string");
+        System.out.println(instance5);
+        System.out.println(instance6);
 
-        var doubleArray = new ImmutableArray<>(new Double[]{1.03, 2.04});
-        for(int i = 0; i < doubleArray.length(); i++){
-            System.out.println(doubleArray.get(i));
-        }
 
     }
 
