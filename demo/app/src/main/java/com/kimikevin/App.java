@@ -642,10 +642,10 @@ public class App {
 //        System.out.println(instance.getT());
 
 
-        EnumSet<Direction> enumSet = EnumSet.allOf(Direction.class);
-        for (Direction direction : enumSet) {
-            System.out.println(direction.getShortCode());
-        }
+//        EnumSet<Direction> enumSet = EnumSet.allOf(Direction.class);
+//        for (Direction direction : enumSet) {
+//            System.out.println(direction.getShortCode());
+//        }
 
     }
 }
