@@ -7,6 +7,7 @@ import com.kimikevin.generics.GenericType;
 import com.kimikevin.generics.ImmutableArray;
 import com.kimikevin.generics.NonGenericClass;
 import com.kimikevin.lambdas.Operation;
+import com.kimikevin.lambdas.Person;
 
 import java.time.LocalDateTime;
 import java.util.EnumSet;
@@ -670,12 +671,29 @@ public class App {
 //        System.out.println(newDateTime);
 
 //        System.out.println(Operation.max.apply(50,70));
-        Function<Double, Double> sqrt = Math::sqrt;
-        System.out.println(sqrt.apply(100.0d));
 
-        String whatGoingOnText = "What's going on here?";
-        Function<String, Integer> indexWithinWhatGoingOnText = whatGoingOnText::indexOf;
-        System.out.println(indexWithinWhatGoingOnText.apply("?"));
+        // reference to a static method
+//        Function<Double, Double> sqrt = Math::sqrt;
+//        System.out.println(sqrt.apply(100.0d));
+//
+        // reference to an instance method of an object
+//        String whatGoingOnText = "What's going on here?";
+//        Function<String, Integer> indexWithinWhatsGoingOnText = whatGoingOnText::indexOf;
+//        System.out.println(indexWithinWhatsGoingOnText.apply("?"));
+//
+//        System.out.println(indexWithinWhatsGoingOnText.apply("going")); // 7
+//        System.out.println(indexWithinWhatsGoingOnText.apply("Hi"));    // -1
+
+        // reference to an instance method of an object of a particular type
+//        Function<Long, Double> converter = Long::doubleValue;
+//
+//        System.out.println(converter.apply(100L)); // the result is 100.0d
+//        System.out.println(converter.apply(200L)); // the result is 200.0d
+
+        // reference to a constructor
+        Function<String, Person> personGenerator = Person::new;
+        Person johnFoster = personGenerator.apply("John Foster"); // we have a John Foster object
+        System.out.println(johnFoster.name);
 
     }
 }
