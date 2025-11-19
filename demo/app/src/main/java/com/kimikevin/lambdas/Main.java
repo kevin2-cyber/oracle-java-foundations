@@ -44,6 +44,19 @@ public class Main {
             }
             return count;
         });
+
+        // closures
+        final String hello = "Hello, ";
+        Function<String, String> helloFunction = (name) -> hello + name;
+
+        System.out.println(helloFunction.apply("John"));
+        System.out.println(helloFunction.apply("Anastasia"));
+
+        int constant = 100;
+        Function<Integer, Integer> adder100 = x -> x + constant;
+
+        System.out.println(adder100.apply(200));
+        System.out.println(adder100.apply(300));
     }
 
     private static void printResultOfLambda(Function<String, Integer> function) {
