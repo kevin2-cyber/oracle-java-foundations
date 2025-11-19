@@ -8,6 +8,7 @@ import com.kimikevin.generics.ImmutableArray;
 import com.kimikevin.generics.NonGenericClass;
 import com.kimikevin.lambdas.Operation;
 
+import java.time.LocalDateTime;
 import java.util.EnumSet;
 import java.util.Scanner;
 
@@ -649,10 +650,23 @@ public class App {
 //            System.out.println(direction.getShortCode());
 //        }
 
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
+//        Scanner scanner = new Scanner(System.in);
+//        int n = scanner.nextInt();
+//
+//        System.out.println(Operation.isDivisibleBy3And5.test(n));
 
-        System.out.println(Operation.isDivisibleBy3And5.test(n));
+        // days
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        String[] parts = input.split(" ");
+
+        LocalDateTime dateTime = LocalDateTime.parse(parts[0]);
+        int daysToAdd = Integer.parseInt(parts[1]);
+        int hoursToSubtract = Integer.parseInt(parts[2]);
+
+        LocalDateTime newDateTime = dateTime.plusDays(daysToAdd).minusHours(hoursToSubtract);
+
+        System.out.println(newDateTime);
 
     }
 }
