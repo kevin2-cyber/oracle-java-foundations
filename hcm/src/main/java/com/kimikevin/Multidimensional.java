@@ -58,27 +58,57 @@ public class Multidimensional {
 //        }
 
 
-        // maximum element in a matrix of size n and m
+//        // maximum element in a matrix of size n and m
+//        Scanner scanner = new Scanner(System.in);
+//
+//        int n = scanner.nextInt();
+//        int m = scanner.nextInt();
+//
+//        int max = Integer.MIN_VALUE;
+//        int maxRow = 0;
+//        int maxCol = 0;
+//
+//        for (int i = 0; i < n; i++) {
+//            for (int j = 0; j < m; j++) {
+//                int val = scanner.nextInt();
+//                if (val > max) {
+//                    max = val;
+//                    maxRow = i;
+//                    maxCol = j;
+//                }
+//            }
+//        }
+//
+//        System.out.println( maxRow + " " + maxCol);
+
+        // swap the columns
         Scanner scanner = new Scanner(System.in);
 
         int n = scanner.nextInt();
         int m = scanner.nextInt();
 
-        int max = Integer.MIN_VALUE;
-        int maxRow = 0;
-        int maxCol = 0;
-
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < m; j++) {
-                int val = scanner.nextInt();
-                if (val > max) {
-                    max = val;
-                    maxRow = i;
-                    maxCol = j;
-                }
+        int[][] matrix = new int[n][m];
+        for (int k = 0; k < n; k++) {
+            for (int l = 0; l < m; l++) {
+                matrix[k][l] = scanner.nextInt();
             }
         }
 
-        System.out.println( maxRow + " " + maxCol);
+        int i = scanner.nextInt();
+        int j = scanner.nextInt();
+
+        for (int k = 0; k < n; k++) {
+            int temp = matrix[k][i];
+            matrix[k][i] = matrix[k][j];
+            matrix[k][j] = temp;
+        }
+
+        for (int k = 0; k < n; k++) {
+            for (int l = 0; l < m; l++) {
+                System.out.print(matrix[k][l] + " ");
+            }
+            System.out.println();
+        }
+
     }
 }
