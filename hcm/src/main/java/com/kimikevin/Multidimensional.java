@@ -1,6 +1,7 @@
 package com.kimikevin;
 
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Multidimensional {
     public static void main(String[] args) {
@@ -57,20 +58,27 @@ public class Multidimensional {
 //        }
 
 
-    }
+        // maximum element in a matrix of size n and m
+        Scanner scanner = new Scanner(System.in);
 
-    // maximum element in a matrix of size n and m
-    public static int getMaxElement(int[][] matrix, int n, int m) {
-      int maxElement = 0;
-      n = matrix.length;
-      for (int i = 0; i < n; i++) {
-          for (int j = 0; j < matrix[i].length; j++) {
-              m = matrix[i].length;
-              if (matrix[i][j] > maxElement) {
-                  maxElement = matrix[i][j];
-              }
-          }
-      }
-      return maxElement;
+        int n = scanner.nextInt();
+        int m = scanner.nextInt();
+
+        int max = Integer.MIN_VALUE;
+        int maxRow = 0;
+        int maxCol = 0;
+
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                int val = scanner.nextInt();
+                if (val > max) {
+                    max = val;
+                    maxRow = i;
+                    maxCol = j;
+                }
+            }
+        }
+
+        System.out.println( maxRow + " " + maxCol);
     }
 }
