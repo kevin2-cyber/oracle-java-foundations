@@ -110,32 +110,32 @@ public class Multidimensional {
 //            System.out.println();
 //        }
 
-        // rotate a rectangle array
-        Scanner scanner = new Scanner(System.in);
-
-        // Read dimensions
-        if (scanner.hasNextInt()) {
-            int n = scanner.nextInt();
-            int m = scanner.nextInt();
-
-            // Read the matrix
-            int[][] matrix = new int[n][m];
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < m; j++) {
-                    matrix[i][j] = scanner.nextInt();
-                }
-            }
-
-            // Print the rotated matrix
-            // Outer loop iterates through original columns (j becomes the new row index)
-            for (int j = 0; j < m; j++) {
-                // Inner loop iterates through original rows backwards (i becomes part of the new column logic)
-                for (int i = n - 1; i >= 0; i--) {
-                    System.out.print(matrix[i][j] + " ");
-                }
-                System.out.println();
-            }
-        }
+//        // rotate a rectangle array
+//        Scanner scanner = new Scanner(System.in);
+//
+//        // Read dimensions
+//        if (scanner.hasNextInt()) {
+//            int n = scanner.nextInt();
+//            int m = scanner.nextInt();
+//
+//            // Read the matrix
+//            int[][] matrix = new int[n][m];
+//            for (int i = 0; i < n; i++) {
+//                for (int j = 0; j < m; j++) {
+//                    matrix[i][j] = scanner.nextInt();
+//                }
+//            }
+//
+//            // Print the rotated matrix
+//            // Outer loop iterates through original columns (j becomes the new row index)
+//            for (int j = 0; j < m; j++) {
+//                // Inner loop iterates through original rows backwards (i becomes part of the new column logic)
+//                for (int i = n - 1; i >= 0; i--) {
+//                    System.out.print(matrix[i][j] + " ");
+//                }
+//                System.out.println();
+//            }
+//        }
 
     }
 }
