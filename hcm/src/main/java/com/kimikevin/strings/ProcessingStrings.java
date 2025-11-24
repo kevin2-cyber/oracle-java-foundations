@@ -92,10 +92,25 @@ public class ProcessingStrings {
 //        }
 //        System.out.println(modified);
 
-        Scanner scanner = new Scanner(System.in);
-        String input = scanner.nextLine();
+//        Scanner scanner = new Scanner(System.in);
+//        String input = scanner.nextLine();
+//
+//        System.out.println(isMagicalMirror(input));
 
-        System.out.println(isMagicalMirror(input));
+        // counting occurrences of a substring
+        Scanner scanner = new Scanner(System.in);
+        String string = scanner.nextLine();
+        String subString = scanner.nextLine();
+
+        int count = 0;
+        int index = 0;
+
+        while ((index = string.indexOf(subString, index)) != -1) {
+            count++;
+            index += subString.length();
+        }
+
+        System.out.println(count);
     }
 
     public static String isMagicalMirror(String input) {
