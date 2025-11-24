@@ -97,20 +97,32 @@ public class ProcessingStrings {
 //
 //        System.out.println(isMagicalMirror(input));
 
-        // counting occurrences of a substring
+//        // counting occurrences of a substring
+//        Scanner scanner = new Scanner(System.in);
+//        String string = scanner.nextLine();
+//        String subString = scanner.nextLine();
+//
+//        int count = 0;
+//        int index = 0;
+//
+//        while ((index = string.indexOf(subString, index)) != -1) {
+//            count++;
+//            index += subString.length();
+//        }
+//
+//        System.out.println(count);
+
+        // doubles the characters in a string
         Scanner scanner = new Scanner(System.in);
-        String string = scanner.nextLine();
-        String subString = scanner.nextLine();
+        String input = scanner.nextLine();
 
-        int count = 0;
-        int index = 0;
-
-        while ((index = string.indexOf(subString, index)) != -1) {
-            count++;
-            index += subString.length();
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < input.length(); i++) {
+            char c = input.charAt(i);
+            result.append(c).append(c);
         }
 
-        System.out.println(count);
+        System.out.println(result);
     }
 
     public static String isMagicalMirror(String input) {
