@@ -64,9 +64,9 @@ public class ProcessingStrings {
         // to reverse a string
         Scanner scanner = new Scanner(System.in);
         String sentence = scanner.nextLine();
-        String reversed = "";
+        StringBuilder reversed = new StringBuilder();
         for (int i = sentence.length() - 1; i >= 0; i--) {
-            reversed += sentence.charAt(i);
+            reversed.append(sentence.charAt(i));
         }
         System.out.println(reversed);
     }
