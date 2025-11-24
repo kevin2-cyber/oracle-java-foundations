@@ -47,18 +47,27 @@ public class ProcessingStrings {
 //        }
 
         // "This is a sentence with multiple words."
-        // finding the longest word in a sentence
+//        // finding the longest word in a sentence
+//        Scanner scanner = new Scanner(System.in);
+//        String sentence = scanner.nextLine();
+//        String longestWord = "";
+//        String[] words = sentence.split(" ");
+//        int longestWordLength = 0;
+//        for (String word : words) {
+//            if (word.length() > longestWordLength) {
+//                longestWordLength = word.length();
+//                longestWord = word;
+//            }
+//        }
+//        System.out.println(longestWord);
+
+        // to reverse a string
         Scanner scanner = new Scanner(System.in);
         String sentence = scanner.nextLine();
-        String longestWord = "";
-        String[] words = sentence.split(" ");
-        int longestWordLength = 0;
-        for (String word : words) {
-            if (word.length() > longestWordLength) {
-                longestWordLength = word.length();
-                longestWord = word;
-            }
+        String reversed = "";
+        for (int i = sentence.length() - 1; i >= 0; i--) {
+            reversed += sentence.charAt(i);
         }
-        System.out.println(longestWord);
+        System.out.println(reversed);
     }
 }
