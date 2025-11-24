@@ -70,26 +70,26 @@ public class ProcessingStrings {
 //        }
 //        System.out.println(reversed);
 
-        // modifying a string by changing letters and digits
-        Scanner scanner = new Scanner(System.in);
-        String sentence = scanner.nextLine();
-        StringBuilder modified = new StringBuilder();
-        for (int i = 0; i < sentence.length(); i++) {
-            char c = sentence.charAt(i);
-            if (Character.isDigit(c)) {
-                if (c == '0') {
-                    modified.append('9');
-                } else {
-                    modified.append((char) (c - 1));
-                }
-            } else if (Character.isLetter(c)) {
-                if (c == 'z') {
-                    modified.append('a');
-                } else {
-                    modified.append((char) (c + 1));
-                }
-            }
-        }
-        System.out.println(modified);
+//        // modifying a string by changing letters and digits
+//        Scanner scanner = new Scanner(System.in);
+//        String sentence = scanner.nextLine();
+//        StringBuilder modified = new StringBuilder();
+//        for (int i = 0; i < sentence.length(); i++) {
+//            char c = sentence.charAt(i);
+//            if (Character.isDigit(c)) {
+//                if (c == '0') {
+//                    modified.append('9');
+//                } else {
+//                    modified.append((char) (c - 1));
+//                }
+//            } else if (Character.isLetter(c)) {
+//                if (c == 'z') {
+//                    modified.append('a');
+//                } else {
+//                    modified.append((char) (c + 1));
+//                }
+//            }
+//        }
+//        System.out.println(modified);
     }
 }
