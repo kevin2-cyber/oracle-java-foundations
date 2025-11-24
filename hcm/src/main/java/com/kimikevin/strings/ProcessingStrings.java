@@ -91,5 +91,19 @@ public class ProcessingStrings {
 //            }
 //        }
 //        System.out.println(modified);
+
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+
+        System.out.println(isMagicalMirror(input));
+    }
+
+    public static String isMagicalMirror(String word) {
+        String reversed = new StringBuilder(word).reverse().toString();
+        if (word.equals(reversed)) {
+            return "The word is a palindrome.";
+        } else {
+            return "The word is not a palindrome.";
+        }
     }
 }
