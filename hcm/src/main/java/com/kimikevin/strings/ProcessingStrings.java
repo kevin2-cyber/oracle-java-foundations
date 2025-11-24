@@ -61,13 +61,35 @@ public class ProcessingStrings {
 //        }
 //        System.out.println(longestWord);
 
-        // to reverse a string
+//        // to reverse a string
+//        Scanner scanner = new Scanner(System.in);
+//        String sentence = scanner.nextLine();
+//        StringBuilder reversed = new StringBuilder();
+//        for (int i = sentence.length() - 1; i >= 0; i--) {
+//            reversed.append(sentence.charAt(i));
+//        }
+//        System.out.println(reversed);
+
+        // modifying a string by changing letters and digits
         Scanner scanner = new Scanner(System.in);
         String sentence = scanner.nextLine();
-        StringBuilder reversed = new StringBuilder();
-        for (int i = sentence.length() - 1; i >= 0; i--) {
-            reversed.append(sentence.charAt(i));
+        StringBuilder modified = new StringBuilder();
+        for (int i = 0; i < sentence.length(); i++) {
+            char c = sentence.charAt(i);
+            if (Character.isDigit(c)) {
+                if (c == '0') {
+                    modified.append('9');
+                } else {
+                    modified.append((char) (c - 1));
+                }
+            } else if (Character.isLetter(c)) {
+                if (c == 'z') {
+                    modified.append('a');
+                } else {
+                    modified.append((char) (c + 1));
+                }
+            }
         }
-        System.out.println(reversed);
+        System.out.println(modified);
     }
 }
