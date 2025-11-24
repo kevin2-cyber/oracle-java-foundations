@@ -38,5 +38,11 @@ public class ProcessingStrings {
         String text3 = "I'm gonna be a programmer";
         String[] parts3 = text3.split(" gonna be "); // {"I'm", "a programmer"}
         System.out.println(Arrays.toString(parts3));
+
+        // iterating over a string
+        String scientistName = "Isaac Newton";
+        for (int i = 0; i < scientistName.length(); i++) {
+            System.out.println(scientistName.charAt(i) + " ");
+        }
     }
 }
