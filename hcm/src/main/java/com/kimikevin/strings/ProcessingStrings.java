@@ -98,12 +98,16 @@ public class ProcessingStrings {
         System.out.println(isMagicalMirror(input));
     }
 
-    public static String isMagicalMirror(String word) {
-        String reversed = new StringBuilder(word).reverse().toString();
-        if (word.equals(reversed)) {
-            return "The word is a palindrome.";
+    public static String isMagicalMirror(String input) {
+        String reversed = "";
+        for (int i = input.length() - 1; i >= 0; i--) {
+            reversed += input.charAt(i);
+        }
+
+        if (input.equals(reversed)) {
+            return input + " is a palindrome";
         } else {
-            return "The word is not a palindrome.";
+            return input + " is not a palindrome";
         }
     }
 }
