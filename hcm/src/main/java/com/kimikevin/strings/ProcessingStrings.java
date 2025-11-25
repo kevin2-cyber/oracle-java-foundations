@@ -126,12 +126,12 @@ public class ProcessingStrings {
     }
 
     public static String isMagicalMirror(String input) {
-        String reversed = "";
+        StringBuilder reversed = new StringBuilder();
         for (int i = input.length() - 1; i >= 0; i--) {
-            reversed += input.charAt(i);
+            reversed.append(input.charAt(i));
         }
 
-        if (input.equals(reversed)) {
+        if (input.contentEquals(reversed)) {
             return input + " is a palindrome";
         } else {
             return input + " is not a palindrome";
