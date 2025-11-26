@@ -15,5 +15,9 @@ public class NoIndexOutOfBoundsExceptions {
         }  else {
             System.out.println(hardCodedArray[index]);
         }
+
+        char ch = '5';
+        int ch2 = 6;
+        System.out.printf("Marks for my assignment is %d%d",ch, ch2);
     }
 }
