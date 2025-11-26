@@ -1,4 +1,4 @@
-package com.kimikevin;
+package com.kimikevin.arrayexception;
 
 public class ArrayExceptions {
     public static void main(String[] args) {
