@@ -6,5 +6,7 @@ public class Main {
         cat.say();
         Pet dog = new Dog("Buddy", 3);
         dog.say();
+        System.out.println(args[0]);
+
     }
 }
