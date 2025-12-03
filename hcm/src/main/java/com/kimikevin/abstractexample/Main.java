@@ -38,7 +38,21 @@ public class Main {
 //        }
 //        System.out.println(greatestPrimeInRange);
 
-        System.out.println(modifyString("my password is 12345"));
+//        System.out.println(modifyString("my password is 12345"));
+//        boolean result = isPrime(5977);
+        fibonacci();
+    }
+
+    // cycles and iterations
+    public static void fibonacci() {
+        int prev = 0;
+        int current = 1;
+        for (int i = 0; i <= 25; i++) {
+            int swap = prev;
+            prev = current;
+            current += swap;
+            System.out.println(current);
+        }
     }
 
     // String modifier
@@ -71,7 +85,7 @@ public class Main {
 
     // for checking if a number is prime
     public static boolean isPrime(int number) {
-        for(int i = 2; i < number; i++) {
+        for(int i = 2; i < number / 2; i++) {
             if (number % i != 0) {
                 continue;
             } else {
