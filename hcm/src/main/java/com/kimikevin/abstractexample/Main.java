@@ -18,16 +18,38 @@ public class Main {
 //        int result = number2 ^ number1;
 //        System.out.println(result);
 
-        int fibonacciPrevious = 1;
-        int fibonacciCurrent = 1;
-        int fibonacciSum = fibonacciPrevious + fibonacciCurrent;
+//        int fibonacciPrevious = 1;
+//        int fibonacciCurrent = 1;
+//        int fibonacciSum = fibonacciPrevious + fibonacciCurrent;
+//
+//        while (true) {
+//            int temp = fibonacciPrevious + fibonacciCurrent;
+//            fibonacciPrevious = fibonacciCurrent;
+//            fibonacciCurrent = temp;
+//            fibonacciSum += fibonacciCurrent;
+//        }
 
-        while (true) {
-            int temp = fibonacciPrevious + fibonacciCurrent;
-            fibonacciPrevious = fibonacciCurrent;
-            fibonacciCurrent = temp;
-            fibonacciSum += fibonacciCurrent;
+        // primes and how to find them
+        int greatestPrimeInRange = 2;
+        for (int number = 2; number <= 1000; number++) {
+            if (isPrime(number) && number > greatestPrimeInRange) {
+                greatestPrimeInRange = number;
+            }
         }
+        System.out.println(greatestPrimeInRange);
+
+    }
+
+    // for checking if a number is prime
+    public static boolean isPrime(int number) {
+        for(int i = 2; i < number; i++) {
+            if (number % i != 0) {
+                continue;
+            } else {
+                return false;
+            }
+        }
+        return true;
     }
 
     // for debugging with an if-statement
