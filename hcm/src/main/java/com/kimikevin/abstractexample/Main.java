@@ -40,7 +40,21 @@ public class Main {
 
 //        System.out.println(modifyString("my password is 12345"));
 //        boolean result = isPrime(5977);
-        fibonacci();
+//        fibonacci();
+
+        int condition1 = 175892;
+        int condition2 = 98795;
+
+        if ((condition1 & condition2) > 35925) {
+            printXor(condition1 - condition2, condition1 | condition2);
+        } else {
+            printXor(condition1 ^ condition2, condition1 & condition2);
+        }
+    }
+
+    // calls debugging
+    public static void printXor(int condition1, int condition2) {
+        System.out.println(condition1 ^ condition2);
     }
 
     // cycles and iterations
