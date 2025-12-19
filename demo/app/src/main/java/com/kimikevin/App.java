@@ -699,15 +699,12 @@ public class App {
 //        System.out.println(johnFoster.name);
 
         // writing data to a file using the FileWriter class
-        try {
-            File file = new File("/Users/kimi-kevin/Downloads/hyperskill-45347-test-03.txt");
-            FileWriter writer = new FileWriter(file, true);
-
+        File file = new File("/Users/kimi-kevin/Downloads/hyperskill-45347-test-03.txt");
+        try(FileWriter writer = new FileWriter(file, true);) {
             writer.write("\nHello");
             writer.write("Java");
-            writer.close();
         } catch (IOException e) {
-            System.out.println("Error: " + e.getMessage());
+            System.out.printf("An exception occurred %s", e.getMessage());
         }
 
     }
