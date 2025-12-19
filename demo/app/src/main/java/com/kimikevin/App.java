@@ -12,6 +12,7 @@ import com.kimikevin.lambdas.Person;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.util.EnumSet;
 import java.util.Scanner;
@@ -698,11 +699,22 @@ public class App {
 //        Person johnFoster = personGenerator.apply("John Foster"); // we have a John Foster object
 //        System.out.println(johnFoster.name);
 
-        // writing data to a file using the FileWriter class
+//        // writing data to a file using the FileWriter class
+//        File file = new File("/Users/kimi-kevin/Downloads/hyperskill-45347-test-03.txt");
+//        try(FileWriter writer = new FileWriter(file, true)) {
+//            writer.write("\nHello");
+//            writer.write("Java");
+//        } catch (IOException e) {
+//            System.out.printf("An exception occurred %s", e.getMessage());
+//        }
+
+        // writing data to a file using the PrintWriter class
         File file = new File("/Users/kimi-kevin/Downloads/hyperskill-45347-test-03.txt");
-        try(FileWriter writer = new FileWriter(file, true);) {
-            writer.write("\nHello");
-            writer.write("Java");
+        try (PrintWriter printWriter = new PrintWriter(file)) {
+            printWriter.print("Hello");
+            printWriter.println("Java");
+            printWriter.println(123);
+            printWriter.printf("You have %d %s", 400, "gold coins");
         } catch (IOException e) {
             System.out.printf("An exception occurred %s", e.getMessage());
         }
