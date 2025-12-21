@@ -708,17 +708,32 @@ public class App {
 //            System.out.printf("An exception occurred %s", e.getMessage());
 //        }
 
-        // writing data to a file using the PrintWriter class
-        File file = new File("/Users/kimi-kevin/Downloads/hyperskill-45347-test-03.txt");
-        try (PrintWriter printWriter = new PrintWriter(file)) {
-            printWriter.print("Hello");
-            printWriter.println("Java");
-            printWriter.println(123);
-            printWriter.printf("You have %d %s", 400, "gold coins");
-        } catch (IOException e) {
-            System.out.printf("An exception occurred %s", e.getMessage());
-        }
+//        // writing data to a file using the PrintWriter class
+//        File file = new File("/Users/kimi-kevin/Downloads/hyperskill-45347-test-03.txt");
+//        try (PrintWriter printWriter = new PrintWriter(file)) {
+//            printWriter.print("Hello");
+//            printWriter.println("Java");
+//            printWriter.println(123);
+//            printWriter.printf("You have %d %s", 400, "gold coins");
+//        } catch (IOException e) {
+//            System.out.printf("An exception occurred %s", e.getMessage());
+//        }
+        String filePath = "/Users/kimi-kevin/Downloads/hyperskill-45347-test-03.txt";
+        printRangeToFile(filePath, false, 0, 10);
+        printRangeToFile(filePath, true, 10, 20);
+        printRangeToFile(filePath, false, 20, 30);
 
+    }
+
+    // what does a file contain
+    public static void printRangeToFile(String filePath, boolean append, int start, int end) {
+        try(PrintWriter writer = new PrintWriter(new FileWriter(filePath, append))) {
+            for (int i = start; i < end; i++) {
+                writer.println(i);
+            }
+        } catch (IOException e) {
+            System.err.println("Error writing to file: " + e.getMessage());
+        }
     }
 }
 
