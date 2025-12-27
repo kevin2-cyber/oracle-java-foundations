@@ -13,7 +13,6 @@ public class MethodReference {
                 .toArray();
         BiFunction<Integer, Integer, Integer> comparator = null;
 
-        // write your code here
         comparator = isAscending ? Math::min : Math::max;
 
         sort(array, comparator);
