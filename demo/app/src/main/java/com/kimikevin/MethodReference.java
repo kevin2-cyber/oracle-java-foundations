@@ -11,10 +11,7 @@ public class MethodReference {
         int[] array = Arrays.stream(scanner.nextLine().split(" "))
                 .mapToInt(Integer::parseInt)
                 .toArray();
-        BiFunction<Integer, Integer, Integer> comparator;
-
-        comparator = isAscending ? Math::min : Math::max;
-
+        BiFunction<Integer, Integer, Integer> comparator = isAscending ? Math::min : Math::max;
         sort(array, comparator);
         Arrays.stream(array).forEach(e -> System.out.print(e + " "));
     }
