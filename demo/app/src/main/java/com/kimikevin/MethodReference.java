@@ -15,6 +15,7 @@ public class MethodReference {
         BiFunction<Integer, Integer, Integer> comparator = isAscending ? Math::min : Math::max;
 
         sort(array, comparator);
+
         Arrays.stream(array).forEach(e -> System.out.print(e + " "));
     }
 
