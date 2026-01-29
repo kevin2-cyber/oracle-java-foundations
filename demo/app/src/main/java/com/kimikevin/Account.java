@@ -3,6 +3,9 @@ package com.kimikevin;
 public class Account {
     private long balance = 0;
 
+    /**
+     * Deposits amount; throws on invalid or excessive input
+     */
     public void deposit(long amount) {
         if (amount <= 0) {
             throw new IllegalArgumentException("Incorrect amount " + amount);

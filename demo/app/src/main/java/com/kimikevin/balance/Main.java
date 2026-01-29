@@ -3,6 +3,9 @@ package com.kimikevin.balance;
 import java.util.Scanner;
 
 public class Main {
+    /**
+     * Reads input; updates and prints account balance
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 

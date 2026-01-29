@@ -5,6 +5,9 @@ import java.util.Scanner;
 import java.util.function.BiFunction;
 
 public class MethodReference {
+    /**
+     * Reads input; sorts array; prints space‑separated result
+     */
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         boolean isAscending = "ascending".equals(scanner.nextLine());
