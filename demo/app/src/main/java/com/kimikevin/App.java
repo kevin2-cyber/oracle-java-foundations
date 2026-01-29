@@ -727,6 +727,7 @@ public class App {
 
     // what does a file contain
     public static void printRangeToFile(String filePath, boolean append, int start, int end) {
+        // Writes range of numbers to file; handles errors
         try(PrintWriter writer = new PrintWriter(new FileWriter(filePath, append))) {
             for (int i = start; i < end; i++) {
                 writer.println(i);
