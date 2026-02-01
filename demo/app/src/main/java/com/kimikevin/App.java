@@ -18,7 +18,7 @@ import java.util.function.Function;
 
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // throwing a runtime exception(Throwable)
 //        RuntimeException exception = new RuntimeException("Something went wrong");
 //        throw exception;
@@ -721,20 +721,32 @@ public class App {
 //        printRangeToFile(filePath, true, 10, 20);
 //        printRangeToFile(filePath, false, 20, 30);
 
-        // Reads file; prints first two chars; handles exceptions
-        try(Reader reader = new FileReader("/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/file.txt")) {
-            char first = (char) reader.read();
-            char second =  (char) reader.read();
+//        // Reads file; prints first two chars; handles exceptions
+//        try(Reader reader = new FileReader("/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/file.txt")) {
+//            char first = (char) reader.read();
+//            char second =  (char) reader.read();
+//
+//            char[] others = new char[12];
+//            int number = reader.read(others);
+//
+//            System.out.println(first);
+//            System.out.println(second);
+//            System.out.println(Arrays.toString(others));
+//        } catch (IOException exception) {
+//            System.err.println(exception.getMessage());
+//        }
 
-            char[] others = new char[12];
-            int number = reader.read(others);
+        FileReader reader = new FileReader("/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/file.txt");
 
-            System.out.println(first);
-            System.out.println(second);
-            System.out.println(Arrays.toString(others));
-        } catch (IOException exception) {
-            System.err.println(exception.getMessage());
+        // Reads and prints file content; handles exceptions
+        int charAsNumber = reader.read();
+        while (charAsNumber != -1) {
+            char character = (char) charAsNumber;
+            System.out.print(character);
+            charAsNumber = reader.read();
         }
+
+        reader.close();
     }
 
 }
