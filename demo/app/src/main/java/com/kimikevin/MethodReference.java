@@ -24,6 +24,7 @@ public class MethodReference {
 
     public static void sort(int[] array, BiFunction<Integer, Integer, Integer> comparator) {
         for (int i = 0; i < array.length - 1; i++) {
+            // Iterates pairs; swaps when comparison favors the right element
             for (int j = 0; j < array.length - i - 1; j++) {
                 if (comparator.apply(array[j], array[j + 1]) == array[j + 1]) {
                     int temp = array[j];

@@ -19,7 +19,7 @@ public class Siblings {
         while (files.size() != 0) {
             File file = files.pop();
 
-            // Recursively deletes files modified after threshold date
+            // Recursively deletes files modified after the threshold date
             if (file.isDirectory()) {
                 if (file.lastModified() > thresholdDate) {
                     file.delete();
