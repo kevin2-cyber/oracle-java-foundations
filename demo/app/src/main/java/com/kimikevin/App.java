@@ -9,10 +9,7 @@ import com.kimikevin.generics.NonGenericClass;
 import com.kimikevin.lambdas.Operation;
 import com.kimikevin.lambdas.Person;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.time.LocalDateTime;
 import java.util.EnumSet;
 import java.util.Scanner;
@@ -718,24 +715,27 @@ public class App {
 //        } catch (IOException e) {
 //            System.out.printf("An exception occurred %s", e.getMessage());
 //        }
-        String filePath = "/Users/kimi-kevin/Downloads/hyperskill-45347-test-03.txt";
-        printRangeToFile(filePath, false, 0, 10);
-        printRangeToFile(filePath, true, 10, 20);
-        printRangeToFile(filePath, false, 20, 30);
+//        String filePath = "/Users/kimi-kevin/Downloads/hyperskill-45347-test-03.txt";
+//        printRangeToFile(filePath, false, 0, 10);
+//        printRangeToFile(filePath, true, 10, 20);
+//        printRangeToFile(filePath, false, 20, 30);
 
-    }
+        // Reads file; prints first two chars; handles exceptions
+        try(Reader reader = new FileReader("/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/file.txt")) {
+            char first = (char) reader.read();
+            char second =  (char) reader.read();
 
-    // what does a file contain
-    public static void printRangeToFile(String filePath, boolean append, int start, int end) {
-        // Writes range of numbers to file; handles errors
-        try(PrintWriter writer = new PrintWriter(new FileWriter(filePath, append))) {
-            for (int i = start; i < end; i++) {
-                writer.println(i);
-            }
-        } catch (IOException e) {
-            System.err.println("Error writing to file: " + e.getMessage());
+            char[] others = new char[12];
+            int number = reader.read(others);
+
+            System.out.println(first);
+            System.out.println(second);
+            System.out.println(number);
+        } catch (IOException exception) {
+            System.err.println(exception.getMessage());
         }
     }
+
 }
 
 
