@@ -11,6 +11,7 @@ import com.kimikevin.lambdas.Person;
 
 import java.io.*;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.Scanner;
 import java.util.function.Function;
@@ -730,7 +731,7 @@ public class App {
 
             System.out.println(first);
             System.out.println(second);
-            System.out.println(number);
+            System.out.println(Arrays.toString(others));
         } catch (IOException exception) {
             System.err.println(exception.getMessage());
         }
