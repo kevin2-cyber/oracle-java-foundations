@@ -736,17 +736,29 @@ public class App {
 //            System.err.println(exception.getMessage());
 //        }
 
-        FileReader reader = new FileReader("/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/file.txt");
+//        FileReader reader = new FileReader("/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/file.txt");
+//
+//        // Reads and prints file content; handles exceptions
+//        int charAsNumber = reader.read();
+//        while (charAsNumber != -1) {
+//            char character = (char) charAsNumber;
+//            System.out.print(character);
+//            charAsNumber = reader.read();
+//        }
+//
+//        reader.close();
 
-        // Reads and prints file content; handles exceptions
-        int charAsNumber = reader.read();
-        while (charAsNumber != -1) {
-            char character = (char) charAsNumber;
-            System.out.print(character);
-            charAsNumber = reader.read();
+        FileInputStream inputStream = new FileInputStream("/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/file.txt");
+
+        byte[] bytes = new byte[5];
+        int numberOfBytes = inputStream.read(bytes);
+        System.out.println(numberOfBytes);
+        for (byte aByte : bytes) {
+            System.out.println((char) aByte);
         }
+        System.out.println(Arrays.toString(bytes));
 
-        reader.close();
+        inputStream.close();
     }
 
 }
