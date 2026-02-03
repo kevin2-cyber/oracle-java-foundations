@@ -9,18 +9,16 @@ import com.kimikevin.generics.NonGenericClass;
 import com.kimikevin.lambdas.Operation;
 import com.kimikevin.lambdas.Person;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.*;
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.EnumSet;
 import java.util.Scanner;
 import java.util.function.Function;
 
 public class App {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         // throwing a runtime exception(Throwable)
 //        RuntimeException exception = new RuntimeException("Something went wrong");
 //        throw exception;
@@ -718,24 +716,51 @@ public class App {
 //        } catch (IOException e) {
 //            System.out.printf("An exception occurred %s", e.getMessage());
 //        }
-        String filePath = "/Users/kimi-kevin/Downloads/hyperskill-45347-test-03.txt";
-        printRangeToFile(filePath, false, 0, 10);
-        printRangeToFile(filePath, true, 10, 20);
-        printRangeToFile(filePath, false, 20, 30);
+//        String filePath = "/Users/kimi-kevin/Downloads/hyperskill-45347-test-03.txt";
+//        printRangeToFile(filePath, false, 0, 10);
+//        printRangeToFile(filePath, true, 10, 20);
+//        printRangeToFile(filePath, false, 20, 30);
 
-    }
+//        // Reads file; prints first two chars; handles exceptions
+//        try(Reader reader = new FileReader("/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/file.txt")) {
+//            char first = (char) reader.read();
+//            char second =  (char) reader.read();
+//
+//            char[] others = new char[12];
+//            int number = reader.read(others);
+//
+//            System.out.println(first);
+//            System.out.println(second);
+//            System.out.println(Arrays.toString(others));
+//        } catch (IOException exception) {
+//            System.err.println(exception.getMessage());
+//        }
 
-    // what does a file contain
-    public static void printRangeToFile(String filePath, boolean append, int start, int end) {
-        // Writes range of numbers to file; handles errors
-        try(PrintWriter writer = new PrintWriter(new FileWriter(filePath, append))) {
-            for (int i = start; i < end; i++) {
-                writer.println(i);
-            }
-        } catch (IOException e) {
-            System.err.println("Error writing to file: " + e.getMessage());
+//        FileReader reader = new FileReader("/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/file.txt");
+//
+//        // Reads and prints file content; handles exceptions
+//        int charAsNumber = reader.read();
+//        while (charAsNumber != -1) {
+//            char character = (char) charAsNumber;
+//            System.out.print(character);
+//            charAsNumber = reader.read();
+//        }
+//
+//        reader.close();
+
+        FileInputStream inputStream = new FileInputStream("/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/file.txt");
+
+        byte[] bytes = new byte[5];
+        int numberOfBytes = inputStream.read(bytes);
+        System.out.println(numberOfBytes);
+        for (byte aByte : bytes) {
+            System.out.println((char) aByte);
         }
+        System.out.println(Arrays.toString(bytes));
+
+        inputStream.close();
     }
+
 }
 
 
