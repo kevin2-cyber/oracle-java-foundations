@@ -14,17 +14,14 @@ public class TryWithMain {
     }
 
     static void readFile() throws IOException {
-        Reader reader = null;
-        try {
-            reader = new FileReader("/Users/thomas/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/file.txt");
-            throw new RuntimeException("Something went wrong");
-        } finally {
-           try {
-               assert reader != null;
-               reader.close();
-           } catch (Exception e) {
-               System.err.println("Failed to close reader: " + e.getMessage());
-           }
+        try(Reader reader = new FileReader("/Users/thomas/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/file.txt")) {
+           int data = reader.read();
+              while(data != -1) {
+                System.out.print((char) data);
+                data = reader.read();
+              }
+        } catch (IOException e) {
+            System.err.println(e.getMessage());
         }
     }
 }
