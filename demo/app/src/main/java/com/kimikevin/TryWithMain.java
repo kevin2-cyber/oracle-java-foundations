@@ -1,13 +1,19 @@
 package com.kimikevin;
 
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.Reader;
+import java.io.*;
 
 public class TryWithMain {
     public static void main(String[] args) {
-        try {
-            readFile();
+//        try {
+//            readFile();
+//        } catch (IOException e) {
+//            System.err.println(e.getMessage());
+//        }
+
+        String language;
+        try (BufferedReader buffReader = new BufferedReader(new InputStreamReader(System.in))) {
+            language = buffReader.readLine();
+            System.out.println("I'm learning " + language);
         } catch (IOException e) {
             System.err.println(e.getMessage());
         }
