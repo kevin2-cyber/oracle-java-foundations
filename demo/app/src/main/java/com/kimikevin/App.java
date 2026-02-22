@@ -10,15 +10,25 @@ import com.kimikevin.lambdas.Operation;
 import com.kimikevin.lambdas.Person;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.time.LocalDateTime;
-import java.util.Arrays;
-import java.util.EnumSet;
-import java.util.Scanner;
+import java.util.*;
 import java.util.function.Function;
+
+import static com.kimikevin.UtilityFx.findFirstIndexOfMax;
 
 public class App {
 
     public static void main(String[] args) throws IOException {
+        Properties properties = new Properties();
+        try(InputStream input = Files.newInputStream(Paths.get(".env"))) {
+            properties.load(input);
+        } catch (Exception e) {
+            System.err.println("Error loading .env file: " + e.getMessage());
+        }
+        String filePath = properties.getProperty("FILE_PATH");
+        String dataset = properties.getProperty("READ_FILE_PATH");
         // throwing a runtime exception(Throwable)
 //        RuntimeException exception = new RuntimeException("Something went wrong");
 //        throw exception;
@@ -252,11 +262,8 @@ public class App {
 //        }
 
 //        // The sum of numbers in a file
-//        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/dataset.txt";
-//
-//
 //        try{
-//           Scanner scanner = new Scanner(new File(pathToFile));
+//           Scanner scanner = new Scanner(new File(dataset));
 //            scanner.useDelimiter("[,\\s]+");
 //           int sum = 0;
 //           while (scanner.hasNext()) {
@@ -271,10 +278,9 @@ public class App {
 //        }
 
 //        // Find the greatest number in a file
-//        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/dataset.txt";
 //
 //        try {
-//            Scanner scanner = new Scanner(new File(pathToFile));
+//            Scanner scanner = new Scanner(new File(dataset));
 //            scanner.useDelimiter("[,\\s]+");
 //
 //            ArrayList<Integer> list = new ArrayList<>();
@@ -291,11 +297,10 @@ public class App {
 //        }
 
 //        // World population
-//        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/dataset.txt";
 //        String year = "";
 //        long diffMax = 0;
 //        long temp = 0;
-//        File file = new File(pathToFile);
+//        File file = new File(dataset);
 //
 //
 //        try (Scanner scanner = new Scanner(file)){
@@ -317,17 +322,15 @@ public class App {
 //        }
 //        System.out.println("Maximum growth in: " + year);
 
-//        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/java/com/kimikevin/file.txt";
-//        try (Scanner scanner = new Scanner(new File(pathToFile))) {
+//        try (Scanner scanner = new Scanner(new File(filePath))) {
 //            System.out.println(scanner.nextInt());
 //        } catch (FileNotFoundException e) {
 //            System.out.println(e.getMessage());
 //        }
 
 //        // even counter
-//        String pathToFile = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/dataset.txt";
 //        int evenCounter = 0;
-//        File file = new File(pathToFile);
+//        File file = new File(dataset);
 //
 //        try (Scanner scanner = new Scanner(file)){
 //            int temp = scanner.nextInt();
@@ -722,7 +725,7 @@ public class App {
 //        printRangeToFile(filePath, false, 20, 30);
 
 //        // Reads file; prints first two chars; handles exceptions
-//        try(Reader reader = new FileReader("/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/file.txt")) {
+//        try(Reader reader = new FileReader(filePath)) {
 //            char first = (char) reader.read();
 //            char second =  (char) reader.read();
 //
@@ -736,7 +739,7 @@ public class App {
 //            System.err.println(exception.getMessage());
 //        }
 
-//        FileReader reader = new FileReader("/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/file.txt");
+//        FileReader reader = new FileReader(filePath);
 //
 //        // Reads and prints file content; handles exceptions
 //        int charAsNumber = reader.read();
@@ -747,18 +750,17 @@ public class App {
 //        }
 //
 //        reader.close();
-
-        FileInputStream inputStream = new FileInputStream("/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/file.txt");
-
-        byte[] bytes = new byte[5];
-        int numberOfBytes = inputStream.read(bytes);
-        System.out.println(numberOfBytes);
-        for (byte aByte : bytes) {
-            System.out.println((char) aByte);
-        }
-        System.out.println(Arrays.toString(bytes));
-
-        inputStream.close();
+//
+//        FileInputStream inputStream = new FileInputStream(filePath);
+//        byte[] bytes = new byte[5];
+//        int numberOfBytes = inputStream.read(bytes);
+//        System.out.println(numberOfBytes);
+//        for (byte aByte : bytes) {
+//            System.out.println((char) aByte);
+//        }
+//        System.out.println(Arrays.toString(bytes));
+//
+//        inputStream.close();
     }
 
 }
