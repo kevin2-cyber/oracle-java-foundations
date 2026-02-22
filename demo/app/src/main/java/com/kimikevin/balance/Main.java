@@ -24,9 +24,9 @@ public class Main {
     }
 
     /**
-     * The method change the balance of the given account according to an operation.
-     * @param account
-     * @param operation
+     * The method changes the balance of the given account according to an operation.
+     * @param account account to change balance
+     * @param operation operation to change balance
      * @return true if the balance has changed, otherwise - false.
      */
     public static boolean changeBalance(Account account, Operation operation, Long sum) {
