@@ -3,12 +3,22 @@ package com.kimikevin.streams;
 import java.io.CharArrayWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Properties;
 
 public class WriterMain {
     public static void main(String[] args) {
+        Properties properties = new Properties();
+        try(InputStream input = Files.newInputStream(Paths.get(".env"))) {
+            properties.load(input);
+        } catch (Exception e) {
+            System.err.println("Error loading .env file: " + e.getMessage());
+        }
 
-        String fileOne = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/business_card_1.txt";
-        String fileTwo = "/Users/kimi-kevin/Desktop/github/oracle-java-foundations/demo/app/src/main/resources/business_card_2.txt";
+        String fileOne = properties.getProperty("BUSINESS_CARD_1");
+        String fileTwo = properties.getProperty("BUSINESS_CARD_2");
         // Writes contact details to files; handles exceptions
         try (CharArrayWriter contactWriter = new CharArrayWriter(); FileWriter bc1 = new FileWriter(fileOne, true);
              FileWriter bc2 = new FileWriter(fileTwo, true)) {
