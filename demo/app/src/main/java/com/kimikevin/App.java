@@ -21,14 +21,14 @@ import static com.kimikevin.UtilityFx.findFirstIndexOfMax;
 public class App {
 
     public static void main(String[] args) throws IOException {
-        Properties properties = new Properties();
-        try(InputStream input = Files.newInputStream(Paths.get(".env"))) {
-            properties.load(input);
-        } catch (Exception e) {
-            System.err.println("Error loading .env file: " + e.getMessage());
-        }
-        String filePath = properties.getProperty("FILE_PATH");
-        String dataset = properties.getProperty("READ_FILE_PATH");
+//        Properties properties = new Properties();
+//        try(InputStream input = Files.newInputStream(Paths.get(".env"))) {
+//            properties.load(input);
+//        } catch (Exception e) {
+//            System.err.println("Error loading .env file: " + e.getMessage());
+//        }
+//        String filePath = properties.getProperty("FILE_PATH");
+//        String dataset = properties.getProperty("READ_FILE_PATH");
         // throwing a runtime exception(Throwable)
 //        RuntimeException exception = new RuntimeException("Something went wrong");
 //        throw exception;
