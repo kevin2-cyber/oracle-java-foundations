@@ -21,12 +21,12 @@ import static com.kimikevin.UtilityFx.findFirstIndexOfMax;
 public class App {
 
     public static void main(String[] args) throws IOException {
-//        Properties properties = new Properties();
-//        try(InputStream input = Files.newInputStream(Paths.get(".env"))) {
-//            properties.load(input);
-//        } catch (Exception e) {
-//            System.err.println("Error loading .env file: " + e.getMessage());
-//        }
+        Properties properties = new Properties();
+        try(InputStream input = Files.newInputStream(Paths.get(".env"))) {
+            properties.load(input);
+        } catch (Exception e) {
+            System.err.println("Error loading .env file: " + e.getMessage());
+        }
 //        String filePath = properties.getProperty("FILE_PATH");
 //        String dataset = properties.getProperty("READ_FILE_PATH");
         // throwing a runtime exception(Throwable)
@@ -761,6 +761,27 @@ public class App {
 //        System.out.println(Arrays.toString(bytes));
 //
 //        inputStream.close();
+
+        String filePath = properties.getProperty("DT_SET");
+
+        FileReader reader = new FileReader(filePath);
+        BufferedReader bufferedReader = new BufferedReader(reader);
+        String line;
+        int count = 0;
+        while ((line = bufferedReader.readLine()) != null) {
+           String[] parts = line.trim().split("\\s+");
+           for (String part : parts) {
+               if (!part.isEmpty()) {
+                   int number = Integer.parseInt(part);
+                   if (number >= 9999) {
+                       count++;
+                   }
+               }
+           }
+        }
+        System.out.println("Total lines read: " + count);
+        bufferedReader.close();
+        reader.close();
     }
 
 }
