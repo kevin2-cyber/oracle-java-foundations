@@ -1,4 +1,4 @@
-package com.kimikevin;
+package com.kimikevin.abstraction;
 
 public interface Interface {
     int INT_CONSTANT = 0; // it's a constant, the same as public static

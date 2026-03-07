@@ -1,6 +1,6 @@
-package com.kimikevin;
+package com.kimikevin.abstraction;
 
-public class ClassImpl implements Interface{
+public class ClassImpl implements Interface {
     @Override
     public void instanceMethod1() {
         System.out.println("Class: instance method1");

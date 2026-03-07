@@ -3,20 +3,13 @@
  */
 package com.kimikevin;
 
-import com.kimikevin.generics.GenericType;
-import com.kimikevin.generics.ImmutableArray;
-import com.kimikevin.generics.NonGenericClass;
-import com.kimikevin.lambdas.Operation;
-import com.kimikevin.lambdas.Person;
+import com.kimikevin.abstraction.ClassImpl;
+import com.kimikevin.abstraction.Interface;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.time.LocalDateTime;
 import java.util.*;
-import java.util.function.Function;
-
-import static com.kimikevin.UtilityFx.findFirstIndexOfMax;
 
 public class App {
 
@@ -783,11 +776,6 @@ public class App {
 //        System.out.println("Total lines read: " + count);
 //        bufferedReader.close();
 //        reader.close();
-
-        Interface instance = new ClassImpl();
-        instance.instanceMethod1();
-        instance.instanceMethod2();
-        instance.defaultMethod();
 
     }
 
