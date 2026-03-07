@@ -762,26 +762,33 @@ public class App {
 //
 //        inputStream.close();
 
-        String filePath = properties.getProperty("DT_SET");
+//        // counts numbers that are greater than or equal to 9999.
+//        String filePath = properties.getProperty("DT_SET");
+//
+//        FileReader reader = new FileReader(filePath);
+//        BufferedReader bufferedReader = new BufferedReader(reader);
+//        String line;
+//        int count = 0;
+//        while ((line = bufferedReader.readLine()) != null) {
+//           String[] parts = line.trim().split("\\s+");
+//           for (String part : parts) {
+//               if (!part.isEmpty()) {
+//                   int number = Integer.parseInt(part);
+//                   if (number >= 9999) {
+//                       count++;
+//                   }
+//               }
+//           }
+//        }
+//        System.out.println("Total lines read: " + count);
+//        bufferedReader.close();
+//        reader.close();
 
-        FileReader reader = new FileReader(filePath);
-        BufferedReader bufferedReader = new BufferedReader(reader);
-        String line;
-        int count = 0;
-        while ((line = bufferedReader.readLine()) != null) {
-           String[] parts = line.trim().split("\\s+");
-           for (String part : parts) {
-               if (!part.isEmpty()) {
-                   int number = Integer.parseInt(part);
-                   if (number >= 9999) {
-                       count++;
-                   }
-               }
-           }
-        }
-        System.out.println("Total lines read: " + count);
-        bufferedReader.close();
-        reader.close();
+        Interface instance = new ClassImpl();
+        instance.instanceMethod1();
+        instance.instanceMethod2();
+        instance.defaultMethod();
+
     }
 
 }
