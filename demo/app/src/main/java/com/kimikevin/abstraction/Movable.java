@@ -43,3 +43,42 @@ class Batman implements Movable {
         turnRight();
     }
 }
+
+class Spiderman implements Movable, Jumpable {
+
+    @Override
+    public void jump() {
+        System.out.println( "Spiderman: jump");
+    }
+
+    @Override
+    public void turnLeftJump() {
+        System.out.println( "Spiderman: turnLeftJump");
+    }
+
+    @Override
+    public void turnRightJump() {
+        System.out.println( "Spiderman: turnRightJump");
+    }
+
+    @Override
+    public void stepAhead() {
+        System.out.println( "Spiderman: stepAhead");
+    }
+
+    @Override
+    public void turnLeft() {
+        System.out.println( "Spiderman: turnLeft");
+    }
+
+    @Override
+    public void turnRight() {
+        System.out.println( "Spiderman: turnRight");
+    }
+
+    @Override
+    public void turnAround() {
+        Movable.super.turnAround();
+        Jumpable.super.turnAround();
+    }
+}
