@@ -3,20 +3,13 @@
  */
 package com.kimikevin;
 
-import com.kimikevin.generics.GenericType;
-import com.kimikevin.generics.ImmutableArray;
-import com.kimikevin.generics.NonGenericClass;
-import com.kimikevin.lambdas.Operation;
-import com.kimikevin.lambdas.Person;
+import com.kimikevin.abstraction.ClassImpl;
+import com.kimikevin.abstraction.Interface;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.time.LocalDateTime;
 import java.util.*;
-import java.util.function.Function;
-
-import static com.kimikevin.UtilityFx.findFirstIndexOfMax;
 
 public class App {
 
@@ -762,26 +755,28 @@ public class App {
 //
 //        inputStream.close();
 
-        String filePath = properties.getProperty("DT_SET");
+//        // counts numbers that are greater than or equal to 9999.
+//        String filePath = properties.getProperty("DT_SET");
+//
+//        FileReader reader = new FileReader(filePath);
+//        BufferedReader bufferedReader = new BufferedReader(reader);
+//        String line;
+//        int count = 0;
+//        while ((line = bufferedReader.readLine()) != null) {
+//           String[] parts = line.trim().split("\\s+");
+//           for (String part : parts) {
+//               if (!part.isEmpty()) {
+//                   int number = Integer.parseInt(part);
+//                   if (number >= 9999) {
+//                       count++;
+//                   }
+//               }
+//           }
+//        }
+//        System.out.println("Total lines read: " + count);
+//        bufferedReader.close();
+//        reader.close();
 
-        FileReader reader = new FileReader(filePath);
-        BufferedReader bufferedReader = new BufferedReader(reader);
-        String line;
-        int count = 0;
-        while ((line = bufferedReader.readLine()) != null) {
-           String[] parts = line.trim().split("\\s+");
-           for (String part : parts) {
-               if (!part.isEmpty()) {
-                   int number = Integer.parseInt(part);
-                   if (number >= 9999) {
-                       count++;
-                   }
-               }
-           }
-        }
-        System.out.println("Total lines read: " + count);
-        bufferedReader.close();
-        reader.close();
     }
 
 }
