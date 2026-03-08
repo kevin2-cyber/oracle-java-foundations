@@ -10,5 +10,8 @@ public class Main {
         AbstractDevice kettle = new Kettle("123456789", 100);
         kettle.on();
         kettle.off();
+
+        Feature feature = new FeatureImpl();
+        feature.action();
     }
 }
