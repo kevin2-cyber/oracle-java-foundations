@@ -10,3 +10,5 @@ public interface Feature {
         return "Default action";
     }
 }
+
+class FeatureImpl implements Feature{ }
