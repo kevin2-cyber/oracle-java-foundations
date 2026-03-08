@@ -2,6 +2,11 @@ package com.kimikevin.abstraction;
 
 public interface Feature {
     default void action() {
-        System.out.println("Default action");
+        String answer = subAction();
+        System.out.println(answer);
+    }
+
+    private String subAction() {
+        return "Default action";
     }
 }
