@@ -13,5 +13,8 @@ public class Main {
 
         Feature feature = new FeatureImpl();
         feature.action();
+
+        Movable spiderman = new Spiderman();
+        spiderman.turnAround();
     }
 }
