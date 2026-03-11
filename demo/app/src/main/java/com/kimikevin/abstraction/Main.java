@@ -11,6 +11,10 @@ public class Main {
         kettle.on();
         kettle.off();
 
+        ManagedDevice kettle1 = new Kettle("123456789", 100);
+        kettle1.on();
+        kettle1.off();
+
         Feature feature = new FeatureImpl();
         feature.action();
 
