@@ -20,5 +20,8 @@ public class Main {
 
         Movable spiderman = new Spiderman();
         spiderman.turnAround();
+
+        Movable batman = new Batman();
+        batman.turnAround();
     }
 }
