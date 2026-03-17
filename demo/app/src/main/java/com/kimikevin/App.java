@@ -3,8 +3,6 @@
  */
 package com.kimikevin;
 
-import com.kimikevin.abstraction.ClassImpl;
-import com.kimikevin.abstraction.Interface;
 
 import java.io.*;
 import java.nio.file.Files;
