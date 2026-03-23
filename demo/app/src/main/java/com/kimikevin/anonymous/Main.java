@@ -1,7 +1,7 @@
 package com.kimikevin.anonymous;
 
 public class Main {
-    private static String BYE_STRING = "Auf Wiedersehen!";
+    private static final String BYE_STRING = "Auf Wiedersehen!";
 
     public static void main(String[] args) {
         final String hello = "Guten Tag!";
@@ -17,8 +17,8 @@ public class Main {
             }
         };
 
-//        englishSpeakingPerson.sayHello();
-//        englishSpeakingPerson.sayBye();
+        englishSpeakingPerson.sayHello();
+        englishSpeakingPerson.sayBye();
 
         SpeakingEntity cat = new SpeakingEntity() {
             @Override
@@ -32,8 +32,8 @@ public class Main {
             }
         };
 
-//        cat.sayHello();
-//        cat.sayBye();
+        cat.sayHello();
+        cat.sayBye();
 
         SpeakingEntity germanSpeakingPerson = new SpeakingEntity() {
             @Override
@@ -47,8 +47,8 @@ public class Main {
             }
         };
 
-//        germanSpeakingPerson.sayHello();
-//        germanSpeakingPerson.sayBye();
+        germanSpeakingPerson.sayHello();
+        germanSpeakingPerson.sayBye();
 
         Runnable runnable = Create.createRunnable("Hello!",3);
         runnable.run();
