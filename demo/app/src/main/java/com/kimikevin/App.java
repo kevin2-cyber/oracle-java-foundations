@@ -775,6 +775,37 @@ public class App {
 //        bufferedReader.close();
 //        reader.close();
 
+//        try(Scanner scanner = new Scanner(new File("stat.txt"))) {
+//            while (scanner.hasNext()) {
+//                String first = scanner.next();
+//                String second = scanner.next();
+//                int duration = scanner.nextInt();
+//                if (duration > 60) {
+//                    System.out.println(first);
+//                }
+//            }
+//        }
+
+        int maximum = max(new int[]{4,6,3,1,5});
+        System.out.println(maximum);
+
+
+
+    }
+
+    public static int max(int[] arr) {
+        if (arr.length == 0) {
+            return -1;
+        }
+
+        int max = arr[1];
+        for (int i = 2; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+
+        return max;
     }
 
 }
