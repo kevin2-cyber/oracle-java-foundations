@@ -789,8 +789,11 @@ public class App {
         int maximum = max(new int[]{4,6,3,1,5});
         System.out.println(maximum);
 
-        double average = check(new int[]{1,2,3,4,5});
+        double average = average(new int[]{1,2,3,4,5});
         System.out.println(average);
+
+        int check = check(new int[]{1, -2, 3, -4, 5});
+        System.out.println(check);
 
 
     }
@@ -810,7 +813,7 @@ public class App {
         return max;
     }
 
-    public static double check(int[] arr) {
+    public static double average(int[] arr) {
         if (arr.length == 0) {
             return -1;
         }
@@ -821,6 +824,20 @@ public class App {
         }
 
         return (double) result / arr.length;
+    }
+
+    public static int check(int[] array) {
+        if (array.length == 0) {
+            return -1;
+        }
+
+        int result = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > 0) {
+                result = result + array[i];
+            }
+        }
+        return result;
     }
 
 }
