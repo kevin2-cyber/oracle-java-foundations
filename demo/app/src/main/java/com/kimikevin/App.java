@@ -12,12 +12,12 @@ import java.util.*;
 public class App {
 
     public static void main(String[] args) throws IOException {
-        Properties properties = new Properties();
-        try(InputStream input = Files.newInputStream(Paths.get(".env"))) {
-            properties.load(input);
-        } catch (Exception e) {
-            System.err.println("Error loading .env file: " + e.getMessage());
-        }
+//        Properties properties = new Properties();
+//        try(InputStream input = Files.newInputStream(Paths.get(".env"))) {
+//            properties.load(input);
+//        } catch (Exception e) {
+//            System.err.println("Error loading .env file: " + e.getMessage());
+//        }
 //        String filePath = properties.getProperty("FILE_PATH");
 //        String dataset = properties.getProperty("READ_FILE_PATH");
         // throwing a runtime exception(Throwable)
@@ -775,6 +775,69 @@ public class App {
 //        bufferedReader.close();
 //        reader.close();
 
+//        try(Scanner scanner = new Scanner(new File("stat.txt"))) {
+//            while (scanner.hasNext()) {
+//                String first = scanner.next();
+//                String second = scanner.next();
+//                int duration = scanner.nextInt();
+//                if (duration > 60) {
+//                    System.out.println(first);
+//                }
+//            }
+//        }
+
+        int maximum = max(new int[]{4,6,3,1,5});
+        System.out.println(maximum);
+
+        double average = average(new int[]{1,2,3,4,5});
+        System.out.println(average);
+
+        int check = check(new int[]{1, -2, 3, -4, 5});
+        System.out.println(check);
+
+
+    }
+
+    public static int max(int[] arr) {
+        if (arr.length == 0) {
+            return -1;
+        }
+
+        int max = arr[0];
+        for (int i = 2; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+
+        return max;
+    }
+
+    public static double average(int[] arr) {
+        if (arr.length == 0) {
+            return -1;
+        }
+
+        int result = 0;
+        for (int i = 0; i < arr.length; i++) {
+            result = result + arr[i];
+        }
+
+        return (double) result / arr.length;
+    }
+
+    public static int check(int[] array) {
+        if (array.length == 0) {
+            return -1;
+        }
+
+        int result = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > 0) {
+                result = result + array[i];
+            }
+        }
+        return result;
     }
 
 }
