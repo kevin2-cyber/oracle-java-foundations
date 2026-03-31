@@ -819,8 +819,8 @@ public class App {
         }
 
         int result = 0;
-        for (int i = 0; i < arr.length; i++) {
-            result = result + arr[i];
+        for (int j : arr) {
+            result = result + j;
         }
 
         return (double) result / arr.length;
@@ -832,9 +832,9 @@ public class App {
         }
 
         int result = 0;
-        for (int i = 0; i < array.length; i++) {
-            if (array[i] > 0) {
-                result = result + array[i];
+        for (int j : array) {
+            if (j > 0) {
+                result = result + j;
             }
         }
         return result;
