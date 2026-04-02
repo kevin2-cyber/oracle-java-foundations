@@ -792,7 +792,7 @@ public class App {
         double average = average(new int[]{1,2,3,4,5});
         System.out.println(average);
 
-        int check = check(new int[]{1, -2, 3, -4, 5});
+        int check = checkPositiveNumbers(new int[]{1, -2, 3, -4, 5});
         System.out.println(check);
 
 
@@ -826,7 +826,7 @@ public class App {
         return (double) result / arr.length;
     }
 
-    public static int check(int[] array) {
+    public static int checkPositiveNumbers(int[] array) {
         if (array.length == 0) {
             return -1;
         }
