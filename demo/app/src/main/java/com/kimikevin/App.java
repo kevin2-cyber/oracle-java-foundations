@@ -792,8 +792,8 @@ public class App {
         double average = average(new int[]{1,2,3,4,5});
         System.out.println(average);
 
-        int check = checkPositiveNumbers(new int[]{1, -2, 3, -4, 5});
-        System.out.println(check);
+        int number = checkPositiveNumbers(new int[]{1, -2, 3, -4, 5});
+        System.out.println(number);
 
 
     }
