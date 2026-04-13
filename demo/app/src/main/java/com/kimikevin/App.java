@@ -828,19 +828,27 @@ public class App {
 //                System.out.print(arr[i]);
 //            }
 //        }
-        //
-        int[] a = {3,5,2,1};
-        int x = 10;
-        a[0] -= x;
-        a[1] += x;
-        x -= a[2];
-        a[2] = x;
-        a[3] -= x;
 
-        for (int i : a) {
-            System.out.print(i + " ");
+//        int[] a = {3,5,2,1};
+//        int x = 10;
+//        a[0] -= x;
+//        a[1] += x;
+//        x -= a[2];
+//        a[2] = x;
+//        a[3] -= x;
+//
+//        for (int i : a) {
+//            System.out.print(i + " ");
+//        }
+
+        int[] a = {0, 2, 7, 4, 2, 1};
+        int r = 0;
+        for(int i = 0; i < a.length; i++) {
+            if (a[i] < a.length) {
+                r = r + a[i];
+            }
         }
-
+        System.out.println(r);
 
     }
 
