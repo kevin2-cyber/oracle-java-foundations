@@ -810,12 +810,23 @@ public class App {
 //        System.out.println(stackList);
 //        System.out.println(dequeList);
 
-        int[][] matrix = {{1,2,3}, {4,5,6}, {7,8,9}};
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[i].length; j++) {
-                System.out.print(matrix[i][j] + " ");
+//        int[][] matrix = {{1,2,3}, {4,5,6}, {7,8,9}};
+//        for (int i = 0; i < matrix.length; i++) {
+//            for (int j = 0; j < matrix[i].length; j++) {
+//                System.out.print(matrix[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
+
+        int[] arr = {9,8,3,1,5,4};
+        for (int i = 0; i < arr.length; i++) {
+            if (arr[i] % 2 == 0) {
+                arr[i] += 1;
+                System.out.print(arr[i]);
+            } else {
+                arr[i] -= 1;
+                System.out.print(arr[i]);
             }
-            System.out.println();
         }
 
 
