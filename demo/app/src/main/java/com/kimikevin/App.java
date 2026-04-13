@@ -8,6 +8,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class App {
 
@@ -786,58 +787,30 @@ public class App {
 //            }
 //        }
 
-        int maximum = max(new int[]{4,6,3,1,5});
-        System.out.println(maximum);
+//        int maximum = max(new int[]{4,6,3,1,5});
+//        System.out.println(maximum);
+//
+//        double average = average(new int[]{1,2,3,4,5});
+//        System.out.println(average);
+//
+//        int number = checkPositiveNumbers(new int[]{1, -2, 3, -4, 5});
+//        System.out.println(number);
 
-        double average = average(new int[]{1,2,3,4,5});
-        System.out.println(average);
+        Stack<Integer> stack = new Stack<>();
+        Deque<Integer> deque = new ArrayDeque<>();
 
-        int number = checkPositiveNumbers(new int[]{1, -2, 3, -4, 5});
-        System.out.println(number);
+        stack.push(1);
+        deque.push(1);
+        stack.push(2);
+        deque.push(2);
+
+        List<Integer> stackList = stack.stream().collect(Collectors.toList());
+        List<Integer> dequeList = deque.stream().collect(Collectors.toList());
+
+        System.out.println(stackList);
+        System.out.println(dequeList);
 
 
-    }
-
-    public static int max(int[] arr) {
-        if (arr.length == 0) {
-            return -1;
-        }
-
-        int max = arr[0];
-        for (int i = 2; i < arr.length; i++) {
-            if (arr[i] > max) {
-                max = arr[i];
-            }
-        }
-
-        return max;
-    }
-
-    public static double average(int[] arr) {
-        if (arr.length == 0) {
-            return -1;
-        }
-
-        int result = 0;
-        for (int j : arr) {
-            result = result + j;
-        }
-
-        return (double) result / arr.length;
-    }
-
-    public static int checkPositiveNumbers(int[] array) {
-        if (array.length == 0) {
-            return -1;
-        }
-
-        int result = 0;
-        for (int j : array) {
-            if (j > 0) {
-                result = result + j;
-            }
-        }
-        return result;
     }
 
 }
