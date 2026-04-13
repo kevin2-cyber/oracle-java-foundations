@@ -796,19 +796,27 @@ public class App {
 //        int number = checkPositiveNumbers(new int[]{1, -2, 3, -4, 5});
 //        System.out.println(number);
 
-        Stack<Integer> stack = new Stack<>();
-        Deque<Integer> deque = new ArrayDeque<>();
+//        Stack<Integer> stack = new Stack<>();
+//        Deque<Integer> deque = new ArrayDeque<>();
+//
+//        stack.push(1);
+//        deque.push(1);
+//        stack.push(2);
+//        deque.push(2);
+//
+//        List<Integer> stackList = stack.stream().collect(Collectors.toList());
+//        List<Integer> dequeList = deque.stream().collect(Collectors.toList());
+//
+//        System.out.println(stackList);
+//        System.out.println(dequeList);
 
-        stack.push(1);
-        deque.push(1);
-        stack.push(2);
-        deque.push(2);
-
-        List<Integer> stackList = stack.stream().collect(Collectors.toList());
-        List<Integer> dequeList = deque.stream().collect(Collectors.toList());
-
-        System.out.println(stackList);
-        System.out.println(dequeList);
+        int[][] matrix = {{1,2,3}, {4,5,6}, {7,8,9}};
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
 
 
     }
