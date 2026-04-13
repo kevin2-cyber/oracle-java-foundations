@@ -8,6 +8,7 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class App {
 
@@ -786,58 +787,69 @@ public class App {
 //            }
 //        }
 
-        int maximum = max(new int[]{4,6,3,1,5});
-        System.out.println(maximum);
+//        int maximum = max(new int[]{4,6,3,1,5});
+//        System.out.println(maximum);
+//
+//        double average = average(new int[]{1,2,3,4,5});
+//        System.out.println(average);
+//
+//        int number = checkPositiveNumbers(new int[]{1, -2, 3, -4, 5});
+//        System.out.println(number);
 
-        double average = average(new int[]{1,2,3,4,5});
-        System.out.println(average);
+//        Stack<Integer> stack = new Stack<>();
+//        Deque<Integer> deque = new ArrayDeque<>();
+//
+//        stack.push(1);
+//        deque.push(1);
+//        stack.push(2);
+//        deque.push(2);
+//
+//        List<Integer> stackList = stack.stream().collect(Collectors.toList());
+//        List<Integer> dequeList = deque.stream().collect(Collectors.toList());
+//
+//        System.out.println(stackList);
+//        System.out.println(dequeList);
 
-        int number = checkPositiveNumbers(new int[]{1, -2, 3, -4, 5});
-        System.out.println(number);
+//        int[][] matrix = {{1,2,3}, {4,5,6}, {7,8,9}};
+//        for (int i = 0; i < matrix.length; i++) {
+//            for (int j = 0; j < matrix[i].length; j++) {
+//                System.out.print(matrix[i][j] + " ");
+//            }
+//            System.out.println();
+//        }
 
+//        int[] arr = {9,8,3,1,5,4};
+//        for (int i = 0; i < arr.length; i++) {
+//            if (arr[i] % 2 == 0) {
+//                arr[i] += 1;
+//                System.out.print(arr[i]);
+//            } else {
+//                arr[i] -= 1;
+//                System.out.print(arr[i]);
+//            }
+//        }
 
-    }
+//        int[] a = {3,5,2,1};
+//        int x = 10;
+//        a[0] -= x;
+//        a[1] += x;
+//        x -= a[2];
+//        a[2] = x;
+//        a[3] -= x;
+//
+//        for (int i : a) {
+//            System.out.print(i + " ");
+//        }
 
-    public static int max(int[] arr) {
-        if (arr.length == 0) {
-            return -1;
-        }
-
-        int max = arr[0];
-        for (int i = 2; i < arr.length; i++) {
-            if (arr[i] > max) {
-                max = arr[i];
+        int[] a = {0, 2, 7, 4, 2, 1};
+        int r = 0;
+        for(int i = 0; i < a.length; i++) {
+            if (a[i] < a.length) {
+                r = r + a[i];
             }
         }
+        System.out.println(r);
 
-        return max;
-    }
-
-    public static double average(int[] arr) {
-        if (arr.length == 0) {
-            return -1;
-        }
-
-        int result = 0;
-        for (int j : arr) {
-            result = result + j;
-        }
-
-        return (double) result / arr.length;
-    }
-
-    public static int checkPositiveNumbers(int[] array) {
-        if (array.length == 0) {
-            return -1;
-        }
-
-        int result = 0;
-        for (int j : array) {
-            if (j > 0) {
-                result = result + j;
-            }
-        }
-        return result;
     }
 
 }

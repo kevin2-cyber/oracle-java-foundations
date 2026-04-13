@@ -264,4 +264,46 @@ public class UtilityFx {
             this.t = t;
         }
     }
+
+    public static int max(int[] arr) {
+        if (arr.length == 0) {
+            return -1;
+        }
+
+        int max = arr[0];
+        for (int i = 2; i < arr.length; i++) {
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+
+        return max;
+    }
+
+    public static double average(int[] arr) {
+        if (arr.length == 0) {
+            return -1;
+        }
+
+        int result = 0;
+        for (int j : arr) {
+            result = result + j;
+        }
+
+        return (double) result / arr.length;
+    }
+
+    public static int checkPositiveNumbers(int[] array) {
+        if (array.length == 0) {
+            return -1;
+        }
+
+        int result = 0;
+        for (int j : array) {
+            if (j > 0) {
+                result = result + j;
+            }
+        }
+        return result;
+    }
 }
