@@ -881,7 +881,7 @@ public class App {
         default void doNothingByDefault() {}
     }
 
-    class Functions {
+    static class Functions {
         public static long square(long val) {
             return val * val;
         }
