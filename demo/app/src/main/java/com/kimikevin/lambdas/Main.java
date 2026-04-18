@@ -1,7 +1,11 @@
 package com.kimikevin.lambdas;
 
+import java.io.Serializable;
+import java.nio.file.Path;
+import java.nio.file.PathMatcher;
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.concurrent.*;
 import java.util.function.BiFunction;
 import java.util.function.Function;
 
@@ -79,8 +83,58 @@ public class Main {
 //
 //        System.out.println(PrefixSuffixOperator.operator.apply("Hi"));
 
-        Predicate.TernaryIntPredicate test = Predicate.ALL_DIFFERENT;
-        System.out.println(test.test(1, 1, 1));
+//        // predicate
+//        Predicate.TernaryIntPredicate test = Predicate.ALL_DIFFERENT;
+//        System.out.println(test.test(1, 1, 1));
+
+//        final double variable = 10;
+//        Serializable serializable = new Serializable() {
+//            double applyFun(double x) {
+//                return x + variable;
+//            }
+//        };
+
+//        Callable<String> callable = new Callable<String>() {
+//            @Override
+//            public String call() throws Exception {
+//                Thread.sleep(100);
+//                return "hello";
+//            }
+//        };
+
+//        Future<Double> future = new Future<>() {
+//            @Override
+//            public boolean cancel(boolean mayInterruptIfRunning) {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean isCancelled() {
+//                return false;
+//            }
+//
+//            @Override
+//            public boolean isDone() {
+//                return false;
+//            }
+//
+//            @Override
+//            public Double get() throws InterruptedException, ExecutionException {
+//                return 0.0;
+//            }
+//
+//            @Override
+//            public Double get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
+//                return 0.0;
+//            }
+//        };
+
+        PathMatcher matcher = new PathMatcher() {
+            @Override
+            public boolean matches(Path path) {
+                return false;
+            }
+        };
     }
 
     private static void printResultOfLambda(Function<String, Integer> function) {
