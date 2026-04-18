@@ -94,47 +94,39 @@ public class Main {
 //            }
 //        };
 
-//        Callable<String> callable = new Callable<String>() {
-//            @Override
-//            public String call() throws Exception {
-//                Thread.sleep(100);
-//                return "hello";
-//            }
-//        };
+        Callable<String> callable = () -> {
+            Thread.sleep(100);
+            return "hello";
+        };
 
-//        Future<Double> future = new Future<>() {
-//            @Override
-//            public boolean cancel(boolean mayInterruptIfRunning) {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean isCancelled() {
-//                return false;
-//            }
-//
-//            @Override
-//            public boolean isDone() {
-//                return false;
-//            }
-//
-//            @Override
-//            public Double get() throws InterruptedException, ExecutionException {
-//                return 0.0;
-//            }
-//
-//            @Override
-//            public Double get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
-//                return 0.0;
-//            }
-//        };
-
-        PathMatcher matcher = new PathMatcher() {
+        Future<Double> future = new Future<>() {
             @Override
-            public boolean matches(Path path) {
+            public boolean cancel(boolean mayInterruptIfRunning) {
                 return false;
             }
+
+            @Override
+            public boolean isCancelled() {
+                return false;
+            }
+
+            @Override
+            public boolean isDone() {
+                return false;
+            }
+
+            @Override
+            public Double get() throws InterruptedException, ExecutionException {
+                return 0.0;
+            }
+
+            @Override
+            public Double get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
+                return 0.0;
+            }
         };
+
+        PathMatcher matcher = path -> false;
     }
 
     private static void printResultOfLambda(Function<String, Integer> function) {
