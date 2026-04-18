@@ -853,11 +853,38 @@ public class App {
         Func<Integer, Integer> multiplier10 = val -> val * 10;
         System.out.println(multiplier10.apply(5));
 
+        // using anonymous classes
+        Func<Long, Long> squareAnon = new Func<Long, Long>() {
+            @Override
+            public Long apply(Long val) {
+                return val * val;
+            }
+        };
+
+        long val = squareAnon.apply(100L);
+        System.out.println(val);
+
+        // using lambda expressions
+        Func<Long, Long> squareLam = val1 -> val1 * val1;
+
+        // using method references
+        Func<Long, Long> squareRef = Functions::square;
+
     }
 
     @FunctionalInterface
     interface Func<T,R> {
         R apply(T val); // single abstract method
+
+        static void doNothingStatic() {}
+
+        default void doNothingByDefault() {}
+    }
+
+    class Functions {
+        public static long square(long val) {
+            return val * val;
+        }
     }
 
 }
