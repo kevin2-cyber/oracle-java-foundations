@@ -841,15 +841,50 @@ public class App {
 //            System.out.print(i + " ");
 //        }
 
-        int[] a = {0, 2, 7, 4, 2, 1};
-        int r = 0;
-        for(int i = 0; i < a.length; i++) {
-            if (a[i] < a.length) {
-                r = r + a[i];
-            }
-        }
-        System.out.println(r);
+//        int[] a = {0, 2, 7, 4, 2, 1};
+//        int r = 0;
+//        for(int i = 0; i < a.length; i++) {
+//            if (a[i] < a.length) {
+//                r = r + a[i];
+//            }
+//        }
+//        System.out.println(r);
 
+        Func<Integer, Integer> multiplier10 = val -> val * 10;
+        System.out.println(multiplier10.apply(5));
+
+        // using anonymous classes
+        Func<Long, Long> squareAnon = new Func<Long, Long>() {
+            @Override
+            public Long apply(Long val) {
+                return val * val;
+            }
+        };
+
+        long val = squareAnon.apply(100L);
+        System.out.println(val);
+
+        // using lambda expressions
+        Func<Long, Long> squareLam = val1 -> val1 * val1;
+
+        // using method references
+        Func<Long, Long> squareRef = Functions::square;
+
+    }
+
+    @FunctionalInterface
+    interface Func<T,R> {
+        R apply(T val); // single abstract method
+
+        static void doNothingStatic() {}
+
+        default void doNothingByDefault() {}
+    }
+
+    static class Functions {
+        public static long square(long val) {
+            return val * val;
+        }
     }
 
 }
