@@ -841,15 +841,23 @@ public class App {
 //            System.out.print(i + " ");
 //        }
 
-        int[] a = {0, 2, 7, 4, 2, 1};
-        int r = 0;
-        for(int i = 0; i < a.length; i++) {
-            if (a[i] < a.length) {
-                r = r + a[i];
-            }
-        }
-        System.out.println(r);
+//        int[] a = {0, 2, 7, 4, 2, 1};
+//        int r = 0;
+//        for(int i = 0; i < a.length; i++) {
+//            if (a[i] < a.length) {
+//                r = r + a[i];
+//            }
+//        }
+//        System.out.println(r);
 
+        Func<Integer, Integer> multiplier10 = val -> val * 10;
+        System.out.println(multiplier10.apply(5));
+
+    }
+
+    @FunctionalInterface
+    interface Func<T,R> {
+        R apply(T val); // single abstract method
     }
 
 }

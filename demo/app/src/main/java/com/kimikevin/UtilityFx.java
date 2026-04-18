@@ -306,9 +306,4 @@ public class UtilityFx {
         }
         return result;
     }
-
-    @FunctionalInterface
-    interface Func<T,R> {
-        R apply(T val); // single abstract method
-    }
 }
