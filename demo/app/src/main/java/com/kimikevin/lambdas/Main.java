@@ -11,88 +11,88 @@ import java.util.function.Function;
 
 public class Main {
     public static void main(String[] args) {
-//        // single line of lambda
-//        BiFunction<Integer, Integer, Boolean> isDivisible = (x, y) -> x % y == 0;
-//
-//        // method reference
-//        BiFunction<Integer, Integer, Integer> max =Integer::max;
-//
-//        // if it has only one argument, "()" are optional
-//        Function<Integer, Integer> adder1 = x -> x + 1;
-//
-//        // with type reference
-//        Function<Integer, Integer> mult2 = (Integer x) -> x * 2;
-//
-//        // with multiple statements
-//        Function<Integer, Integer> adder5 = (x) -> {
-//            x += 2;
-//            x += 3;
-//            return x;
-//        };
-//
-//        boolean result4Div2 = isDivisible.apply(4,2);
-//        boolean result3Div5 = isDivisible.apply(3,5);
-//
-//        System.out.println(result4Div2);
-//        System.out.println(result3Div5);
-//
-//        System.out.println(max.apply(30,40));
-//
-//        // returns the length of the string
-//        Function<String, Integer> f = String::length; // Function<String, Integer> f = s -> s.length();
-//        printResultOfLambda(f);
-//
-//        // passing without a reference
-//        printResultOfLambda(String::length); // replaced with a method reference
-//
-//        // prints the number of digits: 4
-//        printResultOfLambda(s -> {
-//            int count = 0;
-//            for (char c : s.toCharArray()) {
-//                if (Character.isDigit(c)) {
-//                    count++;
-//                }
-//            }
-//            return count;
-//        });
-//
-//        // closures
-//        final String hello = "Hello, ";
-//        Function<String, String> helloFunction = (name) -> hello + name;
-//
-//        System.out.println(helloFunction.apply("John"));
-//        System.out.println(helloFunction.apply("Anastasia"));
-//
-//        int constant = 100;
-//        Function<Integer, Integer> adder100 = x -> x + constant;
-//
-//        System.out.println(adder100.apply(200));
-//        System.out.println(adder100.apply(300));
-//
-//        System.out.println(Operation.binaryOperator.applyAsInt(2,3));
-//
-//        Scanner scanner = new Scanner(System.in);
-//        String method = scanner.nextLine();
-//        String[] array = scanner.nextLine().split(" ");
-//        applyFunction(array,
-//                "lower".equals(method) ? String::toLowerCase :
-//                        "upper".equals(method) ? String::toUpperCase :
-//                                "new".equals(method) ? String::new :
-//                                        "trim".equals(method) ? String::trim : String::intern);
-//        Arrays.stream(array).forEach(e -> System.out.print(e + " "));
-//
-//        System.out.println(PrefixSuffixOperator.operator.apply("Hi"));
+        // single line of lambda
+        BiFunction<Integer, Integer, Boolean> isDivisible = (x, y) -> x % y == 0;
 
-//        // predicate
-//        Predicate.TernaryIntPredicate test = Predicate.ALL_DIFFERENT;
-//        System.out.println(test.test(1, 1, 1));
+        // method reference
+        BiFunction<Integer, Integer, Integer> max =Integer::max;
 
-//        final double variable = 10;
-//        Serializable serializable = new Serializable() {
-//            double applyFun(double x) {
-//                return x + variable;
-//            }
-//        };
+        // if it has only one argument, "()" are optional
+        Function<Integer, Integer> adder1 = x -> x + 1;
+
+        // with type reference
+        Function<Integer, Integer> mult2 = (Integer x) -> x * 2;
+
+        // with multiple statements
+        Function<Integer, Integer> adder5 = (x) -> {
+            x += 2;
+            x += 3;
+            return x;
+        };
+
+        boolean result4Div2 = isDivisible.apply(4,2);
+        boolean result3Div5 = isDivisible.apply(3,5);
+
+        System.out.println(result4Div2);
+        System.out.println(result3Div5);
+
+        System.out.println(max.apply(30,40));
+
+        // returns the length of the string
+        Function<String, Integer> f = String::length; // Function<String, Integer> f = s -> s.length();
+        printResultOfLambda(f);
+
+        // passing without a reference
+        printResultOfLambda(String::length); // replaced with a method reference
+
+        // prints the number of digits: 4
+        printResultOfLambda(s -> {
+            int count = 0;
+            for (char c : s.toCharArray()) {
+                if (Character.isDigit(c)) {
+                    count++;
+                }
+            }
+            return count;
+        });
+
+        // closures
+        final String hello = "Hello, ";
+        Function<String, String> helloFunction = (name) -> hello + name;
+
+        System.out.println(helloFunction.apply("John"));
+        System.out.println(helloFunction.apply("Anastasia"));
+
+        int constant = 100;
+        Function<Integer, Integer> adder100 = x -> x + constant;
+
+        System.out.println(adder100.apply(200));
+        System.out.println(adder100.apply(300));
+
+        System.out.println(Operation.binaryOperator.applyAsInt(2,3));
+
+        Scanner scanner = new Scanner(System.in);
+        String method = scanner.nextLine();
+        String[] array = scanner.nextLine().split(" ");
+        applyFunction(array,
+                "lower".equals(method) ? String::toLowerCase :
+                        "upper".equals(method) ? String::toUpperCase :
+                                "new".equals(method) ? String::new :
+                                        "trim".equals(method) ? String::trim : String::intern);
+        Arrays.stream(array).forEach(e -> System.out.print(e + " "));
+
+        System.out.println(PrefixSuffixOperator.operator.apply("Hi"));
+
+        // predicate
+        Predicate.TernaryIntPredicate test = Predicate.ALL_DIFFERENT;
+        System.out.println(test.test(1, 1, 1));
+
+        final double variable = 10;
+        Serializable serializable = new Serializable() {
+            double applyFun(double x) {
+                return x + variable;
+            }
+        };
 
         Callable<String> callable = () -> {
             Thread.sleep(100);
