@@ -8,7 +8,10 @@ import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.function.LongFunction;
+import java.util.function.LongUnaryOperator;
 import java.util.function.ToLongBiFunction;
+import java.util.function.ToLongFunction;
 import java.util.stream.Collectors;
 
 public class App {
@@ -872,6 +875,9 @@ public class App {
         Func<Long, Long> squareRef = Functions::square;
 
         ToLongBiFunction<String, Double> f = (s, d) -> (long) s.length() * d.intValue();
+        LongUnaryOperator longUnaryOperator = val1 -> val1 * 2;
+        LongFunction<Long> longFunction = val1 -> val1 * 2L;
+        ToLongFunction<Long> toLongFunction = val1 -> val1 * 2L;
 
     }
 
