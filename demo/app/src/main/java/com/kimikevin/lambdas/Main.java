@@ -84,7 +84,7 @@ public class Main {
         System.out.println(PrefixSuffixOperator.operator.apply("Hi"));
 
         // predicate
-        Predicate.TernaryIntPredicate test = Predicate.ALL_DIFFERENT;
+        PredicateType.TernaryIntPredicate test = PredicateType.ALL_DIFFERENT;
         System.out.println(test.test(1, 1, 1));
 
         final double variable = 10;

@@ -3,7 +3,7 @@ package com.kimikevin.lambdas;
 import java.util.Objects;
 import java.util.function.Function;
 
-public class Predicate {
+public class PredicateType {
     public static final TernaryIntPredicate ALL_DIFFERENT = (a, b, c) -> a != b && b != c && a != c;
 
     @FunctionalInterface
