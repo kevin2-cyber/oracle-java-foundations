@@ -64,6 +64,6 @@ public class App {
             Function<? super T, ? extends U> ifTrue,
             Function<? super T, ? extends U> ifFalse
     ) {
-        return null; // write your implementation here
+        return t -> condition.test(t) ? ifTrue.apply(t) : ifFalse.apply(t);
     }
 }
