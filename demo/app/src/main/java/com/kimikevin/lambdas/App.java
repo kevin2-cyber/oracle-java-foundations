@@ -32,7 +32,12 @@ public class App {
 
         ///3. Predicates
         // Character to boolean predicate
-        Predicate<Character> isDigit = Character::isDigit;
+        Predicate<Character> isDigit = new Predicate<Character>() {
+            @Override
+            public boolean test(Character character) {
+                return Character.isDigit(character);
+            }
+        };
         isDigit.test('h');
 
         IntPredicate isEven = val -> val % 2 == 0;
@@ -52,5 +57,13 @@ public class App {
         // it prints a given string
         Consumer<String> printer = System.out::println;
         printer.accept("!!!");
+    }
+
+    public static <T, U> Function<T, U> ternaryOperator(
+            Predicate<? super T> condition,
+            Function<? super T, ? extends U> ifTrue,
+            Function<? super T, ? extends U> ifFalse
+    ) {
+        return null; // write your implementation here
     }
 }

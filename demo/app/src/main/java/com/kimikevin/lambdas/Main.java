@@ -1,7 +1,8 @@
 package com.kimikevin.lambdas;
 
+import org.jspecify.annotations.NonNull;
+
 import java.io.Serializable;
-import java.nio.file.Path;
 import java.nio.file.PathMatcher;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -121,7 +122,7 @@ public class Main {
             }
 
             @Override
-            public Double get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
+            public Double get(long timeout, @NonNull TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
                 return 0.0;
             }
         };
