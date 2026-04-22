@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.*;
+import java.util.stream.Collectors;
 
 public class App {
     public static void main(String[] args) {
@@ -68,6 +69,15 @@ public class App {
         }
 
         System.out.println(processedNumbers);
+
+        // functional way (declarative)
+        List<Integer> numbersD = Arrays.asList(1, 2, 3, 4, 5, 6);
+        List<Integer> processedNumbersD = numbersD.stream()
+                .filter(num -> num % 2 == 0)
+                .map(num -> num * 10)
+                .collect(Collectors.toList());
+
+        System.out.println(processedNumbersD);
     }
 
     public static <T, U> Function<T, U> ternaryOperator(
