@@ -32,12 +32,7 @@ public class App {
 
         ///3. Predicates
         // Character to boolean predicate
-        Predicate<Character> isDigit = new Predicate<Character>() {
-            @Override
-            public boolean test(Character character) {
-                return Character.isDigit(character);
-            }
-        };
+        Predicate<Character> isDigit = Character::isDigit;
         isDigit.test('h');
 
         IntPredicate isEven = val -> val % 2 == 0;
