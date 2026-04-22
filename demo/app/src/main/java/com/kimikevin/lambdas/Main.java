@@ -1,7 +1,8 @@
 package com.kimikevin.lambdas;
 
+import org.jspecify.annotations.NonNull;
+
 import java.io.Serializable;
-import java.nio.file.Path;
 import java.nio.file.PathMatcher;
 import java.util.Arrays;
 import java.util.Scanner;
@@ -84,7 +85,7 @@ public class Main {
         System.out.println(PrefixSuffixOperator.operator.apply("Hi"));
 
         // predicate
-        Predicate.TernaryIntPredicate test = Predicate.ALL_DIFFERENT;
+        PredicateType.TernaryIntPredicate test = PredicateType.ALL_DIFFERENT;
         System.out.println(test.test(1, 1, 1));
 
         final double variable = 10;
@@ -121,7 +122,7 @@ public class Main {
             }
 
             @Override
-            public Double get(long timeout, TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
+            public Double get(long timeout, @NonNull TimeUnit unit) throws InterruptedException, ExecutionException, TimeoutException {
                 return 0.0;
             }
         };
