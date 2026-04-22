@@ -1,5 +1,8 @@
 package com.kimikevin.lambdas;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.function.*;
 
 public class App {
@@ -52,6 +55,19 @@ public class App {
         // it prints a given string
         Consumer<String> printer = System.out::println;
         printer.accept("!!!");
+
+        // imperative old way
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5, 6);
+        List<Integer> processedNumbers = new ArrayList<>();
+
+        for (Integer num: numbers) {
+            if (num % 2 == 0) {
+                int multiplied = num * 10;
+                processedNumbers.add(multiplied);
+            }
+        }
+
+        System.out.println(processedNumbers);
     }
 
     public static <T, U> Function<T, U> ternaryOperator(
