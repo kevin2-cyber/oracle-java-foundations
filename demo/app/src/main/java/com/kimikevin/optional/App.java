@@ -16,6 +16,6 @@ public class App {
     }
 
     public static String getRandomMessage() {
-        return "Hello, World!";
+        return "Hello World";
     }
 }
