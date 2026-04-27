@@ -13,6 +13,13 @@ public class App {
         String message = getRandomMessage();
         Optional<String> optionalMessage = Optional.ofNullable(message);
         System.out.println(optionalMessage.isPresent());
+
+        Optional<String> optName = Optional.of("John");
+        String name = optName.get();
+
+        Optional<String> optionalName = Optional.ofNullable(null);
+        String nullName = optionalName.get();
+        System.out.println(nullName);
     }
 
     public static String getRandomMessage() {
