@@ -16,10 +16,15 @@ public class App {
 
         Optional<String> optName = Optional.of("John");
         String name = optName.get();
+        System.out.println(name);
 
-        Optional<String> optionalName = Optional.ofNullable(null);
-        String nullName = optionalName.get();
-        System.out.println(nullName);
+//        Optional<String> optionalName = Optional.ofNullable(null);
+//        String nullName = optionalName.get();
+//        System.out.println(nullName);
+
+        String nullableName = null;
+        String name2 = Optional.ofNullable(nullableName).orElse("unknown");
+        System.out.println(name2);
     }
 
     public static String getRandomMessage() {
