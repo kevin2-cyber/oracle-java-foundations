@@ -1,6 +1,7 @@
 package com.kimikevin.optional;
 
 import java.util.Optional;
+import java.util.function.Supplier;
 
 public class App {
     public static void main(String[] args) {
@@ -14,20 +15,33 @@ public class App {
         Optional<String> optionalMessage = Optional.ofNullable(message);
         System.out.println(optionalMessage.isPresent());
 
-        Optional<String> optName = Optional.of("John");
-        String name = optName.get();
-        System.out.println(name);
+//        Optional<String> optName = Optional.of("John");
+//        String name = optName.get();
+//        System.out.println(name);
 
 //        Optional<String> optionalName = Optional.ofNullable(null);
 //        String nullName = optionalName.get();
 //        System.out.println(nullName);
 
+//        String nullableName = null;
+//        String name2 = Optional.ofNullable(nullableName).orElse("unknown");
+//        System.out.println(name2);
+
         String nullableName = null;
-        String name2 = Optional.ofNullable(nullableName).orElse("unknown");
-        System.out.println(name2);
+        String name = Optional
+                .ofNullable(nullableName)
+                .orElseGet(SomeClass::getDefaultResult);
+
+        System.out.println(name);
     }
 
     public static String getRandomMessage() {
         return "Hello World";
+    }
+
+    class SomeClass {
+        public static String getDefaultResult() {
+            return "Default Result";
+        }
     }
 }
