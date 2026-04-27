@@ -33,13 +33,25 @@ public class App {
                 .orElseGet(SomeClass::getDefaultResult);
 
         System.out.println(name);
+
+        Optional<String> companyName = Optional.of("Google");
+        companyName.ifPresent((nameCheck) -> System.out.println(nameCheck.length()));
+
+        Optional<String> noName = Optional.empty();
+        noName.ifPresent((nameCheck) -> System.out.println(nameCheck.length()));
+
+        Optional<String> optName = Optional.ofNullable("");
+        optName.ifPresentOrElse(
+                (nameCheck) -> System.out.println(nameCheck.length()),
+                () -> System.out.println(0)
+        );
     }
 
     public static String getRandomMessage() {
         return "Hello World";
     }
 
-    class SomeClass {
+    static class SomeClass {
         public static String getDefaultResult() {
             return "Default Result";
         }
