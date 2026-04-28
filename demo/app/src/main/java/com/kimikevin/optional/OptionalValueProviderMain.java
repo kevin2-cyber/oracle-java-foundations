@@ -14,9 +14,18 @@ public class OptionalValueProviderMain {
 //                .map(Optional::get)
 //                .reduce(Integer::sum)
 //                .get();
+        int summation = provider.getValues()
+                .stream()
+                .filter(Optional::isPresent)
+                .map(Optional::get)
+                .reduce(Integer::sum)
+                .orElse(0);
+
         int sum = provider.getValues()
                 .stream()
                 .mapToInt(opt -> opt.orElse(0)).sum();
+
+        System.out.println(summation);
 
         System.out.println(sum);
     }
