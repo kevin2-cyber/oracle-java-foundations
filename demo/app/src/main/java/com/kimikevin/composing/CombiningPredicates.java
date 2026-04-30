@@ -24,7 +24,7 @@ public class CombiningPredicates {
 
         List<Boolean> values = Arrays.stream(strings)
                 .map(Boolean::parseBoolean)
-                .collect(Collectors.toList());
+                .toList();
 
         List<IntPredicate> predicates = new ArrayList<>();
         values.forEach(v -> predicates.add(x -> v));
