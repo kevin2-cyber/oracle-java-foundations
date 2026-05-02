@@ -1,0 +1,25 @@
+package com.kimikevin.collections;
+
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> list = new ArrayList<>();
+
+        list.add("first");
+        list.add("second");
+        list.add("third");
+
+        System.out.println(list);
+
+        System.out.println(list.get(0));
+        System.out.println(list.get(1));
+        System.out.println(list.get(2));
+
+        list.remove("first");
+
+        System.out.println(list);
+
+        System.out.println(list.size());
+    }
+}
