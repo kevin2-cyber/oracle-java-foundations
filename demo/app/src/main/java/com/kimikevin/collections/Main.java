@@ -21,5 +21,9 @@ public class Main {
         System.out.println(list);
 
         System.out.println(list.size());
+
+        list.add(0,"first");
+        System.out.println(list);
+        System.out.println(list.size());
     }
 }
