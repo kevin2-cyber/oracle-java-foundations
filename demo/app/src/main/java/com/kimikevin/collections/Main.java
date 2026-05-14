@@ -40,5 +40,7 @@ public class Main {
         }
 
         languages.forEach(System.out::println);
+
+        languages.forEach(lang -> System.out.println(lang));
     }
 }
