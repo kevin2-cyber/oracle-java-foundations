@@ -45,5 +45,8 @@ public class Main {
 
         languages.remove("Deutsch");
         System.out.println(languages.size());
+
+        languages.removeIf(lang -> lang.startsWith("E"));
+        System.out.println(languages.size());
     }
 }
