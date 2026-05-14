@@ -34,5 +34,9 @@ public class Main {
         languages.add("Français");
 
         System.out.println(languages.size());
+
+        for (String lang : languages) {
+            System.out.println(lang);
+        }
     }
 }
