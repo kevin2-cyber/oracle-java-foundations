@@ -38,5 +38,7 @@ public class Main {
         for (String lang : languages) {
             System.out.println(lang);
         }
+
+        languages.forEach(System.out::println);
     }
 }
