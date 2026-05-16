@@ -1,8 +1,11 @@
 package com.kimikevin.elapunte.service;
 
+import com.google.protobuf.Empty;
 import com.kimikevin.elapunte.model.Note;
 import com.kimikevin.elapunte.proto.*;
 import com.kimikevin.elapunte.repository.NoteRepository;
+import io.grpc.Status;
+import io.grpc.StatusRuntimeException;
 import io.grpc.stub.StreamObserver;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -117,7 +120,7 @@ class NoteGrpcServiceTest {
 
         when(noteRepository.findAll()).thenReturn(notes);
 
-        Empty request = Empty.newBuilder().build();
+        GetAllNotesRequest request = GetAllNotesRequest.newBuilder().build();
 
         // Act
         noteGrpcService.getAllNotes(request, noteListResponseObserver);
@@ -154,7 +157,7 @@ class NoteGrpcServiceTest {
         when(noteRepository.findById(testUpdateId)).thenReturn(Optional.of(existingNote));
         when(noteRepository.save(any(Note.class))).thenReturn(updatedNote);
 
-        NoteResponse request = NoteResponse.newBuilder()
+        UpdateNoteRequest request = UpdateNoteRequest.newBuilder()
                 .setId(updatedNote.getId())
                 .setTitle("Updated Title")
                 .setContent("Updated Content")
@@ -194,7 +197,7 @@ class NoteGrpcServiceTest {
     }
 
     @Test
-    void testGetNoteNotFound() {
+    void testGetNoteNotFoundShouldCallOnError() {
         // Arrange
         String randomId = UUID.randomUUID().toString();
         when(noteRepository.findById(randomId)).thenReturn(Optional.empty());
@@ -203,27 +206,54 @@ class NoteGrpcServiceTest {
                 .setId(randomId)
                 .build();
 
-        // Act & Assert
-        assertThrows(IllegalArgumentException.class, () -> {
-            noteGrpcService.getNote(request, noteResponseObserver);
-        });
+        // Act
+        noteGrpcService.getNote(request, noteResponseObserver);
+
+        // Assert — onError must be called with NOT_FOUND, never onCompleted
+        ArgumentCaptor<Throwable> errorCaptor = ArgumentCaptor.forClass(Throwable.class);
+        verify(noteResponseObserver).onError(errorCaptor.capture());
+        verify(noteResponseObserver, never()).onCompleted();
+        verify(noteResponseObserver, never()).onNext(any());
+
+        StatusRuntimeException exception = (StatusRuntimeException) errorCaptor.getValue();
+        assertEquals(Status.NOT_FOUND.getCode(), exception.getStatus().getCode());
     }
 
     @Test
-    void testUpdateNoteNotFound() {
-        // Arrange
+    void testUpdateNoteNotFoundShouldCallOnError() {
         String randomId = UUID.randomUUID().toString();
         when(noteRepository.findById(randomId)).thenReturn(Optional.empty());
 
-        NoteResponse request = NoteResponse.newBuilder()
+        UpdateNoteRequest request = UpdateNoteRequest.newBuilder()
                 .setId(randomId)
                 .setTitle("Title")
                 .setContent("Content")
                 .build();
 
-        // Act & Assert
-        assertThrows(IllegalArgumentException.class, () -> {
-            noteGrpcService.updateNote(request, noteResponseObserver);
-        });
+        noteGrpcService.updateNote(request, noteResponseObserver);
+
+        ArgumentCaptor<Throwable> errorCaptor = ArgumentCaptor.forClass(Throwable.class);
+        verify(noteResponseObserver).onError(errorCaptor.capture());
+        verify(noteResponseObserver, never()).onCompleted();
+
+        StatusRuntimeException exception = (StatusRuntimeException) errorCaptor.getValue();
+        assertEquals(Status.NOT_FOUND.getCode(), exception.getStatus().getCode());
+    }
+
+    @Test
+    void testCreateNoteBlankIdShouldCallInvalidArgument() {
+        CreateNoteRequest request = CreateNoteRequest.newBuilder()
+                .setId("")  // blank ID
+                .setTitle("Test")
+                .setContent("Content")
+                .build();
+
+        noteGrpcService.createNote(request, noteResponseObserver);
+
+        ArgumentCaptor<Throwable> errorCaptor = ArgumentCaptor.forClass(Throwable.class);
+        verify(noteResponseObserver).onError(errorCaptor.capture());
+
+        StatusRuntimeException exception = (StatusRuntimeException) errorCaptor.getValue();
+        assertEquals(Status.INVALID_ARGUMENT.getCode(), exception.getStatus().getCode());
     }
 }
