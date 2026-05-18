@@ -1,5 +1,5 @@
 # --- Stage 1: The Builder (Compiles the Code) ---
-FROM eclipse-temurin:21-jdk-jammy AS builder
+FROM eclipse-temurin:25-jdk-jammy AS builder
 WORKDIR /app
 
 # 1. Copy Gradle wrapper & settings first (Cached Layer)
@@ -17,7 +17,7 @@ COPY src src
 RUN ./gradlew bootJar -x test --no-daemon
 
 # --- Stage 2: The Runtime (Runs the App) ---
-FROM eclipse-temurin:21-jre-jammy
+FROM eclipse-temurin:25-jre-jammy
 WORKDIR /app
 
 # Create a non-root user (Best practice for security)
