@@ -27,5 +27,7 @@ public class Main {
         System.out.println(deque);
         deque.push(5);
         System.out.println(deque);
+
+        System.out.println(deque.peek());
     }
 }
