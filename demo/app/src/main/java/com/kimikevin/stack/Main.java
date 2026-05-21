@@ -18,5 +18,14 @@ public class Main {
         System.out.println(stack.pollLast()); // first
 
         System.out.println(stack.pollLast()); // null
+
+        Deque<Integer> deque = new ArrayDeque<>();
+        deque.add(1);
+        deque.add(2);
+        deque.add(3);
+        deque.add(4);
+        System.out.println(deque);
+        deque.push(5);
+        System.out.println(deque);
     }
 }
