@@ -1,5 +1,7 @@
 package com.kimikevin.list;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 public class Main {
@@ -25,5 +27,8 @@ public class Main {
 
         List<String> weekDays = daysOfWeek.subList(0, 5);
         System.out.println(weekDays); // [Monday, Tuesday, Wednesday, Thursday, Friday]
+
+        List<Integer> testNumbers = Arrays.asList(1,2,3,4,5); // fixed-size list
+        testNumbers = Collections.unmodifiableList(testNumbers); // unmodifiable list
     }
 }
