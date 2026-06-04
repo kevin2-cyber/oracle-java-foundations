@@ -8,5 +8,22 @@ public class Main {
         List<String> emptyList = List.of();
         List<String> names = List.of("Larry", "Kenny", "Sabrina");
         List<Integer> numbers = List.of(0, 1, 1, 2, 3, 5, 8, 13);
+
+        List<String> daysOfWeek = List.of(
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+        );
+
+        System.out.println(daysOfWeek.size()); // 7
+        System.out.println(daysOfWeek.get(1)); // Tuesday
+        System.out.println(daysOfWeek.indexOf("Sunday")); // 6
+
+        List<String> weekDays = daysOfWeek.subList(0, 5);
+        System.out.println(weekDays); // [Monday, Tuesday, Wednesday, Thursday, Friday]
     }
 }
