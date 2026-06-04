@@ -1,9 +1,6 @@
 package com.kimikevin.list;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
@@ -46,5 +43,13 @@ public class Main {
 
         List<String> immutableList = List.of("one", "two", "three");
         List<String> mutableList = new ArrayList<>(immutableList);
+
+        List<Integer> numberLinkedList = new LinkedList<>();
+
+        numberLinkedList.add(10);
+        numberLinkedList.add(20);
+        numberLinkedList.add(30);
+
+        System.out.println(numberLinkedList);
     }
 }
