@@ -41,5 +41,18 @@ public class Main {
         System.out.println(numbers2.indexOf(1));     // 1
         System.out.println(numbers2.lastIndexOf(1)); // 4
         System.out.println(numbers2.lastIndexOf(4)); // -1
+
+        ArrayList<Long> powersOfTen = new ArrayList<>();
+
+        int count = 5;
+
+        for (int i = 0; i < count; i++) {
+            long power = (long) Math.pow(10, i);
+            powersOfTen.add(power);
+        }
+
+        for (long value : powersOfTen) {
+            System.out.print(value + " ");
+        }
     }
 }
