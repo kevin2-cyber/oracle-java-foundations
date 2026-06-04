@@ -1,6 +1,7 @@
 package com.kimikevin.arraylist;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 public class Main {
     public static void main(String[] args) {
@@ -68,6 +69,12 @@ public class Main {
 
         for (char character : characters) {
             System.out.print(character + " ");
+        }
+        System.out.println();
+
+        ArrayList<String> nameList = new ArrayList<>(Arrays.asList("Mr.Green", "Mr.Yellow", "Mr.Red"));
+        for (String name : nameList) {
+            System.out.println(name);
         }
     }
 }
