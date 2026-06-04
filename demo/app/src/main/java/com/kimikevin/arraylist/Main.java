@@ -54,5 +54,20 @@ public class Main {
         for (long value : powersOfTen) {
             System.out.print(value + " ");
         }
+
+        ArrayList<Character> characters = new ArrayList<>();
+
+        characters.add('a');
+        characters.add('b');
+        characters.add(1, 'c');
+        characters.add(1, 'd');
+        characters.add('e');
+        characters.add(5, 'f');
+
+        System.out.println();
+
+        for (char character : characters) {
+            System.out.print(character + " ");
+        }
     }
 }
