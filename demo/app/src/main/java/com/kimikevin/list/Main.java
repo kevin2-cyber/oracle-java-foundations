@@ -1,5 +1,6 @@
 package com.kimikevin.list;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
@@ -30,5 +31,17 @@ public class Main {
 
         List<Integer> testNumbers = Arrays.asList(1,2,3,4,5); // fixed-size list
         testNumbers = Collections.unmodifiableList(testNumbers); // unmodifiable list
+
+        List<Integer> numberArrayList = new ArrayList<>();
+
+        numberArrayList.add(15);
+        numberArrayList.add(10);
+        numberArrayList.add(20);
+
+        System.out.println(numberArrayList); // [15, 10, 20]
+
+        numberArrayList.set(0, 30); // no exceptions here
+
+        System.out.println(numberArrayList); // [30, 10, 20]
     }
 }
