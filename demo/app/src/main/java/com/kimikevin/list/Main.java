@@ -13,6 +13,10 @@ public class Main {
         }
         List<Integer> numbers = List.of(0, 1, 1, 2, 3, 5, 8, 13);
 
+        for(int i = 0; i < names.size(); i += 2) {
+            System.out.println(names.get(i));
+        }
+
         List<String> daysOfWeek = List.of(
                 "Monday",
                 "Tuesday",
