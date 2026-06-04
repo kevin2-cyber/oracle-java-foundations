@@ -59,5 +59,19 @@ public class Main {
         numberLinkedList.add(30);
 
         System.out.println(numberLinkedList);
+
+        // list equality
+        Objects.equals(List.of(1, 2, 3), List.of(1, 2, 3));    // true
+        Objects.equals(List.of(1, 2, 3), List.of(1, 3, 2));    // false
+        Objects.equals(List.of(1, 2, 3), List.of(1, 2, 3, 1)); // false
+
+        List<Integer> equalNumbers = new ArrayList<>();
+
+        equalNumbers.add(1);
+        equalNumbers.add(2);
+        equalNumbers.add(3);
+
+        Objects.equals(equalNumbers, List.of(1, 2, 3)); // true
+        System.out.println(equalNumbers.equals(List.of(1, 2, 3)));
     }
 }
