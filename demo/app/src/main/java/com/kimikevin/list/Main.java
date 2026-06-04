@@ -7,6 +7,10 @@ public class Main {
         // immutable list
         List<String> emptyList = List.of();
         List<String> names = List.of("Larry", "Kenny", "Sabrina");
+
+        for (String name : names) {
+            System.out.println(name);
+        }
         List<Integer> numbers = List.of(0, 1, 1, 2, 3, 5, 8, 13);
 
         List<String> daysOfWeek = List.of(
