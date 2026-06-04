@@ -43,5 +43,8 @@ public class Main {
         numberArrayList.set(0, 30); // no exceptions here
 
         System.out.println(numberArrayList); // [30, 10, 20]
+
+        List<String> immutableList = List.of("one", "two", "three");
+        List<String> mutableList = new ArrayList<>(immutableList);
     }
 }
