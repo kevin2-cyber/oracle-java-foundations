@@ -19,16 +19,16 @@ public class Main {
         System.out.println(numbers.contains(300)); // true
 
         // mutable sets: HashSet
-        Set<String> countries = new HashSet<>();
+        Set<String> countriesHash = new HashSet<>();
 
-        countries.add("India");
-        countries.add("Japan");
-        countries.add("Switzerland");
-        countries.add("Japan");
-        countries.add("Brazil");
+        countriesHash.add("India");
+        countriesHash.add("Japan");
+        countriesHash.add("Switzerland");
+        countriesHash.add("Japan");
+        countriesHash.add("Brazil");
 
-        System.out.println(countries);
-        System.out.println(countries.contains("Switzerland"));
+        System.out.println(countriesHash);
+        System.out.println(countriesHash.contains("Switzerland"));
 
         // TreeSet
         SortedSet<Integer> sortedSet = new TreeSet<>();
@@ -57,5 +57,16 @@ public class Main {
         }
 
         System.out.println(characters);
+
+        Set<String> countriesSetOp = new HashSet<>(List.of("India", "Japan", "Switzerland"));
+
+        countriesSetOp.addAll(List.of("India", "Germany", "Algeria"));
+        System.out.println(countriesSetOp);
+
+        countriesSetOp.retainAll(List.of("Italy", "Japan", "India", "Germany"));
+        System.out.println(countriesSetOp);
+
+        countriesSetOp.removeAll(List.of("Japan", "Germany", "USA"));
+        System.out.println(countriesSetOp);
     }
 }
