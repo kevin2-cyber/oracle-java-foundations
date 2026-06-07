@@ -68,5 +68,12 @@ public class Main {
 
         countriesSetOp.removeAll(List.of("Japan", "Germany", "USA"));
         System.out.println(countriesSetOp);
+
+        Set<String> countries = new HashSet<>(List.of("India", "Japan", "Algeria"));
+
+        System.out.println(countries.containsAll(Set.of())); // true
+        System.out.println(countries.containsAll(Set.of("India", "Japan")));   // true
+        System.out.println(countries.containsAll(Set.of("India", "Germany"))); // false
+        System.out.println(countries.containsAll(Set.of("Algeria", "India", "Japan"))); // true
     }
 }
