@@ -1,12 +1,10 @@
 package com.kimikevin.set;
 
-import java.util.HashSet;
-import java.util.Set;
-import java.util.SortedSet;
-import java.util.TreeSet;
+import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
+        // immutable sets
         Set<String> emptySet = Set.of();
         Set<String> people = Set.of("Larry", "Kenny", "Sabrina");
         Set<Integer> numbers = Set.of(100, 200, 300, 400);
@@ -20,6 +18,7 @@ public class Main {
         System.out.println(people.contains("John")); // false
         System.out.println(numbers.contains(300)); // true
 
+        // mutable sets: HashSet
         Set<String> countries = new HashSet<>();
 
         countries.add("India");
@@ -31,6 +30,7 @@ public class Main {
         System.out.println(countries);
         System.out.println(countries.contains("Switzerland"));
 
+        // TreeSet
         SortedSet<Integer> sortedSet = new TreeSet<>();
 
         sortedSet.add(10);
@@ -48,5 +48,14 @@ public class Main {
 
         System.out.println(sortedSet.first()); // minimum is 10
         System.out.println(sortedSet.last());  // maximum is 21
+
+        // LinkedHashSet
+        Set<Character> characters = new LinkedHashSet<>();
+
+        for (char c = 'a'; c <= 'k'; c++) {
+            characters.add(c);
+        }
+
+        System.out.println(characters);
     }
 }
