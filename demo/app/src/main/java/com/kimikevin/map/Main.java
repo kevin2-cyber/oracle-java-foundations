@@ -10,5 +10,8 @@ public class Main {
                 "James", "+1-202-555-0220",
                 "Katy", "+1-202-555-0175"
         );
+
+        System.out.println(emptyMap.size());     // 0
+        System.out.println(friendPhones.size()); // 3
     }
 }
