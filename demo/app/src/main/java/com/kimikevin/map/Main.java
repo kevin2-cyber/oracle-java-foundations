@@ -13,5 +13,9 @@ public class Main {
 
         System.out.println(emptyMap.size());     // 0
         System.out.println(friendPhones.size()); // 3
+
+        String bobPhone = friendPhones.get("Bob"); // +1-202-555-0118
+        String alicePhone = friendPhones.get("Alice"); // null
+        String phone = friendPhones.getOrDefault("Alex", "Unknown phone"); // Unknown phone
     }
 }
