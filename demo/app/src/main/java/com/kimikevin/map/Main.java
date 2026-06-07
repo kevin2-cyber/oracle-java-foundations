@@ -17,5 +17,12 @@ public class Main {
         String bobPhone = friendPhones.get("Bob"); // +1-202-555-0118
         String alicePhone = friendPhones.get("Alice"); // null
         String phone = friendPhones.getOrDefault("Alex", "Unknown phone"); // Unknown phone
+
+        System.out.println(bobPhone);
+        System.out.println(alicePhone);
+        System.out.println(phone);
+
+        System.out.println(friendPhones.keySet()); // [James, Bob, Katy]
+        System.out.println(friendPhones.values()); // [+1-202-555-0220, +1-202-555-0118, +1-202-555-0175]
     }
 }
