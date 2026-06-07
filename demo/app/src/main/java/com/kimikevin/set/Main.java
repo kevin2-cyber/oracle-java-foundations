@@ -11,5 +11,10 @@ public class Main {
         System.out.println(emptySet); // []
         System.out.println(people);  // [Kenny, Larry, Sabrina] or another order
         System.out.println(numbers);  // [400, 200, 300, 100] or another order
+
+        System.out.println(emptySet.contains("hello")); // false
+        System.out.println(people.contains("Sabrina")); // true
+        System.out.println(people.contains("John")); // false
+        System.out.println(numbers.contains(300)); // true
     }
 }
