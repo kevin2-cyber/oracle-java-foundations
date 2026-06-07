@@ -7,16 +7,16 @@ public class Main {
         // immutable sets
         Set<String> emptySet = Set.of();
         Set<String> people = Set.of("Larry", "Kenny", "Sabrina");
-        Set<Integer> numbers = Set.of(100, 200, 300, 400);
+        Set<Integer> numberTens = Set.of(100, 200, 300, 400);
 
         System.out.println(emptySet); // []
         System.out.println(people);  // [Kenny, Larry, Sabrina] or another order
-        System.out.println(numbers);  // [400, 200, 300, 100] or another order
+        System.out.println(numberTens);  // [400, 200, 300, 100] or another order
 
         System.out.println(emptySet.contains("hello")); // false
         System.out.println(people.contains("Sabrina")); // true
         System.out.println(people.contains("John")); // false
-        System.out.println(numbers.contains(300)); // true
+        System.out.println(numberTens.contains(300)); // true
 
         // mutable sets: HashSet
         Set<String> countriesHash = new HashSet<>();
@@ -75,5 +75,17 @@ public class Main {
         System.out.println(countries.containsAll(Set.of("India", "Japan")));   // true
         System.out.println(countries.containsAll(Set.of("India", "Germany"))); // false
         System.out.println(countries.containsAll(Set.of("Algeria", "India", "Japan"))); // true
+
+        System.out.println(Objects.equals(Set.of(1, 2, 3), Set.of(1, 3)));    // false
+        System.out.println(Objects.equals(Set.of(1, 2, 3), Set.of(1, 2, 3))); // true
+        System.out.println(Objects.equals(Set.of(1, 2, 3), Set.of(1, 3, 2))); // true
+
+        Set<Integer> numbers = new HashSet<>();
+
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+
+        System.out.println(Objects.equals(numbers, Set.of(1, 2, 3))); // true
     }
 }
