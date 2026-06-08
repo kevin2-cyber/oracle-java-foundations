@@ -25,5 +25,10 @@ public class Main {
 
         Collections.sort(cars);
         System.out.println(cars);
+
+        Coin big = new Coin(25, 2006);
+        Coin medium1 = new Coin(10, 2016);
+        Coin medium2 = new Coin(10, 2001);
+        Coin small = new Coin(2, 2000);
     }
 }
