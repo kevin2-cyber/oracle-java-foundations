@@ -19,7 +19,13 @@ public class Coin implements Comparable<Coin>{
 
     @Override
     public int compareTo(Coin other) {
-        return Integer.compare(nominalValue, other.nominalValue);
+        if (nominalValue == other.nominalValue) {
+            return 0;
+        } else if (nominalValue < other.nominalValue) {
+            return -1;
+        } else {
+            return 1;
+        }
     }
 
     @Override
@@ -37,9 +43,6 @@ public class Coin implements Comparable<Coin>{
 
     @Override
     public String toString() {
-        return "Coin(" +
-                "nominalValue=" + nominalValue +
-                ", mintYear=" + mintYear +
-                ")";
+        return "Coin{nominal=" + nominalValue + ", year=" + mintYear + "}";
     }
 }
