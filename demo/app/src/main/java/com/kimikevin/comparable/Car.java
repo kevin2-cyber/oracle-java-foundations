@@ -1,6 +1,6 @@
 package com.kimikevin.comparable;
 
-public class Car {
+public class Car implements Comparable<Car>{
     private int number;
     private String model;
     private String color;
@@ -43,5 +43,10 @@ public class Car {
 
     public void setWeight(int weight) {
         this.weight = weight;
+    }
+
+    @Override
+    public int compareTo(Car other) {
+        return Integer.compare(getNumber(), other.getNumber());
     }
 }
