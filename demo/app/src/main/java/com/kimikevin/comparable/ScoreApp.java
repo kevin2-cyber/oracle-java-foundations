@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
-public class App {
+public class ScoreApp {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         List<Score> scores = new ArrayList<>();
