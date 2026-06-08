@@ -30,5 +30,14 @@ public class Main {
         Coin medium1 = new Coin(10, 2016);
         Coin medium2 = new Coin(10, 2001);
         Coin small = new Coin(2, 2000);
+
+        List<Coin> coins = new ArrayList<>();
+        coins.add(big);
+        coins.add(medium1);
+        coins.add(medium2);
+        coins.add(small);
+
+        Collections.sort(coins);
+        coins.forEach(System.out::println);
     }
 }
