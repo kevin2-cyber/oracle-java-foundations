@@ -13,5 +13,17 @@ public class Main {
 
         Collections.sort(list);
         System.out.println(list);
+
+        List<Car> cars = new ArrayList<>();
+        Car car1 = new Car(876, "BMW", "white", 1400);
+        Car car2 = new Car(345, "Mercedes", "black", 2000);
+        Car car3 = new Car(470, "Volvo", "blue", 1800);
+
+        cars.add(car1);
+        cars.add(car2);
+        cars.add(car3);
+
+        Collections.sort(cars);
+        System.out.println(cars);
     }
 }
