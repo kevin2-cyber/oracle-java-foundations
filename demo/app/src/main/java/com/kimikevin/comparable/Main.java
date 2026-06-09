@@ -39,5 +39,9 @@ public class Main {
 
         Collections.sort(coins);
         coins.forEach(System.out::println);
+
+        var listing = new ArrayList<>(List.of("car", "cardiogram", "card", "cards"));
+        Collections.sort(listing);
+        listing.forEach(System.out::println);
     }
 }
