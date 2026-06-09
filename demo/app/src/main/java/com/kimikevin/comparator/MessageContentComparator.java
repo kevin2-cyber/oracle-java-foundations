@@ -10,3 +10,17 @@ public class MessageContentComparator implements Comparator<Message> {
         return Integer.compare(firstLength, secondLength);
     }
 }
+
+class MessageDateComparator implements Comparator<Message> {
+    @Override
+    public int compare(Message messageOne, Message messageTwo) {
+        return messageOne.getCreated().compareTo(messageTwo.getCreated());
+    }
+}
+
+class MessageAuthorComparator implements Comparator<Message> {
+    @Override
+    public int compare(Message messageOne, Message messageTwo) {
+        return messageOne.getFrom().compareTo(messageTwo.getFrom());
+    }
+}
