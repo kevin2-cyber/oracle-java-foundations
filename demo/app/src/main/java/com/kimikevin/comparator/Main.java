@@ -18,7 +18,16 @@ public class Main {
 
         System.out.println(messages);
 
+        System.out.println("Sorting by content:");
         messages.sort(new MessageContentComparator());
+        messages.forEach(System.out::println);
+
+        System.out.println("Sorting by date:");
+        messages.sort(new MessageDateComparator());
+        messages.forEach(System.out::println);
+
+        System.out.println("Sorting by author:");
+        messages.sort(new MessageAuthorComparator());
         messages.forEach(System.out::println);
     }
 }
