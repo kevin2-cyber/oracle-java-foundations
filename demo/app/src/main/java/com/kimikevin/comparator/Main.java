@@ -15,5 +15,8 @@ public class Main {
         messages.add(new Message("peace!"));
 
         System.out.println(messages);
+
+        messages.sort(new MessageContentComparator());
+        messages.forEach(System.out::println);
     }
 }
