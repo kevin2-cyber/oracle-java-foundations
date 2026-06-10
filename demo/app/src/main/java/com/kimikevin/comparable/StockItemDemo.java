@@ -54,11 +54,14 @@ class StockItem {
     }
 }
 
-// Write a method that accepts a list of StockItem objects, sorts them by their total value in descending order, and returns the sorted list. You don't need to read or write anything from or to the console, just implement the method.
+// Write a method that accepts a list of StockItem objects, sorts them by their total value in descending order,
+// and returns the sorted list. You don't need to read or write anything from or to the console, just implement the method.
 class StockItemUtil {
     public static List<StockItem> sort(List<StockItem> stockItems) {
         return stockItems.stream()
-                .sorted(Comparator.comparingDouble(StockItemUtil::getTotalValue).thenComparing(StockItem::getName).reversed())
+                .sorted(
+                        Comparator.comparingDouble(StockItemUtil::getTotalValue)
+                                .thenComparing(StockItem::getName).reversed())
                 .toList();
     }
 
