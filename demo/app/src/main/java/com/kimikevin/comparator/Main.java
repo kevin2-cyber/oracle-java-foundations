@@ -1,6 +1,7 @@
 package com.kimikevin.comparator;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 public class Main {
@@ -28,6 +29,12 @@ public class Main {
 
         System.out.println("Sorting by author:");
         messages.sort(new MessageAuthorComparator());
+        messages.forEach(System.out::println);
+
+        System.out.println("Sorting using Java 8 features: lambda with variable");
+        Comparator<Message> dateComparator = (m1, m2) ->
+                m1.getCreated().compareTo(m2.getCreated());
+        messages.sort(dateComparator);
         messages.forEach(System.out::println);
     }
 }
