@@ -19,26 +19,31 @@ public class Main {
 
         System.out.println(messages);
 
-        System.out.println("Sorting by content:");
+        System.out.println("Sort by content:");
         messages.sort(new MessageContentComparator());
         messages.forEach(System.out::println);
 
-        System.out.println("Sorting by date:");
+        System.out.println("Sort by date:");
         messages.sort(new MessageDateComparator());
         messages.forEach(System.out::println);
 
-        System.out.println("Sorting by author:");
+        System.out.println("Sort by author:");
         messages.sort(new MessageAuthorComparator());
         messages.forEach(System.out::println);
 
-        System.out.println("Sorting using Java 8 features: lambda with variable");
+        System.out.println("Sort using Java 8 features: lambda with variable");
         Comparator<Message> dateComparator = (m1, m2) ->
                 m1.getCreated().compareTo(m2.getCreated());
         messages.sort(dateComparator);
         messages.forEach(System.out::println);
 
-        System.out.println("Sorting using Java 8 features: inline lambda");
+        System.out.println("Sort using Java 8 features: inline lambda");
         messages.sort((m1, m2) -> m1.getCreated().compareTo(m2.getCreated()));
         messages.forEach(System.out::println);
+
+        System.out.println("Sort using method reference: date comparator");
+        messages.sort(Comparator.comparing(Message::getCreated).reversed());
+        messages.forEach(System.out::println);
+
     }
 }
