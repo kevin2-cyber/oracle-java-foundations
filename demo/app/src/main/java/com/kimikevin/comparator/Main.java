@@ -41,9 +41,14 @@ public class Main {
         messages.sort((m1, m2) -> m1.getCreated().compareTo(m2.getCreated()));
         messages.forEach(System.out::println);
 
-        System.out.println("Sort using method reference: date comparator");
+        System.out.println("Sort using method reference: Comparator.comparing");
         messages.sort(Comparator.comparing(Message::getCreated).reversed());
         messages.forEach(System.out::println);
 
+        System.out.println("Sort using method reference: Comparator.comparing().thenComparing()");
+        messages.sort(Comparator.comparing(Message::getLikes)
+                .reversed()
+                .thenComparing(Message::getFrom));
+        messages.forEach(System.out::println);
     }
 }
