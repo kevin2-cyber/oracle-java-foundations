@@ -36,5 +36,9 @@ public class Main {
                 m1.getCreated().compareTo(m2.getCreated());
         messages.sort(dateComparator);
         messages.forEach(System.out::println);
+
+        System.out.println("Sorting using Java 8 features: inline lambda");
+        messages.sort((m1, m2) -> m1.getCreated().compareTo(m2.getCreated()));
+        messages.forEach(System.out::println);
     }
 }
