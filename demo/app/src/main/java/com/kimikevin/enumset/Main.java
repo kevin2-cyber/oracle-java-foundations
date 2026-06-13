@@ -12,5 +12,8 @@ public class Main {
 
         EnumSet<BallsColor> enumSet = EnumSet.noneOf(BallsColor.class);
         System.out.println(enumSet);
+
+        EnumSet<BallsColor> newColorsSet = EnumSet.complementOf(ballsColors);
+        System.out.println(newColorsSet);
     }
 }
