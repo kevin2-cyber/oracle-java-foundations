@@ -15,5 +15,8 @@ public class Main {
 
         EnumSet<BallsColor> newColorsSet = EnumSet.complementOf(ballsColors);
         System.out.println(newColorsSet);
+
+        EnumSet<BallsColor> ballsRange = EnumSet.range(BallsColor.RED, BallsColor.YELLOW);
+        System.out.println(ballsRange);
     }
 }
