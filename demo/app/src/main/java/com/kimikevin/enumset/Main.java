@@ -18,5 +18,16 @@ public class Main {
 
         EnumSet<BallsColor> ballsRange = EnumSet.range(BallsColor.RED, BallsColor.YELLOW);
         System.out.println(ballsRange);
+
+        EnumSet<Status> statuses = EnumSet.range(Status.RECEIVED, Status.DISPATCHED);
+        statuses.remove(Status.CHECKING);
+        statuses.remove(Status.DISPATCHED);
+
+        statuses.add(Status.CHECKING);
+
+        // Notice how Checking Enum is placed at the correct position
+        // as in Status class in spite of adding it afterwards
+        System.out.println(statuses);
+        System.out.println(statuses.contains(Status.PROCESSING));
     }
 }
