@@ -9,5 +9,8 @@ public class Main {
 
         EnumSet<BallsColor> colorSet = EnumSet.allOf(BallsColor.class);
         System.out.println(colorSet);
+
+        EnumSet<BallsColor> enumSet = EnumSet.noneOf(BallsColor.class);
+        System.out.println(enumSet);
     }
 }
